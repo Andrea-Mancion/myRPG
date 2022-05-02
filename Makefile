@@ -25,11 +25,11 @@ SRC	=	my_putchar.c	\
 		inventory/create_inventory.c	\
 		inventory/print_inventory.c	\
 		inventory/put_inventory.c	\
-		./menu/background_menu.c	\
-		./menu/button_menu.c	\
-		./menu/click_button.c	\
-		./menu/main_menu.c	\
-		./my_rpg.c	\
+		menu/background_menu.c	\
+		menu/button_menu.c	\
+		menu/click_button.c	\
+		menu/main_menu.c	\
+		my_rpg.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
