@@ -47,16 +47,7 @@ int menu_defender(void)
 
 static int print_help (void)
 {
-    my_putstr("My_defender - Tower Defense\n");
-    my_putstr("• The player is a builder who must defend his castle,\n");
-    my_putstr("• Enemy waves will regularly appear from one side of ");
-    my_putstr("the playground,\n");
-    my_putstr("• The player must buy and place buildings on the playground ");
-    my_putstr("grid to block/kill enemies,\n");
-    my_putstr("• Buildings can be offensive (towers attacking) or defensive ");
-    my_putstr("(basic walls),\n");
-    my_putstr("• When the castle is reached by an enemy, it takes damages,\n");
-    my_putstr("• If the castle reaches 0 hit points the player loose.\n");
+    my_putstr("my_rpg - Baguette The Quest\n");
     return 0;
 }
 
