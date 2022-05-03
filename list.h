@@ -144,6 +144,7 @@ typedef struct object
     struct_game game_over;
     struct_text text;
     struct_inventory **inventory;
+    bool print;
 } struct_object;
 
 #endif /* !LIST_H_ */
