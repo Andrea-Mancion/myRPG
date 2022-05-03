@@ -5,6 +5,8 @@
 ** for functions
 */
 
+#include "list.h"
+
 #ifndef MY_H_
     #define MY_H_
 
@@ -37,5 +39,6 @@
     void put_inventory(struct_inventory **inventory, struct_baguette *baguette);
     void print_inventory(struct_object *object);
     void create_text_inventory(struct_object *object);
+    int second_window(struct_object *object);
 
 #endif /* !MY_H_ */

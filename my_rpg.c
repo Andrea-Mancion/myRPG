@@ -12,8 +12,9 @@
 #include "includes/my_rpg.h"
 #include "includes/my_lib.h"
 #include <stdio.h>
+#include "includes/list.h"
 
-int menu_defender(void)
+int menu_defender(struct_object *object)
 {
     t_gbl opti;
     background(&opti);
@@ -38,7 +39,7 @@ int menu_defender(void)
         sfRenderWindow_drawSprite(window, opti.set_tings.sprite, NULL);
         sfRenderWindow_drawSprite(window, opti.quit.sprite, NULL);
         sfRenderWindow_display(window);
-        pos_play(window, &event);
+        pos_play(window, &event, object);
         pos_settings(window, &event);
         pos_quit(window, &event);
     }
@@ -53,7 +54,8 @@ static int print_help (void)
 
 int main(int ac, char **av)
 {
-    t_gbl gbl;
+    //t_gbl gbl;
+    struct_object *object = malloc(sizeof(struct_object));
 
     if ((ac == 2) && (av[1][0] == '-') && (av[1][1] == 'h'))
         return print_help();
@@ -65,6 +67,6 @@ int main(int ac, char **av)
         my_putstr("Error during initialization\n");
         return 84;
     }*/
-    menu_defender();
+    menu_defender(object);
     return 0;
 }

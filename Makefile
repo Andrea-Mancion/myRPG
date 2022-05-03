@@ -29,11 +29,12 @@ SRC	=	my_putchar.c	\
 		menu/button_menu.c	\
 		menu/click_button.c	\
 		menu/main_menu.c	\
-		my_rpg.c	\
+		my_runner.c	\
+		my_rpg.c
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	my_runner
+NAME	=	my_rpg
 
 CFLAGS	=	-Wall -Wextra
 

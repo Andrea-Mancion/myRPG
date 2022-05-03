@@ -11,19 +11,20 @@
 #include <stdlib.h>
 #include "../includes/my_rpg.h"
 #include "../includes/button.h"
+#include "../includes/my.h"
+#include "../list.h"
 
-int second_window(int ac, char **av);
-
-void pos_play(sfRenderWindow* window, sfEvent *event)
+void pos_play(sfRenderWindow* window, sfEvent *event, struct_object *object)
 {
     sfVector2i mouse_pos = sfMouse_getPosition((const sfWindow *)window);
 
     if (mouse_pos.y >= 416 && mouse_pos.y <= 442) {
         if (mouse_pos.x >= 730 && mouse_pos.x <= 1098) {
+            printf("PLAY\n");
             while (sfRenderWindow_pollEvent(window, event)) {
                 if (event->type == sfEvtMouseButtonPressed) {
-                    // second_window();
-                    break;
+                    printf("Poyo\n");
+                    second_window(object);
                 }
             }
         }

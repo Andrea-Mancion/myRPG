@@ -50,6 +50,6 @@ void main_screen(global_t *global);
 global_t *init_button(sfVector2f position ,sfVector2f size );
 sfRenderWindow *init_window(window_t *window);
 bool button_is_clicked(sfVector2f size, sfVector2f but_pos, sfVector2i mouse);
-int second_window(int ac, char **av);
+int second_window(struct_object *object);
 
 #endif
