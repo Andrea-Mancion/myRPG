@@ -32,7 +32,8 @@ SRC	=	my_putchar.c	\
 		my_rpg.c	\
 		interface/create_stat.c	\
 		interface/give_stats.c	\
-		interface/upgrade_stat.c
+		interface/upgrade_stat.c	\
+		pause/create_button_text.c
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -29,6 +29,11 @@ void render_window(struct_object *object, sfRenderWindow *window)
         sfRenderWindow_drawText(window, object->text_stat.text_invent, NULL);
         print_stat(object, window);
     }
+    if (object->print_pause == true) {
+        sfRenderWindow_drawText(window, object->text_pause.text_invent, NULL);
+        sfRenderWindow_drawSprite(window, object->but_continue.sprite, NULL);
+        sfRenderWindow_drawSprite(window, object->but_exit.sprite, NULL);
+    }
     if (object->game_over.counter2 == 1)
         sfRenderWindow_drawSprite(window, object->game_over.game_s, NULL);
     sfRenderWindow_display(window);

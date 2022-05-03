@@ -27,16 +27,21 @@ static void analyse_events(sfRenderWindow *window, sfEvent event, struct_object 
         object->print_stat = true;
     if (object->print_inventory == true && sfKeyboard_isKeyPressed(sfKeyEscape))
         object->print_inventory = false;
+    if (object->print_inventory == false && object->print_stat == false &&
+    sfKeyboard_isKeyPressed(sfKeyEscape))
+        object->print_pause = true;
 }
 
 int second_window(struct_object *object, sfRenderWindow *window)
 {
     object->print_inventory = false;
     object->print_stat = false;
+    object->print_pause = false;
     object->stat = malloc(sizeof(stats_t));
     object->stat->nmbr_class = 1;  //faire une fonction qui demande la classe
     create_object(object);
     create_inventory(object);
+    create_button(object);
 
     while (sfRenderWindow_isOpen(window)) {
         sfRenderWindow_clear(window, sfBlack);

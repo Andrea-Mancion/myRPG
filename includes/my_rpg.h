@@ -78,6 +78,24 @@ typedef struct s_game {
     int num_player;
 } t_game;
 
+typedef struct btn_continue {
+    int x;
+    int y;
+    int size_x;
+    int size_y;
+    sfTexture *texture;
+    sfSprite *sprite;
+} btn_continue;
+
+typedef struct btn_exit {
+    int x;
+    int y;
+    int size_x;
+    int size_y;
+    sfTexture *texture;
+    sfSprite *sprite;
+} btn_exit;
+
 typedef struct s_gbl {
     trucs backg;
     button_play play;
@@ -212,12 +230,16 @@ typedef struct object
     struct_music music;
     struct_event event;
     struct_game game_over;
+    btn_continue but_continue;
+    btn_exit but_exit;
     struct_text text_invetory;
     struct_text text_stat;
+    struct_text text_pause;
     struct_inventory **inventory;
     stats_t *stat;
     bool print_inventory;
     bool print_stat;
+    bool print_pause;
 } struct_object;
 
 void background(t_gbl *opti);
@@ -228,6 +250,8 @@ void play(t_gbl *opti);
 void button_settings(t_gbl *opti);
 void button_volume(t_gbl *opti);
 void button_quit(t_gbl *opti);
+
+void create_button(struct_object *object);
 
 void pos_play(sfRenderWindow* window, sfEvent *event, struct_object *object);
 void pos_settings(sfRenderWindow* window, sfEvent *event);
