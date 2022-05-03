@@ -22,14 +22,19 @@ static void analyse_events(sfRenderWindow *window, sfEvent event, struct_object 
     if (event.type == sfEvtClosed)
         sfRenderWindow_close(window);
     if (sfKeyboard_isKeyPressed(sfKeyI))
-        object->print = true;
-    if (object->print == true && sfKeyboard_isKeyPressed(sfKeyEscape))
-        object->print = false;
+        object->print_inventory = true;
+    if (sfKeyboard_isKeyPressed(sfKeyC))
+        object->print_stat = true;
+    if (object->print_inventory == true && sfKeyboard_isKeyPressed(sfKeyEscape))
+        object->print_inventory = false;
 }
 
 int second_window(struct_object *object, sfRenderWindow *window)
 {
-    object->print = false;
+    object->print_inventory = false;
+    object->print_stat = false;
+    object->stat = malloc(sizeof(stats_t));
+    object->stat->nmbr_class = 1;  //faire une fonction qui demande la classe
     create_object(object);
     create_inventory(object);
 

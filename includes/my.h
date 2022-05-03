@@ -40,5 +40,8 @@
     void print_inventory(struct_object *object, sfRenderWindow *window);
     void create_text_inventory(struct_object *object);
     int second_window(struct_object *object, sfRenderWindow *window);
+    void create_stat(struct_object *object);
+    void give_stat(stats_t *stat);
+    void print_stat(struct_object *object, sfRenderWindow *window);
 
 #endif /* !MY_H_ */

@@ -82,5 +82,6 @@ void create_object(struct_object *object)
     create_text_inventory(object);
     game_over(object);
     create_clock(object);
+    create_stat(object);
     //create_window(object);
 }

@@ -79,13 +79,13 @@ typedef struct s_game {
 } t_game;
 
 typedef struct s_gbl {
-        trucs backg;
-        button_play play;
-        button_set_tings set_tings;
-        btn_volume volume;
-        btn_quit quit;
-        t_game game;
-        t_object player;
+    trucs backg;
+    button_play play;
+    button_set_tings set_tings;
+    btn_volume volume;
+    btn_quit quit;
+    t_game game;
+    t_object player;
 } t_gbl;
 
 typedef struct ninja
@@ -185,6 +185,21 @@ typedef struct inventory {
     bool used;
 } struct_inventory;
 
+typedef struct stats_s {
+    int strenght;
+    int health;
+    int wisdom;
+    int dext;
+    int luck;
+    int used;
+    int nmbr_class;
+    sfSprite *stat_s;
+    sfTexture *stat_t;
+    sfIntRect stat_r;
+    int nbr_of_point;
+    sfVector2f pos;
+}stats_t;
+
 typedef struct object
 {
     struct_ninja ninja;
@@ -197,9 +212,12 @@ typedef struct object
     struct_music music;
     struct_event event;
     struct_game game_over;
-    struct_text text;
+    struct_text text_invetory;
+    struct_text text_stat;
     struct_inventory **inventory;
-    bool print;
+    stats_t *stat;
+    bool print_inventory;
+    bool print_stat;
 } struct_object;
 
 void background(t_gbl *opti);

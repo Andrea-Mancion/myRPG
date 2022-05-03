@@ -29,7 +29,10 @@ SRC	=	my_putchar.c	\
 		menu/click_button.c	\
 		menu/main_menu.c	\
 		my_runner.c	\
-		my_rpg.c
+		my_rpg.c	\
+		interface/create_stat.c	\
+		interface/give_stats.c	\
+		interface/upgrade_stat.c
 
 OBJ	=	$(SRC:.c=.o)
 

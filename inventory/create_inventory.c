@@ -20,13 +20,13 @@ void create_text_inventory(struct_object *object)
 {
     sfVector2f pos_text = {900, 400};
 
-    object->text.text_invent = sfText_create();
-    object->text.font_text_invent = sfFont_createFromFile("ressource/cinzel.ttf");
-    sfText_setFont(object->text.text_invent, object->text.font_text_invent);
-    sfText_setString(object->text.text_invent, "inventory");
-    sfText_setPosition(object->text.text_invent, pos_text);
-    sfText_setCharacterSize(object->text.text_invent, 40);
-    sfText_setFillColor(object->text.text_invent, sfWhite);
+    object->text_invetory.text_invent = sfText_create();
+    object->text_invetory.font_text_invent = sfFont_createFromFile("ressource/cinzel.ttf");
+    sfText_setFont(object->text_invetory.text_invent, object->text_invetory.font_text_invent);
+    sfText_setString(object->text_invetory.text_invent, "inventory");
+    sfText_setPosition(object->text_invetory.text_invent, pos_text);
+    sfText_setCharacterSize(object->text_invetory.text_invent, 40);
+    sfText_setFillColor(object->text_invetory.text_invent, sfWhite);
 }
 
 void create_inventory(struct_object *object)
