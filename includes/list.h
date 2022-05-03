@@ -74,23 +74,6 @@ typedef struct music
     sfMusic *music;
 } struct_music;
 
-typedef struct ennemy
-{
-    sfSprite *sprite_ennemy;
-    sfTexture *texture_ennemy;
-    sfIntRect rect_ennemy;
-    sfVector2f position_ennemy;
-    sfVector2f scale;
-} struct_ennemy;
-
-typedef struct ennemy2
-{
-    sfSprite *sprite_ennemy2;
-    sfTexture *texture_ennemy2;
-    sfIntRect rect_ennemy2;
-    sfVector2f position_ennemy2;
-    sfVector2f scale2;
-} struct_ennemy2;
 
 typedef struct event
 {
@@ -127,23 +110,5 @@ typedef struct inventory {
     struct_baguette *baguette;
     bool used;
 } struct_inventory;
-
-typedef struct object
-{
-    struct_ninja ninja;
-    struct_clock clock;
-    struct_window window;
-    struct_background background;
-    struct_background2 back2;
-    struct_background3 back3;
-    struct_background4 back4;
-    struct_music music;
-    struct_ennemy ennemy;
-    struct_ennemy2 ennemy2;
-    struct_event event;
-    struct_game game_over;
-    struct_text text;
-    struct_inventory **inventory;
-} struct_object;
 
 #endif /* !LIST_H_ */

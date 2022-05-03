@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** list.h
+** move_object
 ** File description:
-** for structure
+** for runner
 */
 
 #include <stdlib.h>
@@ -10,9 +10,10 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include <stdbool.h>
+#include "list.h"
 
-#ifndef LIST_H_
-    #define LIST_H_
 
-#endif /* !LIST_H_ */
+void text(struct_object *object)
+{
+    
+}

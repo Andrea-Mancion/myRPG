@@ -21,7 +21,6 @@ SRC	=	my_putchar.c	\
 		create_object3.c	\
 		move_object.c	\
 		move_object2.c	\
-		hit_box.c	\
 		inventory/create_inventory.c	\
 		inventory/print_inventory.c	\
 		inventory/put_inventory.c	\

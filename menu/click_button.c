@@ -12,18 +12,16 @@
 #include "../includes/my_rpg.h"
 #include "../includes/button.h"
 #include "../includes/my.h"
-#include "../list.h"
+#include "../includes/my_rpg.h"
 
 void pos_play(sfRenderWindow* window, sfEvent *event, struct_object *object)
 {
     sfVector2i mouse_pos = sfMouse_getPosition((const sfWindow *)window);
 
-    if (mouse_pos.y >= 416 && mouse_pos.y <= 442) {
-        if (mouse_pos.x >= 730 && mouse_pos.x <= 1098) {
-            printf("PLAY\n");
+    if (mouse_pos.y >= 536 && mouse_pos.y <= 617) {
+        if (mouse_pos.x >= 738 && mouse_pos.x <= 1187) {
             while (sfRenderWindow_pollEvent(window, event)) {
                 if (event->type == sfEvtMouseButtonPressed) {
-                    printf("Poyo\n");
                     second_window(object);
                 }
             }

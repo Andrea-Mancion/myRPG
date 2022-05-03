@@ -12,7 +12,6 @@
 #include "includes/my_rpg.h"
 #include "includes/my_lib.h"
 #include <stdio.h>
-#include "includes/list.h"
 
 int menu_defender(struct_object *object)
 {

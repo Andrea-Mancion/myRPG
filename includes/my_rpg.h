@@ -153,6 +153,16 @@ typedef struct event
     sfEvent event;
 } struct_event;
 
+typedef struct game_over
+{
+    sfSprite *game_s;
+    sfTexture *game_text;
+    sfIntRect game;
+    sfVector2f game_scale;
+    int counter2;
+} struct_game;
+
+
 typedef struct text
 {
     sfText *text_invent;
@@ -186,8 +196,10 @@ typedef struct object
     struct_background4 back4;
     struct_music music;
     struct_event event;
+    struct_game game_over;
     struct_text text;
     struct_inventory **inventory;
+    bool print;
 } struct_object;
 
 void background(t_gbl *opti);
