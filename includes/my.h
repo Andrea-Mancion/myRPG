@@ -16,7 +16,6 @@
     void create_back2(struct_object *object);
     void create_back3(struct_object *object);
     void create_back4(struct_object *object);
-    void game_over(struct_object *object);
     void clock(struct_object *object, sfRenderWindow *window);
     void create_clock(struct_object *object);
     void create_music(struct_object *object);

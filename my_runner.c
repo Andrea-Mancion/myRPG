@@ -10,7 +10,6 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "help.h"
 #include "includes/my_rpg.h"
 #include "includes/my.h"
 

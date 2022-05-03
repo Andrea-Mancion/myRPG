@@ -13,14 +13,14 @@ GREEN = "\e[32m"
 LIGHT_BLUE = "\e[94m"
 WHITE = "\e[1;37m"
 
-SRC	=	my_putchar.c	\
-		my_putstr.c	\
-		create_object.c	\
+SRC	=	lib/my_putchar.c	\
+		lib/my_putstr.c	\
+		create_object/create_object.c	\
 		renderwindow.c	\
-		create_object2.c	\
-		create_object3.c	\
-		move_object.c	\
-		move_object2.c	\
+		create_object/create_object2.c	\
+		create_object/create_object3.c	\
+		move/move_object.c	\
+		move/move_object2.c	\
 		inventory/create_inventory.c	\
 		inventory/print_inventory.c	\
 		inventory/put_inventory.c	\

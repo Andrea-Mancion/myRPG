@@ -10,7 +10,7 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "includes/my_rpg.h"
+#include "../includes/my_rpg.h"
 
 
 void create_back3(struct_object *object)
@@ -42,17 +42,4 @@ void create_back4(struct_object *object)
     object->back4.back4_scale.y = 4.5;
     sfSprite_setScale(object->back4.back4_s, object->back4.back4_scale);
 
-}
-
-void game_over(struct_object *object)
-{
-    object->game_over.counter2 = 0;
-    object->game_over.game_text = sfTexture_createFromFile("ressource/game_over.png", NULL);
-    object->game_over.game_s = sfSprite_create();
-    sfSprite_setTexture(object->game_over.game_s, object->game_over.game_text, sfTrue);
-    object->game_over.game.top = 0;
-    object->game_over.game.left = 0;
-    object->game_over.game.width = 1920;
-    object->game_over.game.height = 1080;
-    sfSprite_setTextureRect(object->game_over.game_s, object->game_over.game);
 }

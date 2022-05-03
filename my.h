@@ -16,12 +16,9 @@
     void create_back2(struct_object *object);
     void create_back3(struct_object *object);
     void create_back4(struct_object *object);
-    void game_over(struct_object *object);
     void clock(struct_object *object);
     void create_clock(struct_object *object);
     void create_music(struct_object *object);
-    void create_ennemy(struct_object *object);
-    void create_ennemy2(struct_object *object);
     void render_window(struct_object *object);
     void move_ninja(struct_object *object);
     void mouvement_x(struct_object *object);

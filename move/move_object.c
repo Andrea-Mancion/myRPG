@@ -10,11 +10,10 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "includes/my_rpg.h"
-#include "includes/my.h"
+#include "../includes/my_rpg.h"
+#include "../includes/my.h"
 
 void move_ennemy2(struct_object *object);
-void hit_box(struct_object *object);
 
 void move_ninja(struct_object *object, sfRenderWindow *window)
 {

@@ -10,8 +10,8 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "includes/my_rpg.h"
-#include "includes/my.h"
+#include "../includes/my_rpg.h"
+#include "../includes/my.h"
 
 void mouvement_x_back(struct_object *object, sfRenderWindow *window)
 {

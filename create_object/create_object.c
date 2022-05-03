@@ -10,8 +10,8 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "includes/my_rpg.h"
-#include "includes/my.h"
+#include "../includes/my_rpg.h"
+#include "../includes/my.h"
 
 void create_clock(struct_object *object);
 void create_music(struct_object *object);
@@ -20,11 +20,10 @@ void create_ennemy2(struct_object *object);
 void create_back2(struct_object *object);
 void create_back3(struct_object *object);
 void create_back4(struct_object *object);
-void game_over(struct_object *object);
 
 void create_ninja(struct_object *object)
 {
-    object->ninja.texture = sfTexture_createFromFile("images.png", NULL);
+    object->ninja.texture = sfTexture_createFromFile("assets/sprites/images.png", NULL);
     object->ninja.sprite = sfSprite_create();
     object->ninja.position.x = 0;
     object->ninja.position.y = 900;
@@ -87,7 +86,6 @@ void create_object(struct_object *object)
     create_music(object);
     create_inventory(object);
     create_text_inventory(object);
-    game_over(object);
     create_clock(object);
     create_stat(object);
     //create_window(object);

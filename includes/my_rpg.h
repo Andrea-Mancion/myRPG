@@ -171,14 +171,7 @@ typedef struct event
     sfEvent event;
 } struct_event;
 
-typedef struct game_over
-{
-    sfSprite *game_s;
-    sfTexture *game_text;
-    sfIntRect game;
-    sfVector2f game_scale;
-    int counter2;
-} struct_game;
+
 
 
 typedef struct text
@@ -229,7 +222,6 @@ typedef struct object
     struct_background4 back4;
     struct_music music;
     struct_event event;
-    struct_game game_over;
     btn_continue but_continue;
     btn_exit but_exit;
     struct_text text_invetory;
