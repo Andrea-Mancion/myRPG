@@ -25,8 +25,11 @@ static void analyse_events(sfRenderWindow *window, sfEvent event, struct_object 
         object->print_inventory = true;
     if (sfKeyboard_isKeyPressed(sfKeyC))
         object->print_stat = true;
-    if (object->print_inventory == true && sfKeyboard_isKeyPressed(sfKeyEscape))
+    if ((object->print_inventory == true  || object->print_stat == true) &&
+        sfKeyboard_isKeyPressed(sfKeyM)) {
         object->print_inventory = false;
+        object->print_stat = false;
+    }
     if (object->print_inventory == false && object->print_stat == false &&
     sfKeyboard_isKeyPressed(sfKeyEscape))
         object->print_pause = true;
