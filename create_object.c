@@ -11,7 +11,7 @@
 #include <math.h>
 #include <stdio.h>
 #include "includes/my_rpg.h"
-#include "my.h"
+#include "includes/my.h"
 
 void create_clock(struct_object *object);
 void create_music(struct_object *object);
@@ -59,9 +59,9 @@ sfRenderWindow *create_window(struct_object *object)
     return (object->window.window);
 }
 
-void destroy(struct_object *object)
+void destroy(struct_object *object, sfRenderWindow *window)
 {
-    sfRenderWindow_destroy(object->window.window);
+    sfRenderWindow_destroy(window);
     sfSprite_destroy(object->ninja.sprite);
     sfTexture_destroy(object->ninja.texture);
     sfSprite_destroy(object->background.background);
@@ -82,5 +82,5 @@ void create_object(struct_object *object)
     create_text_inventory(object);
     game_over(object);
     create_clock(object);
-    create_window(object);
+    //create_window(object);
 }

@@ -14,7 +14,7 @@
 #include "../includes/my.h"
 #include "../includes/my_rpg.h"
 
-void pos_play(sfRenderWindow* window, sfEvent *event, struct_object *object)
+void pos_play(sfRenderWindow *window, sfEvent *event, struct_object *object)
 {
     sfVector2i mouse_pos = sfMouse_getPosition((const sfWindow *)window);
 
@@ -22,7 +22,7 @@ void pos_play(sfRenderWindow* window, sfEvent *event, struct_object *object)
         if (mouse_pos.x >= 738 && mouse_pos.x <= 1187) {
             while (sfRenderWindow_pollEvent(window, event)) {
                 if (event->type == sfEvtMouseButtonPressed) {
-                    second_window(object);
+                    second_window(object, window);
                 }
             }
         }

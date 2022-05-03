@@ -4,6 +4,7 @@
         "stdlib.h": "c",
         "my_rpg.h": "c",
         "math.h": "c",
-        "my.h": "c"
+        "my.h": "c",
+        "my_lib.h": "c"
     }
 }

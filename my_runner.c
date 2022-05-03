@@ -12,11 +12,10 @@
 #include <stdio.h>
 #include "help.h"
 #include "includes/my_rpg.h"
-#include "my.h"
+#include "includes/my.h"
 
 int my_putchar(char c);
 int my_putstr(char *str);
-void render_window(struct_object *object);
 
 static void analyse_events(sfRenderWindow *window, sfEvent event, struct_object *object)
 {
@@ -28,19 +27,19 @@ static void analyse_events(sfRenderWindow *window, sfEvent event, struct_object 
         object->print = false;
 }
 
-int second_window(struct_object *object)
+int second_window(struct_object *object, sfRenderWindow *window)
 {
     object->print = false;
     create_object(object);
     create_inventory(object);
 
-    while (sfRenderWindow_isOpen(object->window.window)) {
-        sfRenderWindow_clear(object->window.window, sfBlack);
-        move_object(object);
-        render_window(object);
-        while (sfRenderWindow_pollEvent(object->window.window, &object->event.event))
-            analyse_events(object->window.window, object->event.event, object);
+    while (sfRenderWindow_isOpen(window)) {
+        sfRenderWindow_clear(window, sfBlack);
+        move_object(object, window);
+        render_window(object, window);
+        while (sfRenderWindow_pollEvent(window, &object->event.event))
+            analyse_events(window, object->event.event, object);
     }
-    destroy(object);
+    destroy(object, window);
     return (0);
 }
