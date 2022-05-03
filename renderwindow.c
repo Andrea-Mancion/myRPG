@@ -28,6 +28,8 @@ void render_window(struct_object *object, sfRenderWindow *window)
     if (object->print_stat == true) {
         sfRenderWindow_drawText(window, object->text_stat.text_invent, NULL);
         print_stat(object, window);
+        for (int x = 0; x < 7; x++)
+            sfRenderWindow_drawText(window, object->text_number_stat[x]->text_invent, NULL);
     }
     if (object->print_pause == true) {
         sfRenderWindow_drawText(window, object->text_pause.text_invent, NULL);

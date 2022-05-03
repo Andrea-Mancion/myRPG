@@ -204,6 +204,8 @@ typedef struct stats_s {
     int luck;
     int used;
     int nmbr_class;
+    int lvl;
+    int exp;
     sfSprite *stat_s;
     sfTexture *stat_t;
     sfIntRect stat_r;
@@ -228,6 +230,7 @@ typedef struct object
     struct_text text_stat;
     struct_text text_pause;
     struct_inventory **inventory;
+    struct_text **text_number_stat;
     stats_t *stat;
     bool print_inventory;
     bool print_stat;

@@ -42,5 +42,7 @@
     void create_stat(struct_object *object);
     void give_stat(stats_t *stat);
     void print_stat(struct_object *object, sfRenderWindow *window);
+    void create_number_text_stat(struct_object *object);
+    char *itoa(int i);
 
 #endif /* !MY_H_ */

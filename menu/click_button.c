@@ -18,15 +18,11 @@ void pos_play(sfRenderWindow *window, sfEvent *event, struct_object *object)
 {
     sfVector2i mouse_pos = sfMouse_getPosition((const sfWindow *)window);
 
-    if (mouse_pos.y >= 536 && mouse_pos.y <= 617) {
-        if (mouse_pos.x >= 738 && mouse_pos.x <= 1187) {
-            while (sfRenderWindow_pollEvent(window, event)) {
-                if (event->type == sfEvtMouseButtonPressed) {
+    if (mouse_pos.y >= 536 && mouse_pos.y <= 617)
+        if (mouse_pos.x >= 738 && mouse_pos.x <= 1187)
+            while (sfRenderWindow_pollEvent(window, event))
+                if (event->type == sfEvtMouseButtonPressed)
                     second_window(object, window);
-                }
-            }
-        }
-    }
 }
 
 void pos_settings(sfRenderWindow* window, sfEvent *event)

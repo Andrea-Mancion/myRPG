@@ -35,6 +35,10 @@ SRC	=	lib/my_putchar.c	\
 		interface/upgrade_stat.c	\
 		pause/create_button_text.c	\
 		pause/click_but_pause.c	\
+		interface/create_text_stat.c	\
+		lib/my_revstr.c	\
+		lib/my_strlen.c	\
+		lib/itoa.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -18,7 +18,7 @@
 
 void create_text_stat(struct_object *object)
 {
-    sfVector2f pos_text = {900, 400};
+    sfVector2f pos_text = {330, 450};
 
     object->text_stat.text_invent = sfText_create();
     object->text_stat.font_text_invent = sfFont_createFromFile("ressource/cinzel.ttf");
@@ -31,23 +31,26 @@ void create_text_stat(struct_object *object)
 
 void create_stat(struct_object *object)
 {
-    sfVector2f scale = {1.5, 1.5};
+    sfVector2f scale = {2, 2};
 
     object->stat->stat_t = sfTexture_createFromFile("ressource/stat.png", NULL);
     object->stat->stat_s = sfSprite_create();
     object->stat->used = true;
     object->stat->stat_r.top = 0;
     object->stat->stat_r.left = 0;
-    object->stat->stat_r.height = 200;
-    object->stat->stat_r.width = 340;
+    object->stat->stat_r.height = 150;
+    object->stat->stat_r.width = 160;
     object->stat->pos.x = 200;
     object->stat->pos.y = 500;
+    object->stat->lvl = 1;
+    object->stat->exp = 0;
     sfSprite_setScale(object->stat->stat_s, scale);
     sfSprite_setTexture(object->stat->stat_s, object->stat->stat_t, sfTrue);
     sfSprite_setTextureRect(object->stat->stat_s, object->stat->stat_r);
     sfSprite_setPosition(object->stat->stat_s, object->stat->pos);
     create_text_stat(object);
     give_stat(object->stat);
+    create_number_text_stat(object);
 }
 
 void print_stat(struct_object *object, sfRenderWindow *window)
