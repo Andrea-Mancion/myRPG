@@ -257,6 +257,8 @@ void pos_play(sfRenderWindow* window, sfEvent *event, struct_object *object);
 void pos_settings(sfRenderWindow* window, sfEvent *event);
 void pos_quit(sfRenderWindow* window, sfEvent *event);
 
+void click_but(sfRenderWindow *window, sfEvent event, struct_object *object);
+
 int menu_defender(struct_object *object);
 int init_music(t_gbl *gbl);
 void move_rect(sfIntRect *rect, int offset, int max_value);
