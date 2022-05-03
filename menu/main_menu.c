@@ -12,8 +12,6 @@ int main_menu(void)
 {
     sfVideoMode mode = {800, 600, 32};
     sfRenderWindow* window;
-    sfTexture* texture;
-    sfSprite* sprite;
     sfEvent event;
 
     window = sfRenderWindow_create(mode, "Menu", sfResize | sfClose, NULL);
