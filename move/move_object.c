@@ -40,7 +40,8 @@ void move_background(struct_object *object, sfRenderWindow *window)
 {
     object->background.back.left += 10;
     sfTexture_setRepeated(object->background.background_text, sfTrue);
-    sfSprite_setTextureRect(object->background.background, object->background.back);
+    sfSprite_setTextureRect(object->background.background,
+    object->background.back);
     sfRenderWindow_drawSprite(window, object->background.background, NULL);
 }
 

@@ -21,8 +21,10 @@ void create_text_inventory(struct_object *object)
     sfVector2f pos_text = {900, 400};
 
     object->text_invetory.text_invent = sfText_create();
-    object->text_invetory.font_text_invent = sfFont_createFromFile("ressource/cinzel.ttf");
-    sfText_setFont(object->text_invetory.text_invent, object->text_invetory.font_text_invent);
+    object->text_invetory.font_text_invent =
+    sfFont_createFromFile("ressource/cinzel.ttf");
+    sfText_setFont(object->text_invetory.text_invent,
+    object->text_invetory.font_text_invent);
     sfText_setString(object->text_invetory.text_invent, "inventory");
     sfText_setPosition(object->text_invetory.text_invent, pos_text);
     sfText_setCharacterSize(object->text_invetory.text_invent, 40);
@@ -38,7 +40,8 @@ void create_inventory(struct_object *object)
     object->inventory[TOTALE_CASE] = NULL;
     for (; a < TOTALE_CASE; a++) {
         object->inventory[a] = malloc(sizeof(struct_inventory));
-        object->inventory[a]->inv_t = sfTexture_createFromFile("ressource/inventory.png", NULL);
+        object->inventory[a]->inv_t =
+        sfTexture_createFromFile("ressource/inventory.png", NULL);
         object->inventory[a]->inv_s = sfSprite_create();
         object->inventory[a]->used = true;
         object->inventory[a]->inv_r.top = 0;
@@ -48,8 +51,11 @@ void create_inventory(struct_object *object)
         object->inventory[a]->pos.x = 900;
         object->inventory[a]->pos.y = 500;
         sfSprite_setScale(object->inventory[a]->inv_s, scale);
-        sfSprite_setTexture(object->inventory[a]->inv_s, object->inventory[a]->inv_t, sfTrue);
-        sfSprite_setTextureRect(object->inventory[a]->inv_s, object->inventory[a]->inv_r);
-        sfSprite_setPosition(object->inventory[a]->inv_s, object->inventory[a]->pos);
+        sfSprite_setTexture(object->inventory[a]->inv_s,
+        object->inventory[a]->inv_t, sfTrue);
+        sfSprite_setTextureRect(object->inventory[a]->inv_s,
+        object->inventory[a]->inv_r);
+        sfSprite_setPosition(object->inventory[a]->inv_s,
+        object->inventory[a]->pos);
     }
 }

@@ -15,7 +15,8 @@
 
 void background(t_gbl *opti)
 {
-    opti->backg.texture = sfTexture_createFromFile("./assets/sprites/background_menu.png", NULL);
+    opti->backg.texture =
+    sfTexture_createFromFile("./assets/sprites/background_menu.png", NULL);
     sfVector2f size = {1.0, 0.8};
     opti->backg.sprite = sfSprite_create();
     sfSprite_setScale(opti->backg.sprite, size);

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** my_revstr.c
 ** File description:
-**
+** revstr
 */
 
 #include <stdlib.h>

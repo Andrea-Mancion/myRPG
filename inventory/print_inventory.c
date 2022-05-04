@@ -19,5 +19,6 @@ void print_inventory(struct_object *object, sfRenderWindow *window)
 {
     for (int a = 0; a < TOTALE_CASE; a++)
         if (object->inventory[a]->used)
-            sfRenderWindow_drawSprite(window, object->inventory[a]->inv_s, NULL);
+            sfRenderWindow_drawSprite(window, object->inventory[a]->inv_s,
+            NULL);
 }

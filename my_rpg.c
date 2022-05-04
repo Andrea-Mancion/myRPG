@@ -26,7 +26,8 @@ int menu_defender(struct_object *object)
     sfRenderWindow* window;
     sfEvent event;
 
-    window = sfRenderWindow_create(mode, "Main Menu", sfResize | sfClose, NULL);
+    window = sfRenderWindow_create(mode, "Main Menu", sfResize | sfClose, 
+    NULL);
 
     while (sfRenderWindow_isOpen(window)) {
         while (sfRenderWindow_pollEvent(window, &event)) {

@@ -171,9 +171,6 @@ typedef struct event
     sfEvent event;
 } struct_event;
 
-
-
-
 typedef struct text
 {
     sfText *text_invent;

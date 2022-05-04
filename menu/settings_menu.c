@@ -15,7 +15,8 @@
 
 void background_settings(t_gbl *opti)
 {
-    opti->backg.texture = sfTexture_createFromFile("./sprite/my_defender.png", NULL);
+    opti->backg.texture =
+    sfTexture_createFromFile("./sprite/my_defender.png", NULL);
     sfVector2f size = {3.7, 3.6};
     opti->backg.sprite = sfSprite_create();
     sfSprite_setScale(opti->backg.sprite, size);
@@ -25,7 +26,8 @@ void background_settings(t_gbl *opti)
 void button_volume(t_gbl *opti)
 {
     sfVector2f pos = (sfVector2f) {820, 430};
-    opti->volume.texture = sfTexture_createFromFile("./sprite/button_volume.png", NULL);
+    opti->volume.texture =
+    sfTexture_createFromFile("./sprite/button_volume.png", NULL);
     sfVector2f size = {0.5, 0.5};
 
     opti->volume.sprite = sfSprite_create();

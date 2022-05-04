@@ -1,3 +1,9 @@
+/*
+** EPITECH PROJECT, 2022
+** itoa.c
+** File description:
+** take a int and return an array
+*/
 
 #include <stdlib.h>
 #include <stdio.h>

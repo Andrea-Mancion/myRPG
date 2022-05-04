@@ -15,9 +15,11 @@
 
 void create_back3(struct_object *object)
 {
-    object->back3.back_text3 = sfTexture_createFromFile("ressource/back3.png", NULL);
+    object->back3.back_text3 =
+    sfTexture_createFromFile("ressource/back3.png", NULL);
     object->back3.back3_s = sfSprite_create();
-    sfSprite_setTexture(object->back3.back3_s, object->back3.back_text3, sfTrue);
+    sfSprite_setTexture(object->back3.back3_s, object->back3.back_text3,
+    sfTrue);
     object->back3.back3.top = 0;
     object->back3.back3.left = 0;
     object->back3.back3.width = 1920;
@@ -30,9 +32,11 @@ void create_back3(struct_object *object)
 
 void create_back4(struct_object *object)
 {
-    object->back4.back_text4 = sfTexture_createFromFile("ressource/back4.png", NULL);
+    object->back4.back_text4 =
+    sfTexture_createFromFile("ressource/back4.png", NULL);
     object->back4.back4_s = sfSprite_create();
-    sfSprite_setTexture(object->back4.back4_s, object->back4.back_text4, sfTrue);
+    sfSprite_setTexture(object->back4.back4_s, object->back4.back_text4,
+    sfTrue);
     object->back4.back4.top = 0;
     object->back4.back4.left = 0;
     object->back4.back4.width = 1920;

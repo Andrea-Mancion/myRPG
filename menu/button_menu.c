@@ -16,7 +16,8 @@
 void play(t_gbl *opti)
 {
     sfVector2f pos = (sfVector2f) {735, 530};
-    opti->play.texture = sfTexture_createFromFile("./assets/sprites/button_play.png", NULL);
+    opti->play.texture =
+    sfTexture_createFromFile("./assets/sprites/button_play.png", NULL);
     sfVector2f size = {2.5, 2.5};
 
     opti->play.sprite = sfSprite_create();
@@ -28,19 +29,22 @@ void play(t_gbl *opti)
 void button_settings(t_gbl *opti)
 {
     sfVector2f pos = (sfVector2f) {735, 630};
-    opti->set_tings.texture = sfTexture_createFromFile("./assets/sprites/button_settings.png", NULL);
+    opti->set_tings.texture =
+    sfTexture_createFromFile("./assets/sprites/button_settings.png", NULL);
     sfVector2f size = {2.5, 2.5};
 
     opti->set_tings.sprite = sfSprite_create();
     sfSprite_setScale(opti->set_tings.sprite, size);
     sfSprite_setPosition(opti->set_tings.sprite, pos);
-    sfSprite_setTexture(opti->set_tings.sprite, opti->set_tings.texture, sfTrue);
+    sfSprite_setTexture(opti->set_tings.sprite, opti->set_tings.texture,
+    sfTrue);
 }
 
 void button_quit(t_gbl *opti)
 {
     sfVector2f pos = (sfVector2f) {735, 730};
-    opti->quit.texture = sfTexture_createFromFile("./assets/sprites/button_quit.png", NULL);
+    opti->quit.texture =
+    sfTexture_createFromFile("./assets/sprites/button_quit.png", NULL);
     sfVector2f size = {2.5, 2.5};
 
     opti->quit.sprite = sfSprite_create();
