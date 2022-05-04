@@ -224,7 +224,7 @@ typedef struct object
 {
     struct_text text_class;
     struct_charachter hero;
-    struct_charachter balc_anni;
+    struct_charachter balk_anny;
     struct_clock clock;
     struct_window window;
     struct_background background;

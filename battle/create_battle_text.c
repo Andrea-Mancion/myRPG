@@ -14,12 +14,12 @@
 #include "../includes/my.h"
 #include "../includes/my_rpg.h"
 
-void put_numbers_in_text(struct_object *object)
+static void put_text_in_battle(struct_object *object)
 {
     sfText_setString(object->battle.text_battle[0]->text_invent,
     my_strcat("health =", itoa(object->stat->health * 2)));
     sfText_setString(object->battle.text_battle[1]->text_invent,
-    my_strcat("health =", itoa(object->balc_anni.health * 2)));
+    my_strcat("health =", itoa(object->balk_anny.health * 2)));
     sfText_setString(object->battle.text_battle[2]->text_invent,
     "Attack:");
     sfText_setString(object->battle.text_battle[3]->text_invent,
@@ -30,7 +30,7 @@ void put_numbers_in_text(struct_object *object)
     "Cast Magic");
 }
 
-void create_number_text_stat(struct_object *object)
+void create_text_battle(struct_object *object)
 {
     object->battle.text_battle = malloc(sizeof(struct_text) * 6);
 
@@ -56,7 +56,5 @@ void create_number_text_stat(struct_object *object)
     (sfVector2f){445, 655});
     sfText_setPosition(object->battle.text_battle[5]->text_invent,
     (sfVector2f){445, 705});
-    sfText_setPosition(object->battle.text_battle[6]->text_invent,
-    (sfVector2f){445, 755});
-    put_numbers_in_text(object);
+    put_text_in_battle(object);
 }

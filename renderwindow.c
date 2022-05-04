@@ -21,6 +21,9 @@ void render_window(struct_object *object, sfRenderWindow *window)
     sfRenderWindow_drawSprite(window, object->back3.back3_s, NULL);
     sfRenderWindow_drawSprite(window, object->back4.back4_s, NULL);
     sfRenderWindow_drawSprite(window, object->hero.sprite, NULL);
+    if (object->battle.battle_beg == true) {
+        print_battle(object);
+    }
     if (object->print_inventory == true) {
         sfRenderWindow_drawText(window, object->text_invetory.text_invent,
         NULL);

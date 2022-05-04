@@ -63,6 +63,6 @@ void clock(struct_object *object, sfRenderWindow *window)
 
 void move_object(struct_object *object, sfRenderWindow *window)
 {
-    if (object->print_pause == false)
+    if (object->print_pause == false || object->battle.battle_beg == false)
         clock(object, window);
 }

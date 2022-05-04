@@ -39,8 +39,12 @@ SRC	=	lib/my_putchar.c	\
 		lib/my_revstr.c	\
 		lib/my_strlen.c	\
 		lib/itoa.c	\
+		lib/my_strcat.c	\
 		class/chose_class.c	\
-		class/class_text.c
+		class/class_text.c	\
+		battle/create_battle_text.c	\
+		battle/create_battle.c	\
+		battle/print_battle.c
 
 OBJ	=	$(SRC:.c=.o)
 

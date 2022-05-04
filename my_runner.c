@@ -19,12 +19,15 @@ int my_putstr(char *str);
 static void analyse_events(sfRenderWindow *window, sfEvent event,
 struct_object *object)
 {
+    object->balk_anny.health = 10;
     if (event.type == sfEvtClosed)
         sfRenderWindow_close(window);
     if (sfKeyboard_isKeyPressed(sfKeyI))
         object->print_inventory = true;
     if (sfKeyboard_isKeyPressed(sfKeyC))
         object->print_stat = true;
+    if (sfKeyboard_isKeyPressed(sfKeyY))
+        start_battle(object);
     if ((object->print_inventory == true || object->print_stat == true) &&
         sfKeyboard_isKeyPressed(sfKeyM)) {
         object->print_inventory = false;
@@ -37,6 +40,7 @@ struct_object *object)
 
 int second_window(struct_object *object, sfRenderWindow *window)
 {
+    object->window.window = window;
     if (object->create == false) {
         object->print_inventory = false;
         object->print_stat = false;

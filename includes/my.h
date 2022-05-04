@@ -49,5 +49,8 @@
     *event);
     void create_class_text(struct_object *obj);
     char *my_strcat(char *str1, char const *str2);
+    void print_battle(struct_object *obj);
+    void create_text_battle(struct_object *object);
+    void start_battle(struct_object *object);
 
 #endif /* !MY_H_ */

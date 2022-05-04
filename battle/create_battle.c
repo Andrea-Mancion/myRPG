@@ -10,9 +10,9 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "includes/my_rpg.h"
+#include "../includes/my_rpg.h"
 #include "../includes/my_lib.h"
-#include "includes/my.h"
+#include "../includes/my.h"
 
 static void create_battle_back(struct_object *object)
 {
@@ -43,4 +43,13 @@ static void create_foe_battle(struct_object *object)
     object->battle.foe.position);
     sfSprite_setTextureRect(object->battle.foe.sprite,
     object->battle.foe.rect);
+}
+
+void start_battle(struct_object *object)
+{
+    create_text_battle(object);
+    create_foe_battle(object);
+    create_battle_back(object);
+    object->hero.position = (sfVector2f){1000, 500};
+    object->battle.battle_beg = true;
 }

@@ -8,7 +8,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "my.h"
+
+int my_strlen(char const *str);
 
 char *my_strcat(char *str1, char const *str2)
 {
