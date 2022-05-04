@@ -22,42 +22,6 @@ typedef struct trucs {
     sfSprite *sprite;
 } trucs;
 
-typedef struct button_play {
-    int x;
-    int y;
-    int size_x;
-    int size_y;
-    sfTexture *texture;
-    sfSprite *sprite;
-} button_play;
-
-typedef struct button_set_tings {
-    int x;
-    int y;
-    int size_x;
-    int size_y;
-    sfTexture *texture;
-    sfSprite *sprite;
-} button_set_tings;
-
-typedef struct btn_volume {
-    int x;
-    int y;
-    int size_x;
-    int size_y;
-    sfTexture *texture;
-    sfSprite *sprite;
-} btn_volume;
-
-typedef struct btn_quit {
-    int x;
-    int y;
-    int size_x;
-    int size_y;
-    sfTexture *texture;
-    sfSprite *sprite;
-} btn_quit;
-
 typedef struct s_object {
     sfSprite *sprt;
     sfTexture *texture;
@@ -89,10 +53,10 @@ typedef struct btn_s {
 
 typedef struct s_gbl {
     trucs backg;
-    button_play play;
-    button_set_tings set_tings;
-    btn_volume volume;
-    btn_quit quit;
+    btn_t play;
+    btn_t set_tings;
+    btn_t volume;
+    btn_t quit;
     t_game game;
     t_object player;
 } t_gbl;
@@ -261,9 +225,9 @@ void button_quit(t_gbl *opti);
 
 void create_button(struct_object *object);
 
-void pos_play(sfRenderWindow* window, sfEvent *event, struct_object *object);
-void pos_settings(sfRenderWindow* window, sfEvent *event);
-void pos_quit(sfRenderWindow* window, sfEvent *event);
+void pos_play(sfRenderWindow* window, struct_object *object);
+void pos_settings(sfRenderWindow* window, struct_object *object);
+void pos_quit(sfRenderWindow* window, struct_object *object);
 
 void click_but(sfRenderWindow *window, sfEvent event, struct_object *object);
 

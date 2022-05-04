@@ -74,8 +74,7 @@ static void which_class_is_select(struct_object *obj, sfVector2i mouse_pos)
         obj->stat->nmbr_class = 3;
 }
 
-void choose_class(struct_object *object, sfRenderWindow *window,
-sfEvent *event)
+void choose_class(struct_object *object, sfRenderWindow *window)
 {
     sfVector2i mouse_pos;
 
@@ -86,14 +85,14 @@ sfEvent *event)
         sfRenderWindow_drawSprite(window, object->class[x]->sprite, NULL);
     sfRenderWindow_drawText(window, object->text_class.text_invent, NULL);
     sfRenderWindow_display(window);
-    while (sfRenderWindow_pollEvent(window, event)) {
-        if (event->type == sfEvtMouseButtonPressed) {
+    while (sfRenderWindow_pollEvent(window, &object->event.event)) {
+        if (object->event.event.type == sfEvtMouseButtonPressed) {
             mouse_pos = sfMouse_getPosition((const sfWindow *)window);
             object->play = 2;
             which_class_is_select(object, mouse_pos);
             destroy_class(object);
         }
-        if (event->type == sfEvtClosed) {
+        if (object->event.event.type == sfEvtClosed) {
             sfRenderWindow_close(window);
             return;
         }

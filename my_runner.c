@@ -16,10 +16,9 @@
 int my_putchar(char c);
 int my_putstr(char *str);
 
-static void analyse_events(sfRenderWindow *window, sfEvent event,
-struct_object *object)
+static void analyse_events(sfRenderWindow *window, struct_object *object)
 {
-    if (event.type == sfEvtClosed)
+    if (object->event.event.type == sfEvtClosed)
         sfRenderWindow_close(window);
     if (sfKeyboard_isKeyPressed(sfKeyI))
         object->print_inventory = true;
@@ -53,6 +52,6 @@ int second_window(struct_object *object, sfRenderWindow *window)
     move_object(object, window);
     render_window(object, window);
     while (sfRenderWindow_pollEvent(window, &object->event.event))
-        analyse_events(window, object->event.event, object);
+        analyse_events(window, object);
     return (0);
 }
