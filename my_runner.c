@@ -16,8 +16,7 @@
 int my_putchar(char c);
 int my_putstr(char *str);
 
-static void analyse_events(sfRenderWindow *window, sfEvent event,
-struct_object *object)
+static void analyse_events(sfRenderWindow *window, sfEvent event, struct_object *object)
 {
     if (event.type == sfEvtClosed)
         sfRenderWindow_close(window);
@@ -37,21 +36,18 @@ struct_object *object)
 
 int second_window(struct_object *object, sfRenderWindow *window)
 {
-    object->print_inventory = false;
-    object->print_stat = false;
-    object->print_pause = false;
-    object->stat = malloc(sizeof(stats_t));
-    object->stat->nmbr_class = 1;  //faire une fonction qui demande la classe
-    create_object(object);
-    create_inventory(object);
-    create_button(object);
-
-    while (sfRenderWindow_isOpen(window)) {
-        sfRenderWindow_clear(window, sfBlack);
-        move_object(object, window);
-        render_window(object, window);
-        while (sfRenderWindow_pollEvent(window, &object->event.event))
-            analyse_events(window, object->event.event, object);
+    if (object->create == false) {
+        object->print_inventory = false;
+        object->print_stat = false;
+        object->print_pause = false;
+        create_object(object);
+        create_inventory(object);
+        create_button(object);
+        object->create = true;
     }
+    move_object(object, window);
+    render_window(object, window);
+    while (sfRenderWindow_pollEvent(window, &object->event.event))
+        analyse_events(window, object->event.event, object);
     return (0);
 }

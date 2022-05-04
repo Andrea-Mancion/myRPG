@@ -14,6 +14,24 @@
 #include "includes/my.h"
 #include <stdio.h>
 
+static void display_menu(struct_object *object, sfRenderWindow *window, t_gbl opti)
+{
+    sfRenderWindow_clear(window, sfWhite);
+    sfRenderWindow_drawSprite(window, opti.backg.sprite, NULL);
+    sfRenderWindow_drawSprite(window, opti.play.sprite, NULL);
+    sfRenderWindow_drawSprite(window, opti.set_tings.sprite, NULL);
+    sfRenderWindow_drawSprite(window, opti.quit.sprite, NULL);
+    sfRenderWindow_display(window);
+}
+
+static void menu(struct_object *object, sfRenderWindow *window, t_gbl opti, sfEvent *event)
+{
+    display_menu(object, window, opti);
+    pos_play(window, event, object);
+    pos_settings(window, event);
+    pos_quit(window, event);
+}
+
 int menu_defender(struct_object *object)
 {
     t_gbl opti;
@@ -25,24 +43,22 @@ int menu_defender(struct_object *object)
     sfVideoMode mode = {1920, 1080, 32};
     sfRenderWindow* window;
     sfEvent event;
-
-    window = sfRenderWindow_create(mode, "Main Menu", sfResize | sfClose, 
-    NULL);
+    object->play = 0;
+    object->create = false;
+    window = sfRenderWindow_create(mode, "Main Menu", sfResize | sfClose, NULL);
 
     while (sfRenderWindow_isOpen(window)) {
         while (sfRenderWindow_pollEvent(window, &event)) {
             if (event.type == sfEvtClosed)
                 sfRenderWindow_close(window);
         }
-        sfRenderWindow_clear(window, sfWhite);
-        sfRenderWindow_drawSprite(window, opti.backg.sprite, NULL);
-        sfRenderWindow_drawSprite(window, opti.play.sprite, NULL);
-        sfRenderWindow_drawSprite(window, opti.set_tings.sprite, NULL);
-        sfRenderWindow_drawSprite(window, opti.quit.sprite, NULL);
-        sfRenderWindow_display(window);
-        pos_play(window, &event, object);
-        pos_settings(window, &event);
-        pos_quit(window, &event);
+        sfRenderWindow_clear(window, sfBlack);
+        if (object->play == 0)
+            menu(object, window, opti, &event);
+        if (object->play == 1)
+            choose_class(object, window, &event);
+        if (object->play == 2)
+            second_window(object, window);
     }
     destroy(object, window);
     return 0;

@@ -78,23 +78,14 @@ typedef struct s_game {
     int num_player;
 } t_game;
 
-typedef struct btn_continue {
+typedef struct btn_s {
     int x;
     int y;
     int size_x;
     int size_y;
     sfTexture *texture;
     sfSprite *sprite;
-} btn_continue;
-
-typedef struct btn_exit {
-    int x;
-    int y;
-    int size_x;
-    int size_y;
-    sfTexture *texture;
-    sfSprite *sprite;
-} btn_exit;
+} btn_t;
 
 typedef struct s_gbl {
     trucs backg;
@@ -165,7 +156,6 @@ typedef struct music
     sfMusic *music;
 } struct_music;
 
-
 typedef struct event
 {
     sfEvent event;
@@ -210,6 +200,13 @@ typedef struct stats_s {
     sfVector2f pos;
 }stats_t;
 
+typedef struct class_s {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfVector2f position;
+    sfIntRect rect;
+}class_t;
+
 typedef struct object
 {
     struct_ninja ninja;
@@ -221,14 +218,17 @@ typedef struct object
     struct_background4 back4;
     struct_music music;
     struct_event event;
-    btn_continue but_continue;
-    btn_exit but_exit;
+    btn_t but_continue;
+    btn_t but_exit;
     struct_text text_invetory;
     struct_text text_stat;
     struct_text text_pause;
     struct_inventory **inventory;
     struct_text **text_number_stat;
     stats_t *stat;
+    class_t **class;
+    int play;
+    bool create;
     bool print_inventory;
     bool print_stat;
     bool print_pause;

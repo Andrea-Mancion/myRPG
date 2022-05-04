@@ -35,7 +35,8 @@
     void create_object(struct_object *object);
     void move_object(struct_object *object, sfRenderWindow *window);
     void create_inventory(struct_object *object);
-    void put_inventory(struct_inventory **inventory, struct_baguette *baguette);
+    void put_inventory(struct_inventory **inventory,
+    struct_baguette *baguette);
     void print_inventory(struct_object *object, sfRenderWindow *window);
     void create_text_inventory(struct_object *object);
     int second_window(struct_object *object, sfRenderWindow *window);
@@ -44,5 +45,7 @@
     void print_stat(struct_object *object, sfRenderWindow *window);
     void create_number_text_stat(struct_object *object);
     char *itoa(int i);
+    void choose_class(struct_object *object, sfRenderWindow *window, sfEvent
+    *event);
 
 #endif /* !MY_H_ */

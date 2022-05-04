@@ -49,8 +49,8 @@ void give_stat(stats_t *stat)
 {
     if (stat->nmbr_class == 1)
         give_stat_warrior(stat);
-    if (stat->nmbr_class == 2)
-        give_stat_ranger(stat);
     if (stat->nmbr_class == 3)
+        give_stat_ranger(stat);
+    if (stat->nmbr_class == 2)
         give_stat_spellcaster(stat);
 }

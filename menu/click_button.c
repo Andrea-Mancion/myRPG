@@ -22,7 +22,7 @@ void pos_play(sfRenderWindow *window, sfEvent *event, struct_object *object)
         if (mouse_pos.x >= 738 && mouse_pos.x <= 1187)
             while (sfRenderWindow_pollEvent(window, event))
                 if (event->type == sfEvtMouseButtonPressed)
-                    second_window(object, window);
+                    object->play = 1;
 }
 
 void pos_settings(sfRenderWindow* window, sfEvent *event)

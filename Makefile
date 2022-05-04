@@ -39,6 +39,7 @@ SRC	=	lib/my_putchar.c	\
 		lib/my_revstr.c	\
 		lib/my_strlen.c	\
 		lib/itoa.c	\
+		chose_class.c
 
 OBJ	=	$(SRC:.c=.o)
 
