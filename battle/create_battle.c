@@ -36,10 +36,10 @@ struct_charachter foe, char *png)
     foe.sprite = sfSprite_create();
     foe.position.x = 200;
     foe.position.y = 500;
-    foe.rect.top = 98;
+    foe.rect.top = 0;
     foe.rect.left = 0;
-    foe.rect.width = 35;
-    foe.rect.height = 142;
+    foe.rect.width = 37;
+    foe.rect.height = 45;
     foe.health = 10;
     sfSprite_setTexture(foe.sprite, foe.texture, sfTrue);
     sfSprite_setPosition(foe.sprite, foe.position);
@@ -53,12 +53,13 @@ struct_charachter start_battle(struct_object *object, struct_charachter foe)
     sfVector2f size = {2.0, 2.0};
 
     foe = create_foe_battle(object, foe,
-    "./assets/sprites/balk_anny.png");
+    "./assets/sprites/balk_anny2.png");
     create_text_battle(object, foe);
     create_battle_back(object);
     object->hero.position = (sfVector2f){1000, 500};
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
     sfSprite_setScale(object->hero.sprite, size);
     object->battle.battle_beg = true;
+
     return foe;
 }
