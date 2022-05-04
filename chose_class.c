@@ -81,10 +81,12 @@ sfEvent *event)
     for (size_t x = 0; x < 3; x++)
     sfRenderWindow_drawSprite(window, object->class[x]->sprite, NULL);
     sfRenderWindow_display(window);
-    if (event->type == sfEvtMouseButtonPressed) {
-        mouse_pos = sfMouse_getPosition((const sfWindow *)window);
-        object->play = 2;
-        which_class_is_select(object, mouse_pos);
-        destroy_class(object);
+    while (sfRenderWindow_pollEvent(window, event)) {
+        if (event->type == sfEvtMouseButtonPressed) {
+            mouse_pos = sfMouse_getPosition((const sfWindow *)window);
+            object->play = 2;
+            which_class_is_select(object, mouse_pos);
+            destroy_class(object);
+        }
     }
 }
