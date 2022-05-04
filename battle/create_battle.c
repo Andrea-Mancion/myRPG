@@ -30,6 +30,8 @@ static void create_battle_back(struct_object *object)
 struct_charachter create_foe_battle(struct_object *object,
 struct_charachter foe, char *png)
 {
+    sfVector2f size = {2.0, 2.0};
+
     foe.texture = sfTexture_createFromFile(png, NULL);
     foe.sprite = sfSprite_create();
     foe.position.x = 200;
@@ -42,17 +44,21 @@ struct_charachter foe, char *png)
     sfSprite_setTexture(foe.sprite, foe.texture, sfTrue);
     sfSprite_setPosition(foe.sprite, foe.position);
     sfSprite_setTextureRect(foe.sprite, foe.rect);
+    sfSprite_setScale(foe.sprite, size);
     return (foe);
 }
 
 struct_charachter start_battle(struct_object *object, struct_charachter foe)
 {
+    sfVector2f size = {2.0, 2.0};
+
     foe = create_foe_battle(object, foe,
     "./assets/sprites/balk_anny.png");
     create_text_battle(object, foe);
     create_battle_back(object);
     object->hero.position = (sfVector2f){1000, 500};
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
+    sfSprite_setScale(object->hero.sprite, size);
     object->battle.battle_beg = true;
     return foe;
 }
