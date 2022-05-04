@@ -207,6 +207,16 @@ typedef struct class_s {
     sfIntRect rect;
 }class_t;
 
+typedef struct battle_s {
+    struct_text **text_battle;
+    struct_background battle_back;
+    int health_enemy;
+    int health_hero;
+    int damage_attack1;
+    int damage_attack2;
+    int damage_attack3;
+}battle_t;
+
 typedef struct object
 {
     struct_ninja ninja;
@@ -226,8 +236,8 @@ typedef struct object
     struct_inventory **inventory;
     struct_text **text_number_stat;
     stats_t *stat;
+    battle_t battle;
     class_t **class;
-    struct_background battle_back;
     int play;
     bool create;
     bool print_inventory;
