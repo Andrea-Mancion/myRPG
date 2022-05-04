@@ -16,7 +16,8 @@
 int my_putchar(char c);
 int my_putstr(char *str);
 
-static void analyse_events(sfRenderWindow *window, sfEvent event, struct_object *object)
+static void analyse_events(sfRenderWindow *window, sfEvent event,
+struct_object *object)
 {
     if (event.type == sfEvtClosed)
         sfRenderWindow_close(window);

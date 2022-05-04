@@ -31,12 +31,16 @@ static void init_class(struct_object *obj)
     obj->class = malloc(sizeof(class_t) * 3);
     for (int x = 0; x < 3; x++)
         obj->class[x] = malloc(sizeof(class_t));
-    obj->class[0]->texture = sfTexture_createFromFile("ressource/Guerrier.jpg", NULL);
-    obj->class[1]->texture = sfTexture_createFromFile("ressource/sorcerer.jpg", NULL);
-    obj->class[2]->texture = sfTexture_createFromFile("ressource/ranger.jpg", NULL);
+    obj->class[0]->texture =
+    sfTexture_createFromFile("ressource/Guerrier.jpg", NULL);
+    obj->class[1]->texture =
+    sfTexture_createFromFile("ressource/sorcerer.jpg", NULL);
+    obj->class[2]->texture =
+    sfTexture_createFromFile("ressource/ranger.jpg", NULL);
     for (int x = 0; x < 3; x++) {
         obj->class[x]->sprite = sfSprite_create();
-        sfSprite_setTexture(obj->class[x]->sprite, obj->class[x]->texture, sfTrue);
+        sfSprite_setTexture(obj->class[x]->sprite, obj->class[x]->texture,
+        sfTrue);
         obj->class[x]->rect.top = 0;
         obj->class[x]->rect.left = 0;
     }
@@ -67,7 +71,8 @@ static void which_class_is_select(struct_object *obj, sfVector2i mouse_pos)
         obj->stat->nmbr_class = 3;
 }
 
-void choose_class(struct_object *object, sfRenderWindow *window, sfEvent *event)
+void choose_class(struct_object *object, sfRenderWindow *window,
+sfEvent *event)
 {
     sfVector2i mouse_pos;
 
