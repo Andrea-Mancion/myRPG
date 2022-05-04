@@ -23,18 +23,18 @@ void create_back4(struct_object *object);
 
 void create_ninja(struct_object *object)
 {
-    object->ninja.texture =
+    object->hero.texture =
     sfTexture_createFromFile("assets/sprites/images.png", NULL);
-    object->ninja.sprite = sfSprite_create();
-    object->ninja.position.x = 0;
-    object->ninja.position.y = 900;
-    sfSprite_setTexture(object->ninja.sprite, object->ninja.texture, sfTrue);
-    sfSprite_setPosition(object->ninja.sprite, object->ninja.position);
-    object->ninja.rect.top = 0;
-    object->ninja.rect.left = 25;
-    object->ninja.rect.width = 50;
-    object->ninja.rect.height = 78;
-    sfSprite_setTextureRect(object->ninja.sprite, object->ninja.rect);
+    object->hero.sprite = sfSprite_create();
+    object->hero.position.x = 0;
+    object->hero.position.y = 900;
+    sfSprite_setTexture(object->hero.sprite, object->hero.texture, sfTrue);
+    sfSprite_setPosition(object->hero.sprite, object->hero.position);
+    object->hero.rect.top = 0;
+    object->hero.rect.left = 25;
+    object->hero.rect.width = 50;
+    object->hero.rect.height = 78;
+    sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
 }
 
 void create_background(struct_object *object)
@@ -67,8 +67,8 @@ void destroy(struct_object *object, sfRenderWindow *window)
 {
     sfRenderWindow_destroy(window);
     if (object->play == 2) {
-        sfSprite_destroy(object->ninja.sprite);
-        sfTexture_destroy(object->ninja.texture);
+        sfSprite_destroy(object->hero.sprite);
+        sfTexture_destroy(object->hero.texture);
         sfSprite_destroy(object->background.background);
         sfTexture_destroy(object->background.background_text);
         sfText_destroy(object->text_invetory.text_invent);

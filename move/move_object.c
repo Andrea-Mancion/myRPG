@@ -17,23 +17,23 @@ void move_ennemy2(struct_object *object);
 
 void move_ninja(struct_object *object, sfRenderWindow *window)
 {
-    object->ninja.rect.left += 55;
-    if (object->ninja.rect.left >= 295)
-        object->ninja.rect.left = 25;
-    sfSprite_setTextureRect(object->ninja.sprite, object->ninja.rect);
-    sfRenderWindow_drawSprite(window, object->ninja.sprite, NULL);
+    object->hero.rect.left += 55;
+    if (object->hero.rect.left >= 295)
+        object->hero.rect.left = 25;
+    sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
+    sfRenderWindow_drawSprite(window, object->hero.sprite, NULL);
 }
 
 void mouvement_x(struct_object *object, sfRenderWindow *window)
 {
-    object->ninja.position = sfSprite_getPosition(object->ninja.sprite);
+    object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyRight)) {
-        object->ninja.position.x += 10;
+        object->hero.position.x += 10;
         move_ninja(object, window);
-        if (object->ninja.position.x >= 1920.00)
-            object->ninja.position.x = 0;
+        if (object->hero.position.x >= 1920.00)
+            object->hero.position.x = 0;
     }
-    sfSprite_setPosition(object->ninja.sprite, object->ninja.position);
+    sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
 
 void move_background(struct_object *object, sfRenderWindow *window)

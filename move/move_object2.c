@@ -15,38 +15,38 @@
 
 void mouvement_x_back(struct_object *object, sfRenderWindow *window)
 {
-    object->ninja.position = sfSprite_getPosition(object->ninja.sprite);
+    object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
-        object->ninja.position.x -= 10;
+        object->hero.position.x -= 10;
         move_ninja(object, window);
-        if (object->ninja.position.x <= -90.00)
-            object->ninja.position.x = 0;
+        if (object->hero.position.x <= -90.00)
+            object->hero.position.x = 0;
     }
-    sfSprite_setPosition(object->ninja.sprite, object->ninja.position);
+    sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
 
 void mouvement_y_up(struct_object *object, sfRenderWindow *window)
 {
-    object->ninja.position = sfSprite_getPosition(object->ninja.sprite);
+    object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyUp)) {
-        object->ninja.position.y -= 10;
+        object->hero.position.y -= 10;
         move_ninja(object, window);
-        if (object->ninja.position.y <= -90.00)
-            object->ninja.position.y = 900;
+        if (object->hero.position.y <= -90.00)
+            object->hero.position.y = 900;
     }
-    sfSprite_setPosition(object->ninja.sprite, object->ninja.position);
+    sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
 
 void mouvement_y_down(struct_object *object, sfRenderWindow *window)
 {
-    object->ninja.position = sfSprite_getPosition(object->ninja.sprite);
+    object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyDown)) {
-        object->ninja.position.y += 10;
+        object->hero.position.y += 10;
         move_ninja(object, window);
-        if (object->ninja.position.y >= 1010.00)
-            object->ninja.position.y = 900;
+        if (object->hero.position.y >= 1010.00)
+            object->hero.position.y = 900;
     }
-    sfSprite_setPosition(object->ninja.sprite, object->ninja.position);
+    sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
 
 void move_back2(struct_object *object, sfRenderWindow *window)
