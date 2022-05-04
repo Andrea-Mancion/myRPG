@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include "includes/my_rpg.h"
 #include "includes/my_lib.h"
+#include "includes/my.h"
 #include <stdio.h>
 
 int menu_defender(struct_object *object)
@@ -42,6 +43,7 @@ int menu_defender(struct_object *object)
         pos_settings(window, &event);
         pos_quit(window, &event);
     }
+    destroy(object, window);
     return 0;
 }
 

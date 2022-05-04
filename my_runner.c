@@ -52,6 +52,5 @@ int second_window(struct_object *object, sfRenderWindow *window)
         while (sfRenderWindow_pollEvent(window, &object->event.event))
             analyse_events(window, object->event.event, object);
     }
-    destroy(object, window);
     return (0);
 }
