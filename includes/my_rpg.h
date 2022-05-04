@@ -227,6 +227,7 @@ typedef struct object
     struct_text **text_number_stat;
     stats_t *stat;
     class_t **class;
+    struct_background battle_back;
     int play;
     bool create;
     bool print_inventory;
