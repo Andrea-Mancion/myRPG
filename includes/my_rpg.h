@@ -210,6 +210,7 @@ typedef struct class_s {
 typedef struct battle_s {
     struct_text **text_battle;
     struct_background battle_back;
+    struct_ninja foe;
     int health_enemy;
     int health_hero;
     int damage_attack1;
