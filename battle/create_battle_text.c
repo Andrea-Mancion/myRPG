@@ -14,12 +14,12 @@
 #include "../includes/my.h"
 #include "../includes/my_rpg.h"
 
-static void put_text_in_battle(struct_object *object)
+static void put_text_in_battle(struct_object *object, struct_charachter foe)
 {
     sfText_setString(object->battle.text_battle[0]->text_invent,
     my_strcat("health =", itoa(object->stat->health * 2)));
     sfText_setString(object->battle.text_battle[1]->text_invent,
-    my_strcat("health =", itoa(object->balk_anny.health * 2)));
+    my_strcat("health =", itoa(foe.health * 2)));
     sfText_setString(object->battle.text_battle[2]->text_invent,
     "Attack:");
     sfText_setString(object->battle.text_battle[3]->text_invent,
@@ -30,7 +30,7 @@ static void put_text_in_battle(struct_object *object)
     "Cast Magic");
 }
 
-void create_text_battle(struct_object *object)
+void create_text_battle(struct_object *object, struct_charachter foe)
 {
     object->battle.text_battle = malloc(sizeof(struct_text) * 6);
 
@@ -56,5 +56,5 @@ void create_text_battle(struct_object *object)
     (sfVector2f){445, 655});
     sfText_setPosition(object->battle.text_battle[5]->text_invent,
     (sfVector2f){445, 705});
-    put_text_in_battle(object);
+    put_text_in_battle(object, foe);
 }

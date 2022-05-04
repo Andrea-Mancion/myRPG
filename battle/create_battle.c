@@ -26,30 +26,33 @@ static void create_battle_back(struct_object *object)
     object->battle.battle_back.background_text, sfTrue);
 }
 
-static void create_foe_battle(struct_object *object)
+struct_charachter create_foe_battle(struct_object *object,
+struct_charachter foe, char *png)
 {
-    object->battle.foe.texture =
-    sfTexture_createFromFile("./assets/sprites/balk_anny.png", NULL);
-    object->battle.foe.sprite = sfSprite_create();
-    object->battle.foe.position.x = 200;
-    object->battle.foe.position.y = 500;
-    object->battle.foe.rect.top = 98;
-    object->battle.foe.rect.left = 0;
-    object->battle.foe.rect.width = 35;
-    object->battle.foe.rect.height = 142;
-    sfSprite_setTexture(object->battle.foe.sprite, object->battle.foe.texture,
-    sfTrue);
-    sfSprite_setPosition(object->battle.foe.sprite,
-    object->battle.foe.position);
-    sfSprite_setTextureRect(object->battle.foe.sprite,
-    object->battle.foe.rect);
+    foe.texture = sfTexture_createFromFile(png, NULL);
+    foe.sprite = sfSprite_create();
+    foe.position.x = 200;
+    foe.position.y = 500;
+    foe.rect.top = 98;
+    foe.rect.left = 0;
+    foe.rect.width = 35;
+    foe.rect.height = 142;
+    foe.health = 10;
+    sfSprite_setTexture(foe.sprite, foe.texture, sfTrue);
+    sfSprite_setPosition(foe.sprite, foe.position);
+    sfSprite_setTextureRect(foe.sprite, foe.rect);
+
+    return (foe);
 }
 
-void start_battle(struct_object *object)
+struct_charachter start_battle(struct_object *object, struct_charachter foe)
 {
-    create_text_battle(object);
-    create_foe_battle(object);
+    foe = create_foe_battle(object, foe,
+    "./assets/sprites/balk_anny.png");
+    create_text_battle(object, foe);
     create_battle_back(object);
     object->hero.position = (sfVector2f){1000, 500};
+    sfSprite_setPosition(object->hero.sprite, object->hero.position);
     object->battle.battle_beg = true;
+    return foe;
 }

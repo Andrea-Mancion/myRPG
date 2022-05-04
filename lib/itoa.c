@@ -20,10 +20,14 @@ static size_t count_number_number(int i)
 
 char *itoa(int i)
 {
-    int nbr = count_number_number(i);
+    int nbr = 0;
     size_t s = 0;
-    char *str = malloc(sizeof(char) * (nbr + 1));
+    char *str = NULL;
 
+    if (!i)
+        return NULL;
+    nbr = count_number_number(i);
+    str = malloc(sizeof(char) * (nbr + 1));
     for (size_t x = 0; i > 10; x++, i /= 10) {
         s = i % 10;
         str[x] = s + 48;

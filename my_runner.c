@@ -19,7 +19,6 @@ int my_putstr(char *str);
 static void analyse_events(sfRenderWindow *window, sfEvent event,
 struct_object *object)
 {
-    object->balk_anny.health = 10;
     if (event.type == sfEvtClosed)
         sfRenderWindow_close(window);
     if (sfKeyboard_isKeyPressed(sfKeyI))
@@ -27,7 +26,7 @@ struct_object *object)
     if (sfKeyboard_isKeyPressed(sfKeyC))
         object->print_stat = true;
     if (sfKeyboard_isKeyPressed(sfKeyY))
-        start_battle(object);
+        object->balk_anny = start_battle(object, object->balk_anny);
     if ((object->print_inventory == true || object->print_stat == true) &&
         sfKeyboard_isKeyPressed(sfKeyM)) {
         object->print_inventory = false;
