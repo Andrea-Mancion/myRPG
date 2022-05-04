@@ -216,6 +216,7 @@ typedef struct battle_s {
     int damage_attack1;
     int damage_attack2;
     int damage_attack3;
+    bool battle_beg;
 }battle_t;
 
 typedef struct object

@@ -18,12 +18,29 @@ static void create_battle_back(struct_object *object)
 {
     sfVector2f size = {1.0, 0.8};
 
-    object->battle_back.background_text =
+    object->battle.battle_back.background_text =
     sfTexture_createFromFile("./assets/sprites/battle_rpg.png", NULL);
-    object->battle_back.background = sfSprite_create();
-    sfSprite_setScale(object->battle_back.background, size);
-    sfSprite_setTexture(object->battle_back.background,
-    object->battle_back.background_text, sfTrue);
+    object->battle.battle_back.background = sfSprite_create();
+    sfSprite_setScale(object->battle.battle_back.background, size);
+    sfSprite_setTexture(object->battle.battle_back.background,
+    object->battle.battle_back.background_text, sfTrue);
 }
 
-static void 
+static void create_foe_battle(struct_object *object)
+{
+    object->battle.foe.texture =
+    sfTexture_createFromFile("./assets/sprites/balk_anny.png", NULL);
+    object->battle.foe.sprite = sfSprite_create();
+    object->battle.foe.position.x = 200;
+    object->battle.foe.position.y = 500;
+    object->battle.foe.rect.top = 98;
+    object->battle.foe.rect.left = 0;
+    object->battle.foe.rect.width = 35;
+    object->battle.foe.rect.height = 142;
+    sfSprite_setTexture(object->battle.foe.sprite, object->battle.foe.texture,
+    sfTrue);
+    sfSprite_setPosition(object->battle.foe.sprite,
+    object->battle.foe.position);
+    sfSprite_setTextureRect(object->battle.foe.sprite,
+    object->battle.foe.rect);
+}

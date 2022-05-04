@@ -41,6 +41,7 @@ int second_window(struct_object *object, sfRenderWindow *window)
         object->print_inventory = false;
         object->print_stat = false;
         object->print_pause = false;
+        object->battle.battle_beg = false;
         create_object(object);
         create_inventory(object);
         create_button(object);

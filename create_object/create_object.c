@@ -73,13 +73,17 @@ void destroy(struct_object *object, sfRenderWindow *window)
         sfTexture_destroy(object->background.background_text);
         sfText_destroy(object->text_invetory.text_invent);
         sfText_destroy(object->text_stat.text_invent);
-       sfText_destroy(object->text_pause.text_invent);
+        sfText_destroy(object->text_pause.text_invent);
         sfClock_destroy(object->clock.clock);
         sfMusic_destroy(object->music.music);
         sfSprite_destroy(object->but_continue.sprite);
         sfTexture_destroy(object->but_continue.texture);
         sfSprite_destroy(object->but_exit.sprite);
         sfTexture_destroy(object->but_exit.texture);
+        sfSprite_destroy(object->battle.battle_back.background);
+        sfTexture_destroy(object->battle.battle_back.background_text);
+        sfSprite_destroy(object->battle.foe.sprite);
+        sfTexture_destroy(object->battle.foe.texture);
     }
 }
 
