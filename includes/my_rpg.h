@@ -219,6 +219,7 @@ typedef struct battle_s {
 
 typedef struct object
 {
+    struct_text text_class;
     struct_ninja ninja;
     struct_clock clock;
     struct_window window;

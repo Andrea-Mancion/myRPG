@@ -10,8 +10,8 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "includes/my_rpg.h"
-#include "includes/my.h"
+#include "../includes/my_rpg.h"
+#include "../includes/my.h"
 
 static void set_rect(struct_object *obj)
 {
@@ -24,6 +24,10 @@ static void set_rect(struct_object *obj)
     obj->class[2]->rect.width = 512;
     obj->class[2]->rect.height = 481;
     sfSprite_setTextureRect(obj->class[2]->sprite, obj->class[2]->rect);
+    obj->class[1]->position = (sfVector2f){640, 0};
+    obj->class[2]->position = (sfVector2f){1280, 0};
+    sfSprite_setPosition(obj->class[1]->sprite, obj->class[1]->position);
+    sfSprite_setPosition(obj->class[2]->sprite, obj->class[2]->position);
 }
 
 static void init_class(struct_object *obj)
@@ -45,10 +49,9 @@ static void init_class(struct_object *obj)
         obj->class[x]->rect.left = 0;
     }
     set_rect(obj);
-    obj->class[1]->position = (sfVector2f){640, 0};
-    obj->class[2]->position = (sfVector2f){1280, 0};
-    sfSprite_setPosition(obj->class[1]->sprite, obj->class[1]->position);
-    sfSprite_setPosition(obj->class[2]->sprite, obj->class[2]->position);
+    sfSprite_setScale(obj->class[0]->sprite, (sfVector2f){1, 1.2});
+    sfSprite_setScale(obj->class[1]->sprite, (sfVector2f){1.2, 1.5});
+    sfSprite_setScale(obj->class[2]->sprite, (sfVector2f){1.3, 2.2});
 }
 
 static void destroy_class(struct_object *obj)
@@ -78,8 +81,10 @@ sfEvent *event)
 
     object->stat = malloc(sizeof(stats_t));
     init_class(object);
+    create_class_text(object);
     for (size_t x = 0; x < 3; x++)
-    sfRenderWindow_drawSprite(window, object->class[x]->sprite, NULL);
+        sfRenderWindow_drawSprite(window, object->class[x]->sprite, NULL);
+    sfRenderWindow_drawText(window, object->text_class.text_invent, NULL);
     sfRenderWindow_display(window);
     while (sfRenderWindow_pollEvent(window, event)) {
         if (event->type == sfEvtMouseButtonPressed) {

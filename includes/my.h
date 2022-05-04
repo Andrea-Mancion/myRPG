@@ -47,5 +47,6 @@
     char *itoa(int i);
     void choose_class(struct_object *object, sfRenderWindow *window, sfEvent
     *event);
+    void create_class_text(struct_object *obj);
 
 #endif /* !MY_H_ */
