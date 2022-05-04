@@ -97,14 +97,15 @@ typedef struct s_gbl {
     t_object player;
 } t_gbl;
 
-typedef struct ninja
+typedef struct charachter
 {
     sfSprite *sprite;
     sfTexture *texture;
     sfIntRect rect;
     sfVector2f position;
     int counter;
-} struct_ninja;
+    int health;
+} struct_charachter;
 
 typedef struct clock
 {
@@ -210,7 +211,7 @@ typedef struct class_s {
 typedef struct battle_s {
     struct_text **text_battle;
     struct_background battle_back;
-    struct_ninja foe;
+    struct_charachter foe;
     int health_enemy;
     int health_hero;
     int damage_attack1;
@@ -222,7 +223,8 @@ typedef struct battle_s {
 typedef struct object
 {
     struct_text text_class;
-    struct_ninja ninja;
+    struct_charachter hero;
+    struct_charachter balc_anni;
     struct_clock clock;
     struct_window window;
     struct_background background;

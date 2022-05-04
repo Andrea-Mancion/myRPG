@@ -48,5 +48,6 @@
     void choose_class(struct_object *object, sfRenderWindow *window, sfEvent
     *event);
     void create_class_text(struct_object *obj);
+    char *my_strcat(char *str1, char const *str2);
 
 #endif /* !MY_H_ */
