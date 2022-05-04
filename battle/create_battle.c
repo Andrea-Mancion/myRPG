@@ -61,6 +61,7 @@ struct_charachter start_battle(struct_object *object, struct_charachter foe)
     "./assets/sprites/balk_anny2.png");
     create_text_battle(object, foe);
     create_battle_back(object);
+    foe = create_button_battle(object, foe);
     object->hero.position = (sfVector2f){1000, 500};
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
     sfSprite_setScale(object->hero.sprite, size);

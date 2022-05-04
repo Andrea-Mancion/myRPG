@@ -24,12 +24,12 @@ static void display_menu(struct_object *object, sfRenderWindow *window, t_gbl op
     sfRenderWindow_display(window);
 }
 
-static void menu(struct_object *object, sfRenderWindow *window, t_gbl opti, sfEvent *event)
+static void menu(struct_object *object, sfRenderWindow *window, t_gbl opti)
 {
     display_menu(object, window, opti);
-    pos_play(window, event, object);
-    pos_settings(window, event);
-    pos_quit(window, event);
+    pos_play(window, object);
+    pos_settings(window, object);
+    pos_quit(window, object);
 }
 
 int menu_defender(struct_object *object)
@@ -42,23 +42,22 @@ int menu_defender(struct_object *object)
 
     sfVideoMode mode = {1920, 1080, 32};
     sfRenderWindow* window;
-    sfEvent event;
     object->play = 0;
     object->create = false;
     window = sfRenderWindow_create(mode, "Main Menu", sfResize | sfClose, NULL);
 
     while (sfRenderWindow_isOpen(window)) {
-        while (sfRenderWindow_pollEvent(window, &event)) {
-            if (event.type == sfEvtClosed)
+        while (sfRenderWindow_pollEvent(window, &object->event.event)) {
+            if (object->event.event.type == sfEvtClosed)
                 sfRenderWindow_close(window);
         }
         sfRenderWindow_clear(window, sfBlack);
         if (object->play == 0) {
-            menu(object, window, opti, &event);
+            menu(object, window, opti);
             continue;
         }
         if (object->play == 1)
-            choose_class(object, window, &event);
+            choose_class(object, window);
         if (object->play == 2)
             second_window(object, window);
     }
