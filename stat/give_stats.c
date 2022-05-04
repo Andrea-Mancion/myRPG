@@ -23,7 +23,7 @@ static void give_stat_warrior(stats_t *stat)
     stat->strenght = 7;
     stat->dext = 3;
     stat->luck = -1;
-    stat->wisdom = 1;
+    stat->wisdom = 2;
     stat->health = 5;
 }
 
@@ -32,17 +32,17 @@ static void give_stat_spellcaster(stats_t *stat)
     stat->strenght = 2;
     stat->dext = 3;
     stat->luck = -1;
-    stat->wisdom = 7;
+    stat->wisdom = 8;
     stat->health = 3;
 }
 
 static void give_stat_ranger(stats_t *stat)
 {
-    stat->strenght = 4;
+    stat->strenght = 3;
     stat->dext = 7;
     stat->luck = -1;
     stat->wisdom = 3;
-    stat->health = 5;
+    stat->health = 4;
 }
 
 void give_stat(stats_t *stat)

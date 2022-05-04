@@ -30,12 +30,12 @@ SRC	=	lib/my_putchar.c	\
 		menu/main_menu.c	\
 		my_runner.c	\
 		my_rpg.c	\
-		interface/create_stat.c	\
-		interface/give_stats.c	\
-		interface/upgrade_stat.c	\
+		stat/create_stat.c	\
+		stat/give_stats.c	\
+		stat/upgrade_stat.c	\
 		pause/create_button_text.c	\
 		pause/click_but_pause.c	\
-		interface/create_text_stat.c	\
+		stat/create_text_stat.c	\
 		lib/my_revstr.c	\
 		lib/my_strlen.c	\
 		lib/itoa.c	\
