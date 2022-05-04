@@ -48,6 +48,11 @@ struct_charachter foe, char *png)
     return (foe);
 }
 
+static void create_clock_battle(struct_object *object)
+{
+    object->clock_battle.clock = sfClock_create();
+}
+
 struct_charachter start_battle(struct_object *object, struct_charachter foe)
 {
     sfVector2f size = {2.0, 2.0};
@@ -59,7 +64,10 @@ struct_charachter start_battle(struct_object *object, struct_charachter foe)
     object->hero.position = (sfVector2f){1000, 500};
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
     sfSprite_setScale(object->hero.sprite, size);
+    create_clock_battle(object);
     object->battle.battle_beg = true;
+    if (object->battle.battle_beg == true)
+        move_battle(object, foe);
 
     return foe;
 }

@@ -226,6 +226,7 @@ typedef struct object
     struct_charachter hero;
     struct_charachter balk_anny;
     struct_clock clock;
+    struct_clock clock_battle;
     struct_window window;
     struct_background background;
     struct_background2 back2;

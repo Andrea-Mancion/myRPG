@@ -44,7 +44,8 @@ SRC	=	lib/my_putchar.c	\
 		class/class_text.c	\
 		battle/create_battle_text.c	\
 		battle/create_battle.c	\
-		battle/print_battle.c
+		battle/print_battle.c	\
+		battle/move_battle.c
 
 OBJ	=	$(SRC:.c=.o)
 

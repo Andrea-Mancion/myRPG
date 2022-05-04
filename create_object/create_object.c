@@ -75,6 +75,7 @@ void destroy(struct_object *object, sfRenderWindow *window)
         sfText_destroy(object->text_stat.text_invent);
         sfText_destroy(object->text_pause.text_invent);
         sfClock_destroy(object->clock.clock);
+        sfClock_destroy(object->clock_battle.clock);
         sfMusic_destroy(object->music.music);
         sfSprite_destroy(object->but_continue.sprite);
         sfTexture_destroy(object->but_continue.texture);

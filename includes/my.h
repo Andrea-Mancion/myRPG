@@ -52,5 +52,6 @@
     void print_battle(struct_object *obj, struct_charachter foe);
     void create_text_battle(struct_object *object, struct_charachter foe);
     struct_charachter start_battle(struct_object *object, struct_charachter foe);
+    void move_battle(struct_object *object, struct_charachter foe);
 
 #endif /* !MY_H_ */
