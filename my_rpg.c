@@ -53,8 +53,10 @@ int menu_defender(struct_object *object)
                 sfRenderWindow_close(window);
         }
         sfRenderWindow_clear(window, sfBlack);
-        if (object->play == 0)
+        if (object->play == 0) {
             menu(object, window, opti, &event);
+            continue;
+        }
         if (object->play == 1)
             choose_class(object, window, &event);
         if (object->play == 2)
