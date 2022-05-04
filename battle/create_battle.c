@@ -69,6 +69,5 @@ struct_charachter start_battle(struct_object *object, struct_charachter foe)
     object->battle.battle_beg = true;
     if (object->battle.battle_beg == true)
         move_battle(object, foe);
-
     return foe;
 }
