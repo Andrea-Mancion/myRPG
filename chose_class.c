@@ -88,5 +88,9 @@ sfEvent *event)
             which_class_is_select(object, mouse_pos);
             destroy_class(object);
         }
+        if (event->type == sfEvtClosed) {
+            sfRenderWindow_close(window);
+            return;
+        }
     }
 }
