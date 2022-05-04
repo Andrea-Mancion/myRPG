@@ -24,6 +24,7 @@ static void create_battle_back(struct_object *object)
     sfSprite_setScale(object->battle.battle_back.background, size);
     sfSprite_setTexture(object->battle.battle_back.background,
     object->battle.battle_back.background_text, sfTrue);
+    sfSprite_setScale(object->battle.battle_back.background, (sfVector2f){3, 4.5});
 }
 
 struct_charachter create_foe_battle(struct_object *object,
@@ -41,7 +42,6 @@ struct_charachter foe, char *png)
     sfSprite_setTexture(foe.sprite, foe.texture, sfTrue);
     sfSprite_setPosition(foe.sprite, foe.position);
     sfSprite_setTextureRect(foe.sprite, foe.rect);
-
     return (foe);
 }
 

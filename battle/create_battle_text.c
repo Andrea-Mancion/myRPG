@@ -45,16 +45,16 @@ void create_text_battle(struct_object *object, struct_charachter foe)
         sfText_setFillColor(object->battle.text_battle[x]->text_invent, sfWhite);
     }
     sfText_setPosition(object->battle.text_battle[0]->text_invent,
-    (sfVector2f){279, 505});
+    (sfVector2f){1650, 50});
     sfText_setPosition(object->battle.text_battle[1]->text_invent,
-    (sfVector2f){445, 505});
+    (sfVector2f){20, 50});
     sfText_setPosition(object->battle.text_battle[2]->text_invent,
-    (sfVector2f){445, 560});
+    (sfVector2f){850, 900});
     sfText_setPosition(object->battle.text_battle[3]->text_invent,
-    (sfVector2f){445, 610});
+    (sfVector2f){600, 950});
     sfText_setPosition(object->battle.text_battle[4]->text_invent,
-    (sfVector2f){445, 655});
+    (sfVector2f){850, 950});
     sfText_setPosition(object->battle.text_battle[5]->text_invent,
-    (sfVector2f){445, 705});
+    (sfVector2f){1050, 950});
     put_text_in_battle(object, foe);
 }
