@@ -13,11 +13,11 @@
 #include "../includes/my_rpg.h"
 #include "../includes/my.h"
 
-void move_ninja(struct_object *object, sfRenderWindow *window)
+void move_warrior(struct_object *object, sfRenderWindow *window)
 {
-    object->hero.rect.left += 55;
-    if (object->hero.rect.left >= 295)
-        object->hero.rect.left = 25;
+    object->hero.rect.left += 38;
+    if (object->hero.rect.left >= 114)
+        object->hero.rect.left = 0;
     sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
     sfRenderWindow_drawSprite(window, object->hero.sprite, NULL);
 }
@@ -26,32 +26,40 @@ void mouvement_x(struct_object *object, sfRenderWindow *window)
 {
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyRight)) {
+        object->hero.rect.top = 90;
         object->hero.position.x += 10;
-        move_ninja(object, window);
+        move_warrior(object, window);
         if (object->hero.position.x >= 1920.00)
             object->hero.position.x = 0;
     }
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
 
-/*void move_background(struct_object *object, sfRenderWindow *window)
-{
-    object->background.back.left += 10;
-    sfTexture_setRepeated(object->background.background_text, sfTrue);
-    sfSprite_setTextureRect(object->background.background,
-    object->background.back);
-    sfRenderWindow_drawSprite(window, object->background.background, NULL);
-}*/
-
 void clock(struct_object *object, sfRenderWindow *window)
 {
     object->clock.time = sfClock_getElapsedTime(object->clock.clock);
     object->clock.seconds = object->clock.time.microseconds / 1000000.0f;
-    if (object->clock.seconds > 0.02) {
-        mouvement_x(object, window);
-        mouvement_x_back(object, window);
-        mouvement_y_up(object, window);
-        mouvement_y_down(object, window);
+    if (object->clock.seconds > 0.2) {
+        if (object->stat->nmbr_class == 1) {
+            mouvement_x(object, window);
+            mouvement_x_back(object, window);
+            mouvement_y_up(object, window);
+            mouvement_y_down(object, window);
+        }
+        if (object->stat->nmbr_class == 2) {
+            mouvement_spellfor(object);
+            mouvement_spellback(object);
+            mouvement_spellup(object);
+            mouvement_spelldown(object);
+        }
+        if (object->stat->nmbr_class == 3) {
+            mouvement_rangerfor(object);
+            mouvement_rangerback(object);
+            mouvement_rangerup(object);
+            mouvement_rangerdown(object);
+        }
+        move_idle_balk(object);
+        sfClock_restart(object->clock.clock);
     }
 }
 

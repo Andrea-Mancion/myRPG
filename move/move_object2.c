@@ -17,8 +17,9 @@ void mouvement_x_back(struct_object *object, sfRenderWindow *window)
 {
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
+        object->hero.rect.top = 45;
         object->hero.position.x -= 10;
-        move_ninja(object, window);
+        move_warrior(object, window);
         if (object->hero.position.x <= -90.00)
             object->hero.position.x = 0;
     }
@@ -29,8 +30,9 @@ void mouvement_y_up(struct_object *object, sfRenderWindow *window)
 {
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyUp)) {
+        object->hero.rect.top = 135;
         object->hero.position.y -= 10;
-        move_ninja(object, window);
+        move_warrior(object, window);
         if (object->hero.position.y <= -90.00)
             object->hero.position.y = 900;
     }
@@ -41,10 +43,22 @@ void mouvement_y_down(struct_object *object, sfRenderWindow *window)
 {
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyDown)) {
+        object->hero.rect.top = 0;
         object->hero.position.y += 10;
-        move_ninja(object, window);
+        move_warrior(object, window);
         if (object->hero.position.y >= 1010.00)
             object->hero.position.y = 900;
     }
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
+}
+
+void move_idle_balk(struct_object *obj)
+{
+    obj->balk_anny_game.rect.left += 30;
+    if (obj->balk_anny_game.rect.left >= 100)
+        obj->balk_anny_game.rect.left = 0;
+    sfSprite_setTextureRect(obj->balk_anny_game.sprite,
+    obj->balk_anny_game.rect);
+    sfRenderWindow_drawSprite(obj->window.window, obj->balk_anny_game.sprite,
+    NULL);
 }
