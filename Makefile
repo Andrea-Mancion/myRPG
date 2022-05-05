@@ -18,7 +18,6 @@ SRC	=	lib/my_putchar.c	\
 		create_object/create_object.c	\
 		renderwindow.c	\
 		create_object/create_object2.c	\
-		create_object/create_object3.c	\
 		move/move_object.c	\
 		move/move_object2.c	\
 		inventory/create_inventory.c	\

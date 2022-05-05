@@ -34,14 +34,14 @@ void mouvement_x(struct_object *object, sfRenderWindow *window)
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
 
-void move_background(struct_object *object, sfRenderWindow *window)
+/*void move_background(struct_object *object, sfRenderWindow *window)
 {
     object->background.back.left += 10;
     sfTexture_setRepeated(object->background.background_text, sfTrue);
     sfSprite_setTextureRect(object->background.background,
     object->background.back);
     sfRenderWindow_drawSprite(window, object->background.background, NULL);
-}
+}*/
 
 void clock(struct_object *object, sfRenderWindow *window)
 {
@@ -52,10 +52,6 @@ void clock(struct_object *object, sfRenderWindow *window)
         mouvement_x_back(object, window);
         mouvement_y_up(object, window);
         mouvement_y_down(object, window);
-        move_background(object, window);
-        move_back2(object, window);
-        move_back3(object, window);
-        move_back4(object, window);
     }
 }
 

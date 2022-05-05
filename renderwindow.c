@@ -17,9 +17,6 @@ void render_window(struct_object *object, sfRenderWindow *window)
 {
     sfRenderWindow_setFramerateLimit(window, 60);
     sfRenderWindow_drawSprite(window, object->background.background, NULL);
-    sfRenderWindow_drawSprite(window, object->back2.back2_s, NULL);
-    sfRenderWindow_drawSprite(window, object->back3.back3_s, NULL);
-    sfRenderWindow_drawSprite(window, object->back4.back4_s, NULL);
     sfRenderWindow_drawSprite(window, object->hero.sprite, NULL);
     if (object->battle.battle_beg == true) {
         print_battle(object, object->balk_anny);

@@ -13,9 +13,6 @@
     void create_ninja(struct_object *object);
     sfRenderWindow *create_window(struct_object *object);
     void create_background(struct_object *object);
-    void create_back2(struct_object *object);
-    void create_back3(struct_object *object);
-    void create_back4(struct_object *object);
     void clock(struct_object *object, sfRenderWindow *window);
     void create_clock(struct_object *object);
     void create_music(struct_object *object);
@@ -27,10 +24,6 @@
     void mouvement_x_back(struct_object *object, sfRenderWindow *window);
     void mouvement_y_up(struct_object *object, sfRenderWindow *window);
     void mouvement_y_down(struct_object *object, sfRenderWindow *window);
-    void move_background(struct_object *object, sfRenderWindow *window);
-    void move_back2(struct_object *object, sfRenderWindow *window);
-    void move_back3(struct_object *object, sfRenderWindow *window);
-    void move_back4(struct_object *object, sfRenderWindow *window);
     void destroy(struct_object *object, sfRenderWindow *window);
     void create_object(struct_object *object);
     void move_object(struct_object *object, sfRenderWindow *window);

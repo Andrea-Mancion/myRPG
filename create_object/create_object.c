@@ -40,11 +40,11 @@ void create_ninja(struct_object *object)
 void create_background(struct_object *object)
 {
     object->background.background_text =
-    sfTexture_createFromFile("ressource/back1.png", NULL);
+    sfTexture_createFromFile("assets/sprites/map.png", NULL);
     object->background.background = sfSprite_create();
     sfSprite_setTexture(object->background.background,
     object->background.background_text, sfTrue);
-    object->background.back.top = 0;
+    object->background.back.top = 500;
     object->background.back.left = 0;
     object->background.back.width = 1920;
     object->background.back.height = 1080;
@@ -91,9 +91,6 @@ void destroy(struct_object *object, sfRenderWindow *window)
 void create_object(struct_object *object)
 {
     create_background(object);
-    create_back2(object);
-    create_back3(object);
-    create_back4(object);
     create_ninja(object);
     create_music(object);
     create_inventory(object);

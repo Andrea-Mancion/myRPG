@@ -48,27 +48,3 @@ void mouvement_y_down(struct_object *object, sfRenderWindow *window)
     }
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
-
-void move_back2(struct_object *object, sfRenderWindow *window)
-{
-    object->back2.back2.left += 2;
-    sfTexture_setRepeated(object->back2.back_text2, sfTrue);
-    sfSprite_setTextureRect(object->back2.back2_s, object->back2.back2);
-    sfRenderWindow_drawSprite(window, object->back2.back2_s, NULL);
-}
-
-void move_back3(struct_object *object, sfRenderWindow *window)
-{
-    object->back3.back3.left += 4;
-    sfTexture_setRepeated(object->back3.back_text3, sfTrue);
-    sfSprite_setTextureRect(object->back3.back3_s, object->back3.back3);
-    sfRenderWindow_drawSprite(window, object->back3.back3_s, NULL);
-}
-
-void move_back4(struct_object *object, sfRenderWindow *window)
-{
-    object->back4.back4.left += 6;
-    sfTexture_setRepeated(object->back4.back_text4, sfTrue);
-    sfSprite_setTextureRect(object->back4.back4_s, object->back4.back4);
-    sfRenderWindow_drawSprite(window, object->back4.back4_s, NULL);
-}

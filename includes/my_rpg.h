@@ -86,30 +86,6 @@ typedef struct background
     sfVector2f pos;
 } struct_background;
 
-typedef struct back2
-{
-    sfSprite *back2_s;
-    sfTexture *back_text2;
-    sfIntRect back2;
-    sfVector2f back2_scale;
-} struct_background2;
-
-typedef struct back3
-{
-    sfSprite *back3_s;
-    sfTexture *back_text3;
-    sfIntRect back3;
-    sfVector2f back3_scale;
-} struct_background3;
-
-typedef struct back4
-{
-    sfSprite *back4_s;
-    sfTexture *back_text4;
-    sfIntRect back4;
-    sfVector2f back4_scale;
-} struct_background4;
-
 typedef struct window
 {
     sfVideoMode mode;
@@ -193,9 +169,6 @@ typedef struct object
     struct_clock clock_battle;
     struct_window window;
     struct_background background;
-    struct_background2 back2;
-    struct_background3 back3;
-    struct_background4 back4;
     struct_music music;
     struct_event event;
     btn_t but_continue;

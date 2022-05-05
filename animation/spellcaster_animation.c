@@ -5,7 +5,7 @@
 ** speelcaster_animation
 */
 
-#include "../animation.h"
+#include "animation.h"
 
 void create_warrior(object_t *object)
 {
