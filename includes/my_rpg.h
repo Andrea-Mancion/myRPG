@@ -188,6 +188,7 @@ typedef struct object
     bool print_inventory;
     bool print_stat;
     bool print_pause;
+    bool bag_in_invent;
 } struct_object;
 
 void background(t_gbl *opti);
