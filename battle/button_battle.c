@@ -16,17 +16,12 @@
 
 static struct_charachter which_button_click(struct_object *obj, sfVector2i mouse_pos, struct_charachter foe)
 {
-    if (mouse_pos.x <= 762) {
+    if (mouse_pos.x <= 762)
         foe.health -= obj->stat->strenght / 2;
-            printf("force %d\n", obj->stat->strenght);
-    } else if (mouse_pos.x >= 1048) {
+    else if (mouse_pos.x >= 1048)
         foe.health -= obj->stat->wisdom / 2;
-            printf("magie %d\n", obj->stat->wisdom);
-    }
-    else if (mouse_pos.x >= 845 && mouse_pos.x <= 1000) {
+    else if (mouse_pos.x >= 845 && mouse_pos.x <= 1000)
         foe.health -= obj->stat->dext / 2;
-            printf("dext %d\n", obj->stat->dext);
-    }
     return foe;
 }
 
