@@ -16,9 +16,12 @@
 
 static struct_charachter which_button_click(struct_object *obj, sfVector2i mouse_pos, struct_charachter foe)
 {
-    if (mouse_pos.x <= 762)
+    float verif = 0;
+
+    if (mouse_pos.x <= 762) {
         foe.health -= obj->stat->strenght / 2;
-    else if (mouse_pos.x >= 1048)
+        verif = obj->stat->strenght / 2;
+    } else if (mouse_pos.x >= 1048)
         foe.health -= obj->stat->wisdom / 2;
     else if (mouse_pos.x >= 845 && mouse_pos.x <= 1000)
         foe.health -= obj->stat->dext / 2;
