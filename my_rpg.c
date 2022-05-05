@@ -44,6 +44,7 @@ int menu_defender(struct_object *object)
     sfRenderWindow* window;
     object->play = 0;
     object->create = false;
+    object->battle.battle_beg = false;
     window = sfRenderWindow_create(mode, "Main Menu", sfResize | sfClose, NULL);
 
     while (sfRenderWindow_isOpen(window)) {

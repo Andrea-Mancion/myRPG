@@ -14,7 +14,7 @@
 #include "../includes/my.h"
 #include "../includes/my_rpg.h"
 
-static void put_text_in_battle(struct_object *object, struct_charachter foe)
+void put_text_in_battle(struct_object *object, struct_charachter foe)
 {
     sfText_setString(object->battle.text_battle[0]->text_invent,
     my_strcat("health = ", itoa(object->stat->health * 2)));

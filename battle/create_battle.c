@@ -24,7 +24,8 @@ static void create_battle_back(struct_object *object)
     sfSprite_setScale(object->battle.battle_back.background, size);
     sfSprite_setTexture(object->battle.battle_back.background,
     object->battle.battle_back.background_text, sfTrue);
-    sfSprite_setScale(object->battle.battle_back.background, (sfVector2f){3, 4.5});
+    sfSprite_setScale(object->battle.battle_back.background,
+    (sfVector2f){3, 4.5});
 }
 
 struct_charachter create_foe_battle(struct_object *object,
@@ -53,12 +54,11 @@ static void create_clock_battle(struct_object *object)
     object->clock_battle.clock = sfClock_create();
 }
 
-struct_charachter start_battle(struct_object *object, struct_charachter foe)
+struct_charachter init_battle(struct_object *object, struct_charachter foe, char *png)
 {
     sfVector2f size = {2.0, 2.0};
 
-    foe = create_foe_battle(object, foe,
-    "./assets/sprites/balk_anny2.png");
+    foe = create_foe_battle(object, foe, png);
     create_text_battle(object, foe);
     create_battle_back(object);
     foe = create_button_battle(object, foe);
@@ -67,7 +67,5 @@ struct_charachter start_battle(struct_object *object, struct_charachter foe)
     sfSprite_setScale(object->hero.sprite, size);
     create_clock_battle(object);
     object->battle.battle_beg = true;
-    if (object->battle.battle_beg == true)
-        move_battle(object, foe);
     return foe;
 }
