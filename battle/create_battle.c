@@ -54,7 +54,8 @@ static void create_clock_battle(struct_object *object)
     object->clock_battle.clock = sfClock_create();
 }
 
-struct_charachter init_battle(struct_object *object, struct_charachter foe, char *png)
+struct_charachter init_battle(struct_object *object, struct_charachter foe,
+char *png)
 {
     sfVector2f size = {2.0, 2.0};
 

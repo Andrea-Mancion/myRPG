@@ -29,6 +29,7 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
         "assets/sprites/balk_anny2.png");
     if (object->battle.battle_beg == true) {
         object->balk_anny = create_button_battle(object, object->balk_anny);
+        move_battle(object, object->balk_anny);
     }
     if ((object->print_inventory == true || object->print_stat == true) &&
         sfKeyboard_isKeyPressed(sfKeyM)) {
