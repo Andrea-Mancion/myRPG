@@ -46,6 +46,24 @@ void create_spellcaster(struct_object *object)
     sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
 }
 
+void create_balk_anny(struct_object *obj)
+{
+    obj->balk_anny_game.texture =
+    sfTexture_createFromFile("assets/sprites/idle_balk.png", NULL);
+    obj->balk_anny_game.sprite = sfSprite_create();
+    obj->balk_anny_game.position.x = 1200;
+    obj->balk_anny_game.position.y = 590;
+    sfSprite_setTexture(obj->balk_anny_game.sprite,
+    obj->balk_anny_game.texture, sfTrue);
+    sfSprite_setPosition(obj->balk_anny_game.sprite,
+    obj->balk_anny_game.position);
+    obj->balk_anny_game.rect.top = 0;
+    obj->balk_anny_game.rect.left = 0;
+    obj->balk_anny_game.rect.width = 37;
+    obj->balk_anny_game.rect.height = 48;
+    sfSprite_setTextureRect(obj->balk_anny_game.sprite,
+    obj->balk_anny_game.rect);
+}
 
 void create_clock(struct_object *object)
 {

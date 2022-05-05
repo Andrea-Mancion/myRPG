@@ -165,6 +165,7 @@ typedef struct object
     struct_text text_class;
     struct_charachter hero;
     struct_charachter balk_anny;
+    struct_charachter balk_anny_game;
     struct_clock clock;
     struct_clock clock_battle;
     struct_window window;

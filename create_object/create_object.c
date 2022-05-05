@@ -91,7 +91,7 @@ void destroy(struct_object *object, sfRenderWindow *window)
 void create_object(struct_object *object)
 {
     create_background(object);
-    //create_ninja(object);
+    create_balk_anny(object);
     create_music(object);
     create_inventory(object);
     create_text_inventory(object);
