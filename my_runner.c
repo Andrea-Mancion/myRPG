@@ -27,6 +27,10 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
     if (sfKeyboard_isKeyPressed(sfKeyY))
         object->balk_anny = init_battle(object, object->balk_anny,
         "assets/sprites/balk_anny2.png");
+    if (object->hero.position.x == object->blob.position.x &&
+    object->hero.position.y == object->blob.position.y)
+        object->balk_anny = init_battle(object, object->balk_anny,
+        "assets/sprites/blob.png");
     if (object->battle.battle_beg == true) {
         object->balk_anny = create_button_battle(object, object->balk_anny);
         move_battle(object, object->balk_anny);
