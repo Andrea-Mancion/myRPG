@@ -14,6 +14,7 @@
     void create_ranger(struct_object *object);
     void create_spellcaster(struct_object *object);
     void create_balk_anny(struct_object *obj);
+    void create_blob(struct_object *obj);
     sfRenderWindow *create_window(struct_object *object);
     void create_background(struct_object *object);
     void clock(struct_object *object, sfRenderWindow *window);

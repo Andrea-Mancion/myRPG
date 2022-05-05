@@ -15,8 +15,6 @@
 
 void create_clock(struct_object *object);
 void create_music(struct_object *object);
-void create_ennemy(struct_object *object);
-void create_ennemy2(struct_object *object);
 void create_back2(struct_object *object);
 void create_back3(struct_object *object);
 void create_back4(struct_object *object);
@@ -87,6 +85,8 @@ void destroy(struct_object *object, sfRenderWindow *window)
         sfTexture_destroy(object->balk_anny.texture);
         sfSprite_destroy(object->balk_anny_game.sprite);
         sfTexture_destroy(object->balk_anny_game.texture);
+        sfSprite_destroy(object->blob.sprite);
+        sfTexture_destroy(object->blob.texture);
     }
 }
 
@@ -94,6 +94,7 @@ void create_object(struct_object *object)
 {
     create_background(object);
     create_balk_anny(object);
+    create_blob(object);
     create_music(object);
     create_inventory(object);
     create_text_inventory(object);
