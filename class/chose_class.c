@@ -66,12 +66,16 @@ static void destroy_class(struct_object *obj)
 
 static void which_class_is_select(struct_object *obj, sfVector2i mouse_pos)
 {
-    if (mouse_pos.x >= 0 && mouse_pos.x < 640)
+    if (mouse_pos.x >= 0 && mouse_pos.x < 640) {
         obj->stat->nmbr_class = 1;
-    else if (mouse_pos.x >= 640 && mouse_pos.x < 1280)
+        create_warrior(obj);
+    } else if (mouse_pos.x >= 640 && mouse_pos.x < 1280) {
         obj->stat->nmbr_class = 2;
-    else
+        create_spellcaster(obj);
+    } else {
         obj->stat->nmbr_class = 3;
+        create_ranger(obj);
+    }
 }
 
 void choose_class(struct_object *object, sfRenderWindow *window)

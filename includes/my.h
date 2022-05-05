@@ -10,14 +10,14 @@
 #ifndef MY_H_
     #define MY_H_
 
-    void create_ninja(struct_object *object);
+    void create_warrior(struct_object *object);
+    void create_ranger(struct_object *object);
+    void create_spellcaster(struct_object *object);
     sfRenderWindow *create_window(struct_object *object);
     void create_background(struct_object *object);
     void clock(struct_object *object, sfRenderWindow *window);
     void create_clock(struct_object *object);
     void create_music(struct_object *object);
-    void create_ennemy(struct_object *object);
-    void create_ennemy2(struct_object *object);
     void render_window(struct_object *object, sfRenderWindow *window);
     void move_ninja(struct_object *object, sfRenderWindow *window);
     void mouvement_x(struct_object *object, sfRenderWindow *window);

@@ -21,19 +21,19 @@ void create_back2(struct_object *object);
 void create_back3(struct_object *object);
 void create_back4(struct_object *object);
 
-void create_ninja(struct_object *object)
+void create_warrior(struct_object *object)
 {
     object->hero.texture =
-    sfTexture_createFromFile("assets/sprites/images.png", NULL);
+    sfTexture_createFromFile("assets/sprites/warrior.png", NULL);
     object->hero.sprite = sfSprite_create();
-    object->hero.position.x = 0;
-    object->hero.position.y = 900;
+    object->hero.position.x = 150;
+    object->hero.position.y = 350;
     sfSprite_setTexture(object->hero.sprite, object->hero.texture, sfTrue);
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
     object->hero.rect.top = 0;
-    object->hero.rect.left = 25;
-    object->hero.rect.width = 50;
-    object->hero.rect.height = 78;
+    object->hero.rect.left = 0;
+    object->hero.rect.width = 38;
+    object->hero.rect.height = 75;
     sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
 }
 
@@ -91,7 +91,7 @@ void destroy(struct_object *object, sfRenderWindow *window)
 void create_object(struct_object *object)
 {
     create_background(object);
-    create_ninja(object);
+    //create_ninja(object);
     create_music(object);
     create_inventory(object);
     create_text_inventory(object);
