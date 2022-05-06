@@ -66,15 +66,11 @@ static void create_clock_battle(struct_object *object)
 struct_charachter init_battle(struct_object *object, struct_charachter foe,
 char *png)
 {
-    sfVector2f size = {2.0, 2.0};
-
     foe = create_foe_battle(foe, png);
     create_text_battle(object, foe);
     create_battle_back(object);
     foe = create_button_battle(object, foe);
-    object->hero.position = (sfVector2f){1000, 500};
-    sfSprite_setPosition(object->hero.sprite, object->hero.position);
-    sfSprite_setScale(object->hero.sprite, size);
+    create_hero_battle(object);
     create_music_battle(object);
     create_clock_battle(object);
     object->battle.battle_beg = true;

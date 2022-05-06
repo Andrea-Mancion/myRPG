@@ -50,6 +50,7 @@ SRC	=	lib/my_putchar.c	\
 		battle/move_battle.c	\
 		battle/button_battle.c	\
 		battle/start_battle.c	\
+		battle/create_battle2.c	\
 		game_over/create_gameover.c	\
 		game_over/interaction_but.c
 
