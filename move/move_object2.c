@@ -59,7 +59,7 @@ void move_idle_balk(struct_object *obj)
 
 void move_blob(struct_object *obj)
 {
-    obj->blob.rect.left += 60;
+    obj->blob.rect.left += 62;
     if (obj->blob.rect.left >= 720)
         obj->blob.rect.left = 0;
     sfSprite_setTextureRect(obj->blob.sprite, obj->blob.rect);
