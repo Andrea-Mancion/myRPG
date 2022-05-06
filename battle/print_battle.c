@@ -25,7 +25,7 @@ void print_battle(struct_object *obj, struct_charachter foe)
 {
     sfRenderWindow_drawSprite(obj->window.window,
     obj->battle.battle_back.background, NULL);
-    sfRenderWindow_drawSprite(obj->window.window, foe.sprite, NULL);
+    sfRenderWindow_drawSprite(obj->window.window, foe.sprite_fight, NULL);
     sfRenderWindow_drawSprite(obj->window.window, obj->hero.sprite, NULL);
     print_text(obj);
 }

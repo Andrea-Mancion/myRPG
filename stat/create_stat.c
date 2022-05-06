@@ -47,6 +47,7 @@ void create_stat(struct_object *object)
     object->stat->pos.y = 500;
     object->stat->lvl = 1;
     object->stat->exp = 0;
+    object->stat->nbr_of_point = 0;
     sfSprite_setScale(object->stat->stat_s, scale);
     sfSprite_setTexture(object->stat->stat_s, object->stat->stat_t, sfTrue);
     sfSprite_setTextureRect(object->stat->stat_s, object->stat->stat_r);

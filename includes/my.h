@@ -57,8 +57,7 @@
     char *my_strcat(char *str1, char const *str2);
     void print_battle(struct_object *obj, struct_charachter foe);
     void create_text_battle(struct_object *object, struct_charachter foe);
-    struct_charachter init_battle(struct_object *object, struct_charachter foe,
-    char *png);
+    struct_charachter init_battle(struct_object *object, struct_charachter foe);
     struct_charachter create_button_battle(struct_object *obj,
     struct_charachter foe);
     void move_battle(struct_object *object, struct_charachter foe);
@@ -68,5 +67,6 @@
     void create_hero_battle(struct_object *obj);
     void create_button_stat(struct_object *obj);
     void move_ranger_batt(struct_object *obj);
+    void put_numbers_in_text(struct_object *object);
 
 #endif /* !MY_H_ */

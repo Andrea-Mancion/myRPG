@@ -85,14 +85,14 @@ void destroy(struct_object *object, sfRenderWindow *window)
         sfTexture_destroy(object->but_exit.texture);
         // sfSprite_destroy(object->but_over.sprite);
         // sfTexture_destroy(object->but_over.texture);
-        sfSprite_destroy(object->battle.battle_back.background);
-        sfTexture_destroy(object->battle.battle_back.background_text);
+//        sfSprite_destroy(object->battle.battle_back.background);
+  //      sfTexture_destroy(object->battle.battle_back.background_text);
+   //     sfSprite_destroy(object->balk_anny.sprite);
+     //   sfTexture_destroy(object->balk_anny.texture);
         sfSprite_destroy(object->balk_anny.sprite);
         sfTexture_destroy(object->balk_anny.texture);
-        sfSprite_destroy(object->balk_anny_game.sprite);
-        sfTexture_destroy(object->balk_anny_game.texture);
-        sfSprite_destroy(object->blob.sprite);
-        sfTexture_destroy(object->blob.texture);
+        sfTexture_destroy(object->balk_anny.texture_fight);
+        sfSprite_destroy(object->balk_anny.sprite_fight);
     }
 }
 

@@ -64,6 +64,8 @@ typedef struct s_gbl {
 typedef struct charachter
 {
     sfSprite *sprite;
+    sfSprite *sprite_fight;
+    sfTexture *texture_fight;
     sfTexture *texture;
     sfIntRect rect;
     sfVector2f position;
@@ -71,6 +73,7 @@ typedef struct charachter
     int counter;
     int health;
     int pv;
+    bool death;
 } struct_charachter;
 
 typedef struct clock
@@ -169,8 +172,8 @@ typedef struct object
     struct_text text_class;
     struct_charachter hero;
     struct_charachter balk_anny;
-    struct_charachter balk_anny_game;
-    struct_charachter blob;
+    struct_charachter current_ennemy;
+    struct_charachter **blob;
     struct_clock clock;
     struct_clock clock_attack;
     struct_clock clock_battle;
