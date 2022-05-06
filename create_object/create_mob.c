@@ -16,15 +16,15 @@
 
 void create_blob(struct_object *obj)
 {
-    obj->blob.texture = sfTexture_createFromFile("./assets/sprites/blob.png",
+    obj->blob.texture = sfTexture_createFromFile("./assets/sprites/blob2.png",
     NULL);
     obj->blob.sprite = sfSprite_create();
     obj->blob.position.x = 750;
     obj->blob.position.y = 650;
     obj->blob.rect.top = 0;
-    obj->blob.rect.left = 5;
-    obj->blob.rect.width = 30;
-    obj->blob.rect.height = 40;
+    obj->blob.rect.left = 0;
+    obj->blob.rect.width = 60;
+    obj->blob.rect.height = 34;
     sfSprite_setTexture(obj->blob.sprite, obj->blob.texture, sfTrue);
     sfSprite_setTextureRect(obj->blob.sprite, obj->blob.rect);
     sfSprite_setPosition(obj->blob.sprite, obj->blob.position);
