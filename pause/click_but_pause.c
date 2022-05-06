@@ -33,25 +33,29 @@ struct_object *object)
     }
 }
 
-static void pos_exit2(sfRenderWindow *window, sfEvent *event)
+static void pos_exit2(sfRenderWindow *window, sfEvent *event,
+struct_object *obj)
 {
     while (sfRenderWindow_pollEvent(window, event))
-        if (event->type == sfEvtMouseButtonPressed)
-            sfRenderWindow_close(window);
+        if (event->type == sfEvtMouseButtonPressed) {
+            sfMusic_stop(obj->music.music);
+            obj->play = 0;
+        }
 }
 
-static void pos_exit(sfRenderWindow *window, sfEvent *event)
+static void pos_exit(sfRenderWindow *window, sfEvent *event,
+struct_object *obj)
 {
     sfVector2i mouse_position = sfMouse_getPosition((const sfWindow *)window);
 
     if (mouse_position.y >= 706 && mouse_position.y <= 795) {
         if (mouse_position.x >= 745 && mouse_position.x <= 953)
-            pos_exit2(window, event);
+            pos_exit2(window, event, obj);
     }
 }
 
 void click_but(sfRenderWindow *window, sfEvent event, struct_object *object)
 {
     pos_continue(window, &event, object);
-    pos_exit(window, &event);
+    pos_exit(window, &event, object);
 }
