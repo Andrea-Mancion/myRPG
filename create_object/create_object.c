@@ -31,7 +31,7 @@ void create_warrior(struct_object *object)
     object->hero.rect.top = 0;
     object->hero.rect.left = 0;
     object->hero.rect.width = 38;
-    object->hero.rect.height = 75;
+    object->hero.rect.height = 45;
     sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
 }
 
