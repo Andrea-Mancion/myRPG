@@ -41,7 +41,7 @@ void create_spellcaster(struct_object *object)
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
     object->hero.rect.top = 0;
     object->hero.rect.left = 0;
-    object->hero.rect.width = 37;
+    object->hero.rect.width = 47;
     object->hero.rect.height = 48;
     sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
 }
@@ -59,7 +59,7 @@ void create_balk_anny(struct_object *obj)
     obj->balk_anny_game.position);
     obj->balk_anny_game.rect.top = 0;
     obj->balk_anny_game.rect.left = 0;
-    obj->balk_anny_game.rect.width = 37;
+    obj->balk_anny_game.rect.width = 43;
     obj->balk_anny_game.rect.height = 48;
     sfSprite_setTextureRect(obj->balk_anny_game.sprite,
     obj->balk_anny_game.rect);
