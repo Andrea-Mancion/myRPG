@@ -57,6 +57,7 @@ void clock(struct_object *object, sfRenderWindow *window)
             mouvement_rangerdown(object);
         }
         move_idle_balk(object);
+        move_blob(object);
         sfClock_restart(object->clock.clock);
     }
 }

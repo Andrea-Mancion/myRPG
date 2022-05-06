@@ -56,3 +56,12 @@ void move_idle_balk(struct_object *obj)
     sfRenderWindow_drawSprite(obj->window.window, obj->balk_anny_game.sprite,
     NULL);
 }
+
+void move_blob(struct_object *obj)
+{
+    obj->blob.rect.left += 60;
+    if (obj->blob.rect.left >= 720)
+        obj->blob.rect.left = 0;
+    sfSprite_setTextureRect(obj->blob.sprite, obj->blob.rect);
+    sfRenderWindow_drawSprite(obj->window.window, obj->blob.sprite, NULL);
+}

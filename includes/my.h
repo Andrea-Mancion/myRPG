@@ -35,6 +35,7 @@
     void mouvement_rangerup(struct_object *object);
     void mouvement_rangerdown(struct_object *object);
     void move_idle_balk(struct_object *obj);
+    void move_blob(struct_object *obj);
     void destroy(struct_object *object, sfRenderWindow *window);
     void create_object(struct_object *object);
     void move_object(struct_object *object, sfRenderWindow *window);
