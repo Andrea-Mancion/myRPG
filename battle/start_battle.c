@@ -16,15 +16,25 @@
 
 void put_text_in_battle(struct_object *object, struct_charachter foe);
 
-void start_battle(struct_object *obj, struct_charachter foe)
+static int end_battle(struct_object *obj, struct_charachter foe)
 {
-    if (foe.health <= 0 || obj->stat->health <= 0) {
-        if (foe.health <= 0) {
+    if (foe.pv <= 0 || obj->stat->pv <= 0) {
+        if (foe.pv <= 0) {
+            obj->stat->pv = obj->stat->health * 2;
             sfMusic_play(obj->music.music);
             obj->battle.battle_beg = false;
-            return;
         } else
             create_over(obj);
+        return 1;
     }
+}
+
+void start_battle(struct_object *obj, struct_charachter foe)
+{
+    if (end_battle(obj, foe) == 1)
+        return;
     put_text_in_battle(obj, foe);
+    if (obj->battle.can_attack == false) {
+        clock_attack(obj);
+    }
 }

@@ -5,6 +5,8 @@
         "my_rpg.h": "c",
         "math.h": "c",
         "my.h": "c",
-        "my_lib.h": "c"
+        "my_lib.h": "c",
+        "graphics.h": "c",
+        "stdbool.h": "c"
     }
 }

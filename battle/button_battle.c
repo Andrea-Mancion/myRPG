@@ -18,20 +18,15 @@ static struct_charachter which_button_click(struct_object *obj,
 sfVector2i mouse_pos, struct_charachter foe)
 {
     if (mouse_pos.x <= 762) {
-        while (obj->hero.position.x > 200) {
-            obj->hero.position.x -= 10;
-            sfSprite_setPosition(obj->hero.sprite, obj->hero.position);
-        }
         foe.pv -= obj->stat->strenght;
-    } else if (mouse_pos.x >= 1048)
+        obj->battle.can_attack = false;
+    } else if (mouse_pos.x >= 1048) {
         foe.pv -= obj->stat->wisdom;
-    else if (mouse_pos.x >= 845 && mouse_pos.x <= 1000)
+        obj->battle.can_attack = false;
+    }
+    else if (mouse_pos.x >= 845 && mouse_pos.x <= 1200) {
         foe.pv -= obj->stat->dext;
-    if (obj->hero.position.x < 1000) {
-        while (obj->hero.position.x < 1000) {
-            obj->hero.position.x += 10;
-            sfSprite_setPosition(obj->hero.sprite, obj->hero.position);
-        }
+        obj->battle.can_attack = false;
     }
     return foe;
 }
@@ -44,7 +39,7 @@ struct_charachter foe)
     if (obj->event.event.type == sfEvtMouseButtonPressed) {
         mouse_pos = sfMouse_getPosition((const sfWindow *)obj->window.window);
         if (mouse_pos.y >= 950 && mouse_pos.y <= 1000 && mouse_pos.x >= 620 &&
-        mouse_pos.x <= 1100)
+        mouse_pos.x <= 1100 && obj->battle.can_attack == true)
             foe = which_button_click(obj, mouse_pos, foe);
     }
     return foe;

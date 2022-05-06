@@ -74,5 +74,6 @@ char *png)
     create_music_battle(object);
     create_clock_battle(object);
     object->battle.battle_beg = true;
+    object->battle.can_attack = true;
     return foe;
 }

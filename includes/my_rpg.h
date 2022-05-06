@@ -160,6 +160,7 @@ typedef struct battle_s {
     int damage_attack2;
     int damage_attack3;
     bool battle_beg;
+    bool can_attack;
 }battle_t;
 
 typedef struct object
@@ -170,6 +171,7 @@ typedef struct object
     struct_charachter balk_anny_game;
     struct_charachter blob;
     struct_clock clock;
+    struct_clock clock_attack;
     struct_clock clock_battle;
     struct_window window;
     struct_background background;

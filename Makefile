@@ -52,7 +52,8 @@ SRC	=	lib/my_putchar.c	\
 		battle/start_battle.c	\
 		battle/create_battle2.c	\
 		game_over/create_gameover.c	\
-		game_over/interaction_but.c
+		game_over/interaction_but.c	\
+		battle/clock_battle.c
 
 OBJ	=	$(SRC:.c=.o)
 

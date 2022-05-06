@@ -10,6 +10,8 @@
 #ifndef MY_H_
     #define MY_H_
 
+    void clock_attack(struct_object *object);
+    void create_clock_attack(struct_object *object);
     void create_warrior(struct_object *object);
     void create_ranger(struct_object *object);
     void create_spellcaster(struct_object *object);
