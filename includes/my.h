@@ -66,5 +66,6 @@
     void create_over(struct_object *obj);
     void pos_over(sfRenderWindow *window, sfEvent *event, struct_object *obj);
     void create_hero_battle(struct_object *obj);
+    void create_button_stat(struct_object *obj);
 
 #endif /* !MY_H_ */

@@ -62,11 +62,14 @@ int second_window(struct_object *object, sfRenderWindow *window)
         create_button(object);
         object->create = true;
     }
+    if (object->print_stat == true)
+        create_button_stat(object);
     if (object->battle.battle_beg == false)
         object->hero.recup = object->hero.position;
     if (object->battle.battle_beg == true)
         start_battle(object, object->balk_anny);
     move_object(object, window);
+    put_numbers_in_text(object);
     render_window(object, window);
     while (sfRenderWindow_pollEvent(window, &object->event.event))
         analyse_events(window, object);

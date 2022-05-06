@@ -18,23 +18,29 @@
 #include <SFML/Audio.h>
 #include <SFML/Audio/Music.h>
 
-// void upgrade_stat(stats_t *stat)
-// {
-//     if (stat->nbr_of_point == 0)
-//         return;
-//     if (stat == 1 || stat == 2) {
-//         if (stat == 1)
-//             stat->stat->dext++;
-//         if (stat == 2)
-//             stat->stat->health++;
-//     }
-//     if (stat == 3 || stat == 4) {
-//         if (stat == 3)
-//             stat->stat->luck++;
-//         if (stat == 4)
-//             stat->stat->strenght++;
-//     }
-//     if (stat == 5)
-//         stat->stat->wisdom++;
-//     stat->nbr_of_point--;
-// }
+static void which_button_click_stat(struct_object *obj, sfVector2i mouse_pos)
+{
+    if (obj->stat->nbr_of_point >= 1) {
+        if (mouse_pos.y <= 600)
+            obj->stat->strenght += 1;
+        else if (mouse_pos.y <= 660)
+            obj->stat->dext += 1;
+        else if (mouse_pos.y <= 710)
+            obj->stat->health += 1;
+        else if (mouse_pos.y <= 760)
+            obj->stat->wisdom += 1;
+        obj->stat->nbr_of_point -= 1;
+    }
+}
+
+void create_button_stat(struct_object *obj)
+{
+    sfVector2i mouse_pos;
+
+    if (obj->event.event.type == sfEvtMouseButtonPressed) {
+        mouse_pos = sfMouse_getPosition((const sfWindow *)obj->window.window);
+        if (mouse_pos.y >= 560 && mouse_pos.y <= 760 && mouse_pos.x >= 470 &&
+        mouse_pos.x <= 520)
+            which_button_click_stat(obj, mouse_pos);
+    }
+}

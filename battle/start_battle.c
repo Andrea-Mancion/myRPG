@@ -29,8 +29,14 @@ static int end_battle(struct_object *obj, struct_charachter foe)
             sfSprite_setPosition(obj->hero.sprite, obj->hero.position);
             sfSprite_setScale(obj->hero.sprite, size);
             obj->battle.battle_beg = false;
+            obj->stat->exp += 50;
         } else
             create_over(obj);
+        if (obj->stat->exp >= 100) {
+            obj->stat->lvl += 1;
+            obj->stat->nbr_of_point += 1;
+            obj->stat->exp -= 100;
+        }
         return 1;
     }
     return 0;

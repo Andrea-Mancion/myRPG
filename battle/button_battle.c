@@ -23,8 +23,7 @@ sfVector2i mouse_pos, struct_charachter foe)
     } else if (mouse_pos.x >= 1048) {
         foe.pv -= obj->stat->wisdom;
         obj->battle.can_attack = false;
-    }
-    else if (mouse_pos.x >= 845 && mouse_pos.x <= 1200) {
+    } else if (mouse_pos.x >= 845 && mouse_pos.x <= 1200) {
         foe.pv -= obj->stat->dext;
         obj->battle.can_attack = false;
     }
