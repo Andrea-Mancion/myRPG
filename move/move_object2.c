@@ -20,8 +20,6 @@ void mouvement_x_back(struct_object *object, sfRenderWindow *window)
         object->hero.rect.top = 45;
         object->hero.position.x -= 10;
         move_warrior(object, window);
-        if (object->hero.position.x <= -90.00)
-            object->hero.position.x = 0;
     }
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
@@ -33,8 +31,6 @@ void mouvement_y_up(struct_object *object, sfRenderWindow *window)
         object->hero.rect.top = 135;
         object->hero.position.y -= 10;
         move_warrior(object, window);
-        if (object->hero.position.y <= -90.00)
-            object->hero.position.y = 900;
     }
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
@@ -46,8 +42,6 @@ void mouvement_y_down(struct_object *object, sfRenderWindow *window)
         object->hero.rect.top = 0;
         object->hero.position.y += 10;
         move_warrior(object, window);
-        if (object->hero.position.y >= 1010.00)
-            object->hero.position.y = 900;
     }
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }

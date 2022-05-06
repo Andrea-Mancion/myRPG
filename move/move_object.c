@@ -29,8 +29,6 @@ void mouvement_x(struct_object *object, sfRenderWindow *window)
         object->hero.rect.top = 90;
         object->hero.position.x += 10;
         move_warrior(object, window);
-        if (object->hero.position.x >= 1920.00)
-            object->hero.position.x = 0;
     }
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
