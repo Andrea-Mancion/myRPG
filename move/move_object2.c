@@ -48,7 +48,7 @@ void mouvement_y_down(struct_object *object, sfRenderWindow *window)
 
 void move_idle_balk(struct_object *obj)
 {
-    obj->balk_anny_game.rect.left += 30;
+    obj->balk_anny_game.rect.left += 43;
     if (obj->balk_anny_game.rect.left >= 100)
         obj->balk_anny_game.rect.left = 0;
     sfSprite_setTextureRect(obj->balk_anny_game.sprite,
