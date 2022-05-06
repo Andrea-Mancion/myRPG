@@ -171,8 +171,10 @@ typedef struct object
     struct_clock clock_battle;
     struct_window window;
     struct_background background;
+    struct_background game_over;
     struct_music music;
     struct_music music_battle;
+    struct_music music_over;
     struct_event event;
     btn_t but_continue;
     btn_t but_exit;
@@ -190,6 +192,7 @@ typedef struct object
     bool print_stat;
     bool print_pause;
     bool bag_in_invent;
+    bool over;
 } struct_object;
 
 void background(t_gbl *opti);

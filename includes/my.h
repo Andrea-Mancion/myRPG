@@ -60,5 +60,6 @@
     struct_charachter foe);
     void move_battle(struct_object *object, struct_charachter foe);
     void start_battle(struct_object *obj, struct_charachter foe);
+    void create_over(struct_object *obj);
 
 #endif /* !MY_H_ */

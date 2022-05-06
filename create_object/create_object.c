@@ -69,6 +69,8 @@ void destroy(struct_object *object, sfRenderWindow *window)
         sfTexture_destroy(object->hero.texture);
         sfSprite_destroy(object->background.background);
         sfTexture_destroy(object->background.background_text);
+        sfSprite_destroy(object->game_over.background);
+        sfTexture_destroy(object->game_over.background_text);
         sfText_destroy(object->text_invetory.text_invent);
         sfText_destroy(object->text_stat.text_invent);
         sfText_destroy(object->text_pause.text_invent);

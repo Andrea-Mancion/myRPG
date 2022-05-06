@@ -43,6 +43,8 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
     if (object->print_inventory == false && object->print_stat == false &&
     sfKeyboard_isKeyPressed(sfKeyEscape))
         object->print_pause = true;
+    if (sfKeyboard_isKeyPressed(sfKeyO))
+        create_over(object);
 }
 
 int second_window(struct_object *object, sfRenderWindow *window)
@@ -54,6 +56,7 @@ int second_window(struct_object *object, sfRenderWindow *window)
         object->print_pause = false;
         object->battle.battle_beg = false;
         object->bag_in_invent = false;
+        object->over = false;
         create_object(object);
         create_inventory(object);
         create_button(object);

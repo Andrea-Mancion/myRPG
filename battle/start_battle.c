@@ -20,8 +20,11 @@ void start_battle(struct_object *obj, struct_charachter foe)
 {
     if (foe.health <= 0 || obj->stat->health <= 0) {
         sfMusic_play(obj->music.music);
-        obj->battle.battle_beg = false;
-        return;
+        if (foe.health <= 0) {
+            obj->battle.battle_beg = false;
+            return;
+        } else
+            create_over(obj);
     }
     put_text_in_battle(obj, foe);
 }
