@@ -53,4 +53,5 @@ void give_stat(stats_t *stat)
         give_stat_ranger(stat);
     if (stat->nmbr_class == 2)
         give_stat_spellcaster(stat);
+    stat->pv = stat->health * 2;
 }

@@ -69,6 +69,7 @@ typedef struct charachter
     sfVector2f position;
     int counter;
     int health;
+    int pv;
 } struct_charachter;
 
 typedef struct clock
@@ -134,6 +135,7 @@ typedef struct stats_s {
     int nmbr_class;
     int lvl;
     int exp;
+    int pv;
     sfSprite *stat_s;
     sfTexture *stat_t;
     sfIntRect stat_r;

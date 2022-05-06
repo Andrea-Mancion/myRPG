@@ -17,9 +17,9 @@
 void put_text_in_battle(struct_object *object, struct_charachter foe)
 {
     sfText_setString(object->battle.text_battle[0]->text_invent,
-    my_strcat("health = ", itoa(object->stat->health * 2)));
+    my_strcat("health = ", itoa(object->stat->pv)));
     sfText_setString(object->battle.text_battle[1]->text_invent,
-    my_strcat("health = ", itoa(foe.health * 2)));
+    my_strcat("health = ", itoa(foe.pv)));
     sfText_setString(object->battle.text_battle[2]->text_invent,
     "Attack:");
     sfText_setString(object->battle.text_battle[3]->text_invent,

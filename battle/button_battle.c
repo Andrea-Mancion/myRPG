@@ -17,19 +17,16 @@
 static struct_charachter which_button_click(struct_object *obj,
 sfVector2i mouse_pos, struct_charachter foe)
 {
-    float verif = 0;
-
     if (mouse_pos.x <= 762) {
         while (obj->hero.position.x > 200) {
             obj->hero.position.x -= 10;
             sfSprite_setPosition(obj->hero.sprite, obj->hero.position);
         }
-        foe.health -= obj->stat->strenght / 2;
-        verif = obj->stat->strenght / 2;
+        foe.pv -= obj->stat->strenght;
     } else if (mouse_pos.x >= 1048)
-        foe.health -= obj->stat->wisdom / 2;
+        foe.pv -= obj->stat->wisdom;
     else if (mouse_pos.x >= 845 && mouse_pos.x <= 1000)
-        foe.health -= obj->stat->dext / 2;
+        foe.pv -= obj->stat->dext;
     if (obj->hero.position.x < 1000) {
         while (obj->hero.position.x < 1000) {
             obj->hero.position.x += 10;

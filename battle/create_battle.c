@@ -51,6 +51,7 @@ struct_charachter foe, char *png)
     foe.rect.width = 37;
     foe.rect.height = 45;
     foe.health = 10;
+    foe.pv = 20;
     sfSprite_setTexture(foe.sprite, foe.texture, sfTrue);
     sfSprite_setPosition(foe.sprite, foe.position);
     sfSprite_setTextureRect(foe.sprite, foe.rect);
