@@ -21,11 +21,21 @@ static void move_foe(struct_object *object, struct_charachter foe)
     sfRenderWindow_drawSprite(object->window.window, foe.sprite, NULL);
 }
 
-static void move_hero(struct_object *object)
+static void move_spell_batt(struct_object *object)
 {
-    object->hero.rect.left += 55;
-    if (object->hero.rect.left >= 295)
-        object->hero.rect.left = 25;
+    object->hero.rect.left += 47;
+    if (object->hero.rect.left >= 111)
+        object->hero.rect.left = 0;
+    sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
+    sfRenderWindow_drawSprite(object->window.window, object->hero.sprite,
+    NULL);
+}
+
+static void move_warrior_batt(struct_object *object)
+{
+    object->hero.rect.left += 38;
+    if (object->hero.rect.left >= 114)
+        object->hero.rect.left = 0;
     sfSprite_setTextureRect(object->hero.sprite, object->hero.rect);
     sfRenderWindow_drawSprite(object->window.window, object->hero.sprite,
     NULL);
@@ -39,7 +49,12 @@ static void clock_battle(struct_object *object, struct_charachter foe)
     1000000.0f;
     if (object->clock_battle.seconds > 0.2) {
         move_foe(object, foe);
-        move_hero(object);
+        if (object->stat->nmbr_class == 1)
+            move_warrior_batt(object);
+        else if (object->stat->nmbr_class == 2)
+            move_spell_batt(object);
+        else if (object->stat->nmbr_class == 3)
+            move_ranger_batt(object);
         sfClock_restart(object->clock_battle.clock);
     }
 }

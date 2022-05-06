@@ -48,6 +48,7 @@ SRC	=	lib/my_putchar.c	\
 		battle/create_battle.c	\
 		battle/print_battle.c	\
 		battle/move_battle.c	\
+		battle/move_battle2.c	\
 		battle/button_battle.c	\
 		battle/start_battle.c	\
 		battle/create_battle2.c	\
