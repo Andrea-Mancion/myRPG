@@ -19,7 +19,7 @@ void create_hero_battle(struct_object *obj)
 {
     sfVector2f size = {2.0, 2.0};
 
-    obj->hero.position = (sfVector2f){1000, 500};
+    obj->hero.position = (sfVector2f){1000, 600};
     if (obj->stat->nmbr_class == 1)
         obj->hero.rect.top = 45;
     else if (obj->stat->nmbr_class == 2)
