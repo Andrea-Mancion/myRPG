@@ -18,10 +18,13 @@ void put_text_in_battle(struct_object *object, struct_charachter foe);
 
 static int end_battle(struct_object *obj, struct_charachter foe)
 {
+    sfVector2f size = {1.0, 1.0};
+
     if (foe.pv <= 0 || obj->stat->pv <= 0) {
         if (foe.pv <= 0) {
             obj->stat->pv = obj->stat->health * 2;
             sfMusic_play(obj->music.music);
+            sfSprite_setScale(obj->hero.sprite, size);
             obj->battle.battle_beg = false;
         } else
             create_over(obj);
