@@ -73,6 +73,7 @@ typedef struct charachter
     int counter;
     int health;
     int pv;
+    int x;
     bool death;
 } struct_charachter;
 

@@ -69,6 +69,7 @@ void create_balk_anny(struct_object *obj)
     obj->balk_anny.rect.width = 43;
     obj->balk_anny.rect.height = 48;
     obj->balk_anny.pv = 50;
+    obj->balk_anny.x = -1;
     obj->balk_anny.health = 25;
     sfSprite_setTextureRect(obj->balk_anny.sprite_fight,
     obj->balk_anny.rect);

@@ -35,6 +35,7 @@ void create_blob(struct_object *obj)
         sfSprite_setTextureRect(obj->blob[x]->sprite_fight, obj->blob[x]->rect);
         obj->blob[x]->death = false;
         obj->blob[x]->pv = 20;
+        obj->blob[x]->x = x;
         obj->blob[x]->health = 20;
         sfSprite_setPosition(obj->blob[x]->sprite_fight, (sfVector2f){200, 500});
     }
