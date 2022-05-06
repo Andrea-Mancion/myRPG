@@ -44,6 +44,7 @@ void render_window(struct_object *object, sfRenderWindow *window)
     if (object->over == true) {
         sfRenderWindow_drawSprite(window, object->game_over.background, NULL);
         sfRenderWindow_drawSprite(window, object->but_over.sprite, NULL);
+        pos_over(window, &object->event.event, object);
     }
     sfRenderWindow_display(window);
 }
