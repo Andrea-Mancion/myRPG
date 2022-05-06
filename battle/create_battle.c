@@ -14,6 +14,15 @@
 #include "../includes/my_lib.h"
 #include "../includes/my.h"
 
+static void create_music_battle(struct_object *obj)
+{
+    sfMusic_pause(obj->music.music);
+    obj->music_battle.music =
+    sfMusic_createFromFile("assets/music/battle_rpg.ogg");
+    sfMusic_setVolume(obj->music_battle.music, 80);
+    sfMusic_play(obj->music_battle.music);
+}
+
 static void create_battle_back(struct_object *object)
 {
     sfVector2f size = {1.0, 0.8};
@@ -66,6 +75,7 @@ char *png)
     object->hero.position = (sfVector2f){1000, 500};
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
     sfSprite_setScale(object->hero.sprite, size);
+    create_music_battle(object);
     create_clock_battle(object);
     object->battle.battle_beg = true;
     return foe;

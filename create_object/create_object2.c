@@ -73,7 +73,7 @@ void create_clock(struct_object *object)
 void create_music(struct_object *object)
 {
     object->music.music =
-    sfMusic_createFromFile("assets/music/undertale-megalovania.ogg");
+    sfMusic_createFromFile("assets/music/rpg_gameplay.ogg");
     sfMusic_setVolume(object->music.music, 80);
     sfMusic_play(object->music.music);
 }

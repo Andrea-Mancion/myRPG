@@ -172,6 +172,7 @@ typedef struct object
     struct_window window;
     struct_background background;
     struct_music music;
+    struct_music music_battle;
     struct_event event;
     btn_t but_continue;
     btn_t but_exit;
