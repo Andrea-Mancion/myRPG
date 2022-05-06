@@ -27,6 +27,8 @@ sfVector2i mouse_pos, struct_charachter foe)
         foe.pv -= obj->stat->dext;
         obj->battle.can_attack = false;
     }
+    if (obj->battle.can_attack == false)
+        sfClock_restart(obj->clock_attack.clock);
     return foe;
 }
 
@@ -40,6 +42,9 @@ struct_charachter foe)
         if (mouse_pos.y >= 950 && mouse_pos.y <= 1000 && mouse_pos.x >= 620 &&
         mouse_pos.x <= 1100 && obj->battle.can_attack == true)
             foe = which_button_click(obj, mouse_pos, foe);
+    }
+    if (obj->battle.can_attack == false) {
+        clock_attack(obj);
     }
     return foe;
 }
