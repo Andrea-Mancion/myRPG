@@ -83,6 +83,8 @@ void destroy(struct_object *object, sfRenderWindow *window)
         sfTexture_destroy(object->but_continue.texture);
         sfSprite_destroy(object->but_exit.sprite);
         sfTexture_destroy(object->but_exit.texture);
+        sfSprite_destroy(object->but_over.sprite);
+        sfTexture_destroy(object->but_over.texture);
         sfSprite_destroy(object->battle.battle_back.background);
         sfTexture_destroy(object->battle.battle_back.background_text);
         sfSprite_destroy(object->balk_anny.sprite);

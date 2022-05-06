@@ -41,7 +41,9 @@ void render_window(struct_object *object, sfRenderWindow *window)
         sfRenderWindow_drawSprite(window, object->but_exit.sprite, NULL);
         click_but(window, object->event.event, object);
     }
-    if (object->over == true)
+    if (object->over == true) {
         sfRenderWindow_drawSprite(window, object->game_over.background, NULL);
+        sfRenderWindow_drawSprite(window, object->but_over.sprite, NULL);
+    }
     sfRenderWindow_display(window);
 }

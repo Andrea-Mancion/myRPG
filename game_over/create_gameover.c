@@ -42,9 +42,24 @@ static void create_game_over_music(struct_object *obj)
     sfMusic_play(obj->music_over.music);
 }
 
+static void create_button_over(struct_object *obj)
+{
+    sfVector2f pos = {700, 700};
+    sfVector2f size = {1.5, 1.5};
+
+    obj->but_over.texture =
+    sfTexture_createFromFile("./assets/sprites/button_over.png", NULL);
+    obj->but_over.sprite = sfSprite_create();
+    sfSprite_setScale(obj->but_over.sprite, size);
+    sfSprite_setPosition(obj->but_over.sprite, pos);
+    sfSprite_setTexture(obj->but_over.sprite, obj->but_over.texture,
+    sfTrue);
+}
+
 void create_over(struct_object *obj)
 {
     game_overback(obj);
+    create_button_over(obj);
     create_game_over_music(obj);
     obj->over = true;
 }
