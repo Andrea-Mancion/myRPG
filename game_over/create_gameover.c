@@ -17,6 +17,8 @@
 
 static void game_overback(struct_object *object)
 {
+    sfVector2f size = {1.5, 1.5};
+
     object->game_over.background_text =
     sfTexture_createFromFile("./assets/sprites/game-over.png", NULL);
     object->game_over.background = sfSprite_create();
@@ -24,6 +26,7 @@ static void game_overback(struct_object *object)
     object->game_over.back.left = 0;
     object->game_over.back.width = 1920;
     object->game_over.back.height = 1080;
+    sfSprite_setScale(object->game_over.background, size);
     sfSprite_setTexture(object->game_over.background,
     object->game_over.background_text, sfTrue);
     sfSprite_setTextureRect(object->game_over.background,
