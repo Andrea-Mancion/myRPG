@@ -27,6 +27,7 @@ static int end_battle(struct_object *obj, struct_charachter foe)
             create_over(obj);
         return 1;
     }
+    return 0;
 }
 
 void start_battle(struct_object *obj, struct_charachter foe)
