@@ -37,8 +37,7 @@ static void create_battle_back(struct_object *object)
     (sfVector2f){3, 4.5});
 }
 
-struct_charachter create_foe_battle(struct_object *object,
-struct_charachter foe, char *png)
+struct_charachter create_foe_battle(struct_charachter foe, char *png)
 {
     sfVector2f size = {2.0, 2.0};
 
@@ -69,7 +68,7 @@ char *png)
 {
     sfVector2f size = {2.0, 2.0};
 
-    foe = create_foe_battle(object, foe, png);
+    foe = create_foe_battle(foe, png);
     create_text_battle(object, foe);
     create_battle_back(object);
     foe = create_button_battle(object, foe);

@@ -14,7 +14,7 @@
 #include "includes/my.h"
 #include <stdio.h>
 
-static void display_menu(struct_object *object, sfRenderWindow *window, t_gbl opti)
+static void display_menu(sfRenderWindow *window, t_gbl opti)
 {
     sfRenderWindow_clear(window, sfWhite);
     sfRenderWindow_drawSprite(window, opti.backg.sprite, NULL);
@@ -26,7 +26,7 @@ static void display_menu(struct_object *object, sfRenderWindow *window, t_gbl op
 
 static void menu(struct_object *object, sfRenderWindow *window, t_gbl opti)
 {
-    display_menu(object, window, opti);
+    display_menu(window, opti);
     pos_play(window, object);
     pos_settings(window, object);
     pos_quit(window, object);
