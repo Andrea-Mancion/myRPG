@@ -62,6 +62,8 @@ int second_window(struct_object *object, sfRenderWindow *window)
         create_button(object);
         object->create = true;
     }
+    if (object->battle.battle_beg == false)
+        object->hero.recup = object->hero.position;
     if (object->battle.battle_beg == true)
         start_battle(object, object->balk_anny);
     move_object(object, window);

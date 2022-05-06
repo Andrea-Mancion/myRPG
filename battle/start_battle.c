@@ -24,6 +24,9 @@ static int end_battle(struct_object *obj, struct_charachter foe)
         if (foe.pv <= 0) {
             obj->stat->pv = obj->stat->health * 2;
             sfMusic_play(obj->music.music);
+            sfMusic_stop(obj->music_battle.music);
+            obj->hero.position = obj->hero.recup;
+            sfSprite_setPosition(obj->hero.sprite, obj->hero.position);
             sfSprite_setScale(obj->hero.sprite, size);
             obj->battle.battle_beg = false;
         } else

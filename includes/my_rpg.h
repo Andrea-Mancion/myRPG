@@ -67,6 +67,7 @@ typedef struct charachter
     sfTexture *texture;
     sfIntRect rect;
     sfVector2f position;
+    sfVector2f recup;
     int counter;
     int health;
     int pv;
