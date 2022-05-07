@@ -62,7 +62,7 @@ void create_balk_anny(struct_object *obj)
     obj->balk_anny.texture_fight, sfTrue);
     sfSprite_setPosition(obj->balk_anny.sprite,
     obj->balk_anny.position);
-    sfSprite_setPosition(obj->balk_anny.sprite_fight, (sfVector2f){200, 700});
+    sfSprite_setPosition(obj->balk_anny.sprite_fight, (sfVector2f){200, 600});
     obj->balk_anny.rect.top = 0;
     obj->balk_anny.rect.left = 0;
     obj->balk_anny.rect.width = 43;
