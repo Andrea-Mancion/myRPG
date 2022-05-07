@@ -162,6 +162,7 @@ typedef struct dialogue_s {
     struct_text text_wife;
     struct_text text_balk_anny;
     struct_clock clock;
+    bool can_print;
 }dialogue_t;
 
 typedef struct battle_s {

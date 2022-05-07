@@ -58,7 +58,7 @@ SRC	=	lib/my_putchar.c	\
 		game_over/interaction_but.c	\
 		battle/clock_battle.c	\
 		battle/contact_ennemy.c	\
-		dialogue/create_text_dialogue.c	\
+		dialogue/create_texte_dialogue.c	\
 		dialogue/print_dialogue.c
 
 OBJ	=	$(SRC:.c=.o)

@@ -45,6 +45,8 @@ void render_window(struct_object *object, sfRenderWindow *window)
             sfRenderWindow_drawText(window,
             object->text_number_stat[x]->text_invent, NULL);
     }
+    print_dialogue_balk_anny(object);
+    print_dialogue_wife(object);
     if (object->print_pause == true) {
         sfRenderWindow_drawText(window, object->text_pause.text_invent, NULL);
         sfRenderWindow_drawSprite(window, object->but_continue.sprite, NULL);

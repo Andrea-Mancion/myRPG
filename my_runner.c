@@ -28,6 +28,9 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
         object->balk_anny = init_battle(object, object->balk_anny);
         object->current_ennemy = object->balk_anny;
     }
+    if (sfKeyboard_isKeyPressed(sfKeyE)) {
+        object->dialogue_wife.can_print = true;
+    }
     if (object->battle.battle_beg == true) {
         object->current_ennemy = create_button_battle(object, object->current_ennemy);
         move_battle(object, object->current_ennemy);
