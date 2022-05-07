@@ -27,6 +27,7 @@ void render_window(struct_object *object, sfRenderWindow *window)
     sfRenderWindow_setFramerateLimit(window, 60);
     sfRenderWindow_drawSprite(window, object->background.background, NULL);
     sfRenderWindow_drawSprite(window, object->balk_anny.sprite, NULL);
+    sfRenderWindow_drawSprite(window, object->wife.sprite, NULL);
     print_blob(object);
     sfRenderWindow_drawSprite(window, object->hero.sprite, NULL);
     if (object->battle.battle_beg == true) {
@@ -44,6 +45,8 @@ void render_window(struct_object *object, sfRenderWindow *window)
             sfRenderWindow_drawText(window,
             object->text_number_stat[x]->text_invent, NULL);
     }
+    print_dialogue_balk_anny(object);
+    print_dialogue_wife(object);
     if (object->print_pause == true) {
         sfRenderWindow_drawText(window, object->text_pause.text_invent, NULL);
         sfRenderWindow_drawSprite(window, object->but_continue.sprite, NULL);

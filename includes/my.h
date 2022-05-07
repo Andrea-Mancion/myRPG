@@ -69,5 +69,14 @@
     void move_ranger_batt(struct_object *obj);
     void put_numbers_in_text(struct_object *object);
     void verif_if_contact(struct_object *object);
+    void create_wife(struct_object *object);
+    void move_wife(struct_object *object);
+    void create_dialogue(struct_object *object);
+    void print_dialogue_balk_anny(struct_object *object);
+    void print_dialogue_wife(struct_object *object);
+    void verif_proxi_balk_anny(struct_object *obj);
+    void clock_dialogue_wife(struct_object *obj);
+    void clock_dialogue_balk_anny(struct_object *obj);
+    void create_clock_dialogue(struct_object *obj);
 
 #endif /* !MY_H_ */

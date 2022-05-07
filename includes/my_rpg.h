@@ -157,6 +157,14 @@ typedef struct class_s {
     sfIntRect rect;
 }class_t;
 
+typedef struct dialogue_s {
+    struct_text text_hero;
+    struct_text text_wife;
+    struct_text text_balk_anny;
+    struct_clock clock;
+    bool can_print;
+}dialogue_t;
+
 typedef struct battle_s {
     struct_text **text_battle;
     struct_background battle_back;
@@ -174,9 +182,12 @@ typedef struct object
 {
     struct_text text_class;
     struct_charachter hero;
+    dialogue_t dialogue_wife;
+    dialogue_t dialogue_balk_anny;
     struct_charachter balk_anny;
     struct_charachter current_ennemy;
     struct_charachter **blob;
+    struct_charachter wife;
     struct_clock clock;
     struct_clock clock_attack;
     struct_clock clock_battle;

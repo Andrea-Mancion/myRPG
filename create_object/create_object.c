@@ -75,7 +75,7 @@ void destroy(struct_object *object, sfRenderWindow *window)
         sfText_destroy(object->text_stat.text_invent);
         sfText_destroy(object->text_pause.text_invent);
         sfClock_destroy(object->clock.clock);
-        sfClock_destroy(object->clock_battle.clock);
+        // sfClock_destroy(object->clock_battle.clock);
         sfMusic_destroy(object->music.music);
         // sfMusic_destroy(object->music_battle.music);
         // sfMusic_destroy(object->music_over.music);
@@ -100,6 +100,7 @@ void create_object(struct_object *object)
 {
     create_background(object);
     create_balk_anny(object);
+    create_wife(object);
     create_blob(object);
     create_music(object);
     create_inventory(object);
@@ -107,4 +108,6 @@ void create_object(struct_object *object)
     create_clock(object);
     create_clock_attack(object);
     create_stat(object);
+    create_dialogue(object);
+    create_clock_dialogue(object);
 }
