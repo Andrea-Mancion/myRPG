@@ -16,9 +16,11 @@
 
 static void move_foe(struct_object *object, struct_charachter foe)
 {
-    foe.rect.left += 50;
-    sfSprite_setTextureRect(foe.sprite, foe.rect);
-    sfRenderWindow_drawSprite(object->window.window, foe.sprite, NULL);
+    foe.rect.left += 62;
+    if (foe.rect.left >= 720)
+        foe.rect.left = 0;
+    sfSprite_setTextureRect(foe.sprite_fight, foe.rect);
+    sfRenderWindow_drawSprite(object->window.window, foe.sprite_fight, NULL);
 }
 
 static void move_spell_batt(struct_object *object)
@@ -48,7 +50,8 @@ static void clock_battle(struct_object *object, struct_charachter foe)
     object->clock_battle.seconds = object->clock_battle.time.microseconds /
     1000000.0f;
     if (object->clock_battle.seconds > 0.2) {
-        move_foe(object, foe);
+        if (foe.x >= 0)
+            move_foe(object, foe);
         if (object->stat->nmbr_class == 1)
             move_warrior_batt(object);
         else if (object->stat->nmbr_class == 2)
