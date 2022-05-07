@@ -23,7 +23,7 @@ sfVector2i mouse_pos, struct_charachter foe)
     } else if (mouse_pos.x >= 1048) {
         foe.pv -= obj->stat->wisdom;
         obj->battle.can_attack = false;
-    } else if (mouse_pos.x >= 845 && mouse_pos.x <= 1200) {
+    } else if (mouse_pos.x >= 845 && mouse_pos.x <= 1000) {
         foe.pv -= obj->stat->dext;
         obj->battle.can_attack = false;
     }
@@ -40,7 +40,7 @@ struct_charachter foe)
     if (obj->event.event.type == sfEvtMouseButtonPressed) {
         mouse_pos = sfMouse_getPosition((const sfWindow *)obj->window.window);
         if (mouse_pos.y >= 950 && mouse_pos.y <= 1000 && mouse_pos.x >= 620 &&
-        mouse_pos.x <= 1100 && obj->battle.can_attack == true)
+        mouse_pos.x <= 1295 && obj->battle.can_attack == true)
             foe = which_button_click(obj, mouse_pos, foe);
     }
     if (obj->battle.can_attack == false) {

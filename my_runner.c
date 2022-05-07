@@ -18,6 +18,11 @@ int my_putstr(char *str);
 
 static void analyse_events(sfRenderWindow *window, struct_object *object)
 {
+   sfVector2i mouse_pos;
+
+        mouse_pos = sfMouse_getPosition((const sfWindow *)object->window.window);
+        printf("x = %d, y = %d\n", mouse_pos.x, mouse_pos.y);
+
     if (object->event.event.type == sfEvtClosed)
         sfRenderWindow_close(window);
     if (sfKeyboard_isKeyPressed(sfKeyI))
@@ -42,18 +47,6 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
         object->print_pause = true;
     if (sfKeyboard_isKeyPressed(sfKeyO))
         create_over(object);
-}
-
-void enconter_blob(struct_object *object)
-{
-    for (size_t x = 0; x < 4; x++) {
-        if (object->hero.position.x == object->blob[x]->position.x &&
-        object->hero.position.y == object->blob[x]->position.y && object->blob[x]->death == false) {
-            *object->blob[x] = init_battle(object, *object->blob[x]);
-            object->current_ennemy = *object->blob[x];
-        }
-
-    }
 }
 
 int second_window(struct_object *object, sfRenderWindow *window)
