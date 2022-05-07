@@ -24,6 +24,7 @@ SRC	=	lib/my_putchar.c	\
 		move/move_object2.c	\
 		move/move_spell.c	\
 		move/move_ranger.c	\
+		move/move_wife.c	\
 		inventory/create_inventory.c	\
 		inventory/print_inventory.c	\
 		inventory/put_inventory.c	\
