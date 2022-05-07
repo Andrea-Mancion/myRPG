@@ -28,6 +28,7 @@ static int end_battle(struct_object *obj, struct_charachter foe)
             obj->hero.position = obj->hero.recup;
             sfSprite_setPosition(obj->hero.sprite, obj->hero.position);
             sfSprite_setScale(obj->hero.sprite, size);
+            obj->bag_in_invent = true;
             obj->battle.battle_beg = false;
             obj->stat->exp += 50;
             if (foe.x == -1)
