@@ -24,6 +24,8 @@ char *itoa(int i)
     int s = 0;
     char *str = NULL;
 
+    if (i == 0)
+        return "0";
     if (!i)
         return NULL;
     nbr = count_number_number(i);
