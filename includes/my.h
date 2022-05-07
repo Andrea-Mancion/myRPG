@@ -68,5 +68,6 @@
     void create_button_stat(struct_object *obj);
     void move_ranger_batt(struct_object *obj);
     void put_numbers_in_text(struct_object *object);
+    void verif_if_contact(struct_object *object);
 
 #endif /* !MY_H_ */

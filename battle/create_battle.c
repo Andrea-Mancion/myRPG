@@ -37,27 +37,6 @@ static void create_battle_back(struct_object *object)
     (sfVector2f){3, 4.5});
 }
 
-// struct_charachter create_foe_battle(struct_charachter foe, char *png)
-// {
-//     sfVector2f size = {2.0, 2.0};
-
-//     foe.texture = sfTexture_createFromFile(png, NULL);
-//     foe.sprite = sfSprite_create();
-//     foe.position.x = 200;
-//     foe.position.y = 500;
-//     foe.rect.top = 0;
-//     foe.rect.left = 0;
-//     foe.rect.width = 37;
-//     foe.rect.height = 45;
-//     foe.health = 10;
-//     foe.pv = 20;
-//     sfSprite_setTexture(foe.sprite, foe.texture, sfTrue);
-//     sfSprite_setPosition(foe.sprite, foe.position);
-//     sfSprite_setTextureRect(foe.sprite, foe.rect);
-//     sfSprite_setScale(foe.sprite, size);
-//     return (foe);
-// }
-
 static void create_clock_battle(struct_object *object)
 {
     object->clock_battle.clock = sfClock_create();

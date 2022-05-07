@@ -36,6 +36,8 @@ void create_blob(struct_object *obj)
         obj->blob[x]->death = false;
         obj->blob[x]->pv = 20;
         obj->blob[x]->x = x;
+                obj->blob[x]->size_x = obj->blob[x]->rect.width;
+        obj->blob[x]->size_y = obj->blob[x]->rect.height;
         obj->blob[x]->health = 20;
         sfSprite_setPosition(obj->blob[x]->sprite_fight, (sfVector2f){200, 700});
     }

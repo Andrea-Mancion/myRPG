@@ -51,7 +51,4 @@ void start_battle(struct_object *obj, struct_charachter foe)
     if (end_battle(obj, foe) == 1)
         return;
     put_text_in_battle(obj, foe);
-    // if (obj->battle.can_attack == false) {
-    //     clock_attack(obj);
-    // }
 }

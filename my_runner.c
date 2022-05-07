@@ -80,7 +80,7 @@ int second_window(struct_object *object, sfRenderWindow *window)
         start_battle(object, object->current_ennemy);
     move_object(object, window);
     put_numbers_in_text(object);
-    enconter_blob(object);
+    verif_if_contact(object);
     render_window(object, window);
     while (sfRenderWindow_pollEvent(window, &object->event.event))
         analyse_events(window, object);
