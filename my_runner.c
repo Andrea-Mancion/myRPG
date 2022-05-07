@@ -18,11 +18,6 @@ int my_putstr(char *str);
 
 static void analyse_events(sfRenderWindow *window, struct_object *object)
 {
-   sfVector2i mouse_pos;
-
-        mouse_pos = sfMouse_getPosition((const sfWindow *)object->window.window);
-        printf("x = %d, y = %d\n", mouse_pos.x, mouse_pos.y);
-
     if (object->event.event.type == sfEvtClosed)
         sfRenderWindow_close(window);
     if (sfKeyboard_isKeyPressed(sfKeyI))
