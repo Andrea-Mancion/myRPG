@@ -61,12 +61,12 @@ int second_window(struct_object *object, sfRenderWindow *window)
         create_inventory(object);
         create_button(object);
         object->create = true;
+        sfClock_restart(object->dialogue_wife.clock.clock);
     }
     if (object->print_stat == true)
         create_button_stat(object);
     if (object->battle.battle_beg == false)
         object->hero.recup = object->hero.position;
-
     if (object->battle.battle_beg == true)
         start_battle(object, object->current_ennemy);
     if (object->dialogue_balk_anny.can_print == true)

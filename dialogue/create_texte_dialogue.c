@@ -44,7 +44,7 @@ static void create_dialogue_wife(struct_object *object)
     sfText_setFillColor(object->dialogue_wife.text_wife.text_invent, sfWhite);
     sfText_setPosition(object->dialogue_wife.text_wife.text_invent,
     (sfVector2f){279, 505});
-    object->dialogue_wife.can_print = false;
+    object->dialogue_wife.can_print = true;
 }
 
 static void create_dialogue_balk_anny(struct_object *object)
