@@ -71,5 +71,6 @@
     void verif_if_contact(struct_object *object);
     void create_wife(struct_object *object);
     void move_wife(struct_object *object);
+    void create_dialogue(struct_object *object);
 
 #endif /* !MY_H_ */
