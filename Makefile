@@ -19,6 +19,7 @@ SRC	=	lib/my_putchar.c	\
 		renderwindow.c	\
 		create_object/create_object2.c	\
 		create_object/create_mob.c	\
+		create_object/create_wife.c	\
 		move/move_object.c	\
 		move/move_object2.c	\
 		move/move_spell.c	\

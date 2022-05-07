@@ -100,6 +100,7 @@ void create_object(struct_object *object)
 {
     create_background(object);
     create_balk_anny(object);
+    create_wife(object);
     create_blob(object);
     create_music(object);
     create_inventory(object);
