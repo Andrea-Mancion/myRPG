@@ -31,10 +31,9 @@ void pos_settings(sfRenderWindow* window, struct_object *object)
 
     if (mouse_pos.y >= 350 && mouse_pos.y <= 472) {
         if (mouse_pos.x >= 853 && mouse_pos.x <= 1072) {
-            //printf("Mouse-position %d, %d", mouse_pos.x, mouse_pos.y);
             while (sfRenderWindow_pollEvent(window, &object->event.event)) {
                 if (object->event.event.type == sfEvtMouseButtonPressed) {
-                    // window_settings();
+                    //window_settings();
                     break;
                 }
             }
