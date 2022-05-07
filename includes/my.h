@@ -74,5 +74,9 @@
     void create_dialogue(struct_object *object);
     void print_dialogue_balk_anny(struct_object *object);
     void print_dialogue_wife(struct_object *object);
+    void verif_proxi_balk_anny(struct_object *obj);
+    void clock_dialogue_wife(struct_object *obj);
+    void clock_dialogue_balk_anny(struct_object *obj);
+    void create_clock_dialogue(struct_object *obj);
 
 #endif /* !MY_H_ */

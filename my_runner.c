@@ -29,7 +29,7 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
         object->current_ennemy = object->balk_anny;
     }
     if (sfKeyboard_isKeyPressed(sfKeyE)) {
-        object->dialogue_wife.can_print = true;
+        verif_proxi_balk_anny(object);
     }
     if (object->battle.battle_beg == true) {
         object->current_ennemy = create_button_battle(object, object->current_ennemy);
@@ -69,6 +69,10 @@ int second_window(struct_object *object, sfRenderWindow *window)
 
     if (object->battle.battle_beg == true)
         start_battle(object, object->current_ennemy);
+    if (object->dialogue_balk_anny.can_print == true)
+        clock_dialogue_balk_anny(object);
+    if (object->dialogue_wife.can_print == true)
+        clock_dialogue_wife(object);
     move_object(object, window);
     put_numbers_in_text(object);
     verif_if_contact(object);
