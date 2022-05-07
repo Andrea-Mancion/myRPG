@@ -48,21 +48,31 @@ void create_spellcaster(struct_object *object)
 
 void create_balk_anny(struct_object *obj)
 {
-    obj->balk_anny_game.texture =
+    obj->balk_anny.texture =
     sfTexture_createFromFile("assets/sprites/idle_balk.png", NULL);
-    obj->balk_anny_game.sprite = sfSprite_create();
-    obj->balk_anny_game.position.x = 1200;
-    obj->balk_anny_game.position.y = 590;
-    sfSprite_setTexture(obj->balk_anny_game.sprite,
-    obj->balk_anny_game.texture, sfTrue);
-    sfSprite_setPosition(obj->balk_anny_game.sprite,
-    obj->balk_anny_game.position);
-    obj->balk_anny_game.rect.top = 0;
-    obj->balk_anny_game.rect.left = 0;
-    obj->balk_anny_game.rect.width = 43;
-    obj->balk_anny_game.rect.height = 48;
-    sfSprite_setTextureRect(obj->balk_anny_game.sprite,
-    obj->balk_anny_game.rect);
+    obj->balk_anny.texture_fight =
+    sfTexture_createFromFile("assets/sprites/balk_anny2.png", NULL);
+    obj->balk_anny.sprite = sfSprite_create();
+    obj->balk_anny.sprite_fight = sfSprite_create();
+    obj->balk_anny.position.x = 1200;
+    obj->balk_anny.position.y = 590;
+    sfSprite_setTexture(obj->balk_anny.sprite,
+    obj->balk_anny.texture, sfTrue);
+    sfSprite_setTexture(obj->balk_anny.sprite_fight,
+    obj->balk_anny.texture_fight, sfTrue);
+    sfSprite_setPosition(obj->balk_anny.sprite,
+    obj->balk_anny.position);
+    sfSprite_setPosition(obj->balk_anny.sprite_fight,
+    obj->balk_anny.position);
+    obj->balk_anny.rect.top = 0;
+    obj->balk_anny.rect.left = 0;
+    obj->balk_anny.rect.width = 43;
+    obj->balk_anny.rect.height = 48;
+    obj->balk_anny.pv = 50;
+    obj->balk_anny.x = -1;
+    obj->balk_anny.health = 25;
+    sfSprite_setTextureRect(obj->balk_anny.sprite_fight,
+    obj->balk_anny.rect);
 }
 
 void create_clock(struct_object *object)

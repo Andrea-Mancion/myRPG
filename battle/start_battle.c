@@ -30,6 +30,10 @@ static int end_battle(struct_object *obj, struct_charachter foe)
             sfSprite_setScale(obj->hero.sprite, size);
             obj->battle.battle_beg = false;
             obj->stat->exp += 50;
+            if (foe.x == -1)
+                obj->balk_anny.death = true;
+            else
+                obj->blob[foe.x]->death = true;
         } else
             create_over(obj);
         if (obj->stat->exp >= 100) {

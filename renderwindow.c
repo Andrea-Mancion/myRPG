@@ -13,15 +13,24 @@
 #include "includes/my_rpg.h"
 #include "includes/my.h"
 
+static void print_blob(struct_object *object)
+{
+    for (size_t x = 0; x < 4; x++) {
+        if (object->blob[x]->death == true)
+            continue;
+        sfRenderWindow_drawSprite(object->window.window, object->blob[x]->sprite, NULL);
+    }
+}
+
 void render_window(struct_object *object, sfRenderWindow *window)
 {
     sfRenderWindow_setFramerateLimit(window, 60);
     sfRenderWindow_drawSprite(window, object->background.background, NULL);
-    sfRenderWindow_drawSprite(window, object->balk_anny_game.sprite, NULL);
-    sfRenderWindow_drawSprite(window, object->blob.sprite, NULL);
+    sfRenderWindow_drawSprite(window, object->balk_anny.sprite, NULL);
+    print_blob(object);
     sfRenderWindow_drawSprite(window, object->hero.sprite, NULL);
     if (object->battle.battle_beg == true) {
-        print_battle(object, object->balk_anny);
+        print_battle(object, object->current_ennemy);
     }
     if (object->print_inventory == true) {
         sfRenderWindow_drawText(window, object->text_invetory.text_invent,

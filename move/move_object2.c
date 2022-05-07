@@ -48,20 +48,22 @@ void mouvement_y_down(struct_object *object, sfRenderWindow *window)
 
 void move_idle_balk(struct_object *obj)
 {
-    obj->balk_anny_game.rect.left += 43;
-    if (obj->balk_anny_game.rect.left >= 100)
-        obj->balk_anny_game.rect.left = 0;
-    sfSprite_setTextureRect(obj->balk_anny_game.sprite,
-    obj->balk_anny_game.rect);
-    sfRenderWindow_drawSprite(obj->window.window, obj->balk_anny_game.sprite,
+    obj->balk_anny.rect.left += 43;
+    if (obj->balk_anny.rect.left >= 100)
+        obj->balk_anny.rect.left = 0;
+    sfSprite_setTextureRect(obj->balk_anny.sprite,
+    obj->balk_anny.rect);
+    sfRenderWindow_drawSprite(obj->window.window, obj->balk_anny.sprite,
     NULL);
 }
 
 void move_blob(struct_object *obj)
 {
-    obj->blob.rect.left += 60;
-    if (obj->blob.rect.left >= 720)
-        obj->blob.rect.left = 0;
-    sfSprite_setTextureRect(obj->blob.sprite, obj->blob.rect);
-    sfRenderWindow_drawSprite(obj->window.window, obj->blob.sprite, NULL);
+    for (size_t x = 0; x < 4; x++) {
+        obj->blob[x]->rect.left += 62;
+        if (obj->blob[x]->rect.left >= 720)
+            obj->blob[x]->rect.left = 0;
+        sfSprite_setTextureRect(obj->blob[x]->sprite, obj->blob[x]->rect);
+        sfRenderWindow_drawSprite(obj->window.window, obj->blob[x]->sprite, NULL);
+    }
 }
