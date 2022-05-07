@@ -109,4 +109,5 @@ void create_object(struct_object *object)
     create_clock_attack(object);
     create_stat(object);
     create_dialogue(object);
+    create_clock_dialogue(object);
 }

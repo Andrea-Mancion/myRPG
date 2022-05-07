@@ -31,11 +31,7 @@ static void verif_pos(struct_object *object, struct_charachter foe)
 
 void verif_if_contact(struct_object *object)
 {
-    for (size_t x = 0; x < 4; x++) {
-        if (object->blob[x]->death == false) {
+    for (size_t x = 0; x < 4; x++)
+        if (object->blob[x]->death == false)
             verif_pos(object, *object->blob[x]);
-        }
-    }
-    if (object->balk_anny.death == false)
-        verif_pos(object, object->balk_anny);
 }
