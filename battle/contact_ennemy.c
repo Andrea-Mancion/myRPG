@@ -15,14 +15,20 @@
 
 static void verif_pos(struct_object *object, struct_charachter foe)
 {
-    if (object->hero.position.x >= foe.position.x && object->hero.position.x <= foe.position.x + foe.size_x) {
-        if (object->hero.position.y >= foe.position.y && object->hero.position.y <= foe.position.y + foe.size_y) {
+    if (object->hero.position.x >= foe.position.x &&
+    object->hero.position.x <= foe.position.x + foe.size_x) {
+        if (object->hero.position.y >= foe.position.y &&
+        object->hero.position.y <= foe.position.y + foe.size_y) {
             foe = init_battle(object, foe);
             object->current_ennemy = foe;
-        } else if (object->hero.position.y + object->hero.rect.height >= foe.position.y && object->hero.position.y + object->hero.rect.height <= foe.position.y + foe.rect.height) {
+        } else if (object->hero.position.y + object->hero.rect.height >=
+        foe.position.y && object->hero.position.y + object->hero.rect.height <=
+        foe.position.y + foe.rect.height) {
             foe = init_battle(object, foe);
             object->current_ennemy = foe;
-        } else if (object->hero.position.y + (object->hero.rect.height / 2) >= foe.position.y && object->hero.position.y + (object->hero.rect.height / 2) <= foe.position.y + foe.rect.height) {
+        } else if (object->hero.position.y + (object->hero.rect.height / 2) >=
+        foe.position.y && object->hero.position.y +
+        (object->hero.rect.height / 2) <= foe.position.y + foe.rect.height) {
             foe = init_battle(object, foe);
             object->current_ennemy = foe;
         }

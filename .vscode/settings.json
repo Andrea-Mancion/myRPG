@@ -8,6 +8,13 @@
         "my_lib.h": "c",
         "graphics.h": "c",
         "stdbool.h": "c",
-        "button.h": "c"
+        "button.h": "c",
+        "array": "c",
+        "*.tcc": "c",
+        "deque": "c",
+        "string": "c",
+        "vector": "c",
+        "memory_resource": "c",
+        "functional": "c"
     }
 }

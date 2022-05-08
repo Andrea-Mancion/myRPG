@@ -64,6 +64,7 @@ void move_blob(struct_object *obj)
         if (obj->blob[x]->rect.left >= 720)
             obj->blob[x]->rect.left = 0;
         sfSprite_setTextureRect(obj->blob[x]->sprite, obj->blob[x]->rect);
-        sfRenderWindow_drawSprite(obj->window.window, obj->blob[x]->sprite, NULL);
+        sfRenderWindow_drawSprite(obj->window.window, obj->blob[x]->sprite,
+        NULL);
     }
 }

@@ -33,7 +33,8 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
         verif_proxi_wife(object);
     }
     if (object->battle.battle_beg == true) {
-        object->current_ennemy = create_button_battle(object, object->current_ennemy);
+        object->current_ennemy = create_button_battle(object,
+        object->current_ennemy);
         move_battle(object, object->current_ennemy);
     }
     if ((object->print_inventory == true || object->print_stat == true) &&

@@ -40,8 +40,10 @@ void create_text_battle(struct_object *object, struct_charachter foe)
         sfFont_createFromFile("ressource/cinzel.ttf");
         sfText_setFont(object->battle.text_battle[x]->text_invent,
         object->battle.text_battle[x]->font_text_invent);
-        sfText_setCharacterSize(object->battle.text_battle[x]->text_invent, 40);
-        sfText_setFillColor(object->battle.text_battle[x]->text_invent, sfWhite);
+        sfText_setCharacterSize(object->battle.text_battle[x]->text_invent,
+        40);
+        sfText_setFillColor(object->battle.text_battle[x]->text_invent,
+        sfWhite);
     }
     sfText_setPosition(object->battle.text_battle[0]->text_invent,
     (sfVector2f){1650, 50});

@@ -21,8 +21,10 @@ void create_clock_dialogue(struct_object *obj)
 
 void clock_dialogue_wife(struct_object *obj)
 {
-    obj->dialogue_wife.clock.time = sfClock_getElapsedTime(obj->dialogue_wife.clock.clock);
-    obj->dialogue_wife.clock.seconds = obj->dialogue_wife.clock.time.microseconds / 1000000.0f;
+    obj->dialogue_wife.clock.time =
+    sfClock_getElapsedTime(obj->dialogue_wife.clock.clock);
+    obj->dialogue_wife.clock.seconds =
+    obj->dialogue_wife.clock.time.microseconds / 1000000.0f;
     if (obj->dialogue_wife.clock.seconds > 5) {
         obj->dialogue_wife.can_print = false;
     }
@@ -32,8 +34,10 @@ void clock_dialogue_wife(struct_object *obj)
 
 void clock_dialogue_balk_anny(struct_object *obj)
 {
-    obj->dialogue_balk_anny.clock.time = sfClock_getElapsedTime(obj->dialogue_balk_anny.clock.clock);
-    obj->dialogue_balk_anny.clock.seconds = obj->dialogue_balk_anny.clock.time.microseconds / 1000000.0f;
+    obj->dialogue_balk_anny.clock.time =
+    sfClock_getElapsedTime(obj->dialogue_balk_anny.clock.clock);
+    obj->dialogue_balk_anny.clock.seconds =
+    obj->dialogue_balk_anny.clock.time.microseconds / 1000000.0f;
     if (obj->dialogue_balk_anny.clock.seconds > 5) {
         obj->dialogue_balk_anny.can_print = false;
         init_battle(obj, obj->balk_anny);

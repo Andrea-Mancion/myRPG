@@ -57,7 +57,8 @@
     char *my_strcat(char *str1, char const *str2);
     void print_battle(struct_object *obj, struct_charachter foe);
     void create_text_battle(struct_object *object, struct_charachter foe);
-    struct_charachter init_battle(struct_object *object, struct_charachter foe);
+    struct_charachter init_battle(struct_object *object,
+    struct_charachter foe);
     struct_charachter create_button_battle(struct_object *obj,
     struct_charachter foe);
     void move_battle(struct_object *object, struct_charachter foe);
