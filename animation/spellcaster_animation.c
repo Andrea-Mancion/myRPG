@@ -10,7 +10,7 @@
 void create_warrior(object_t *object)
 {
     object->carac->texture = sfTexture_createFromFile("sprite_rpg/spellcaster.png",
-     NULL);
+    NULL);
     object->carac->spri = sfSprite_create();
     object->carac->position.x = 400;
     object->carac->position.y = 500;
@@ -29,7 +29,8 @@ void move_carac(object_t *object)
     if (object->carac->rect.left >= 111)
         object->carac->rect.left = 0;
     sfSprite_setTextureRect(object->carac->spri, object->carac->rect);
-    sfRenderWindow_drawSprite(object->window->window, object->carac->spri, NULL);
+    sfRenderWindow_drawSprite(object->window->window, object->carac->spri,\
+    NULL);
 }
 
 void mouvement_backward(object_t *object)
@@ -86,7 +87,8 @@ void mouvement_downward(object_t *object)
 
 void essaie(object_t *object)
 {
-    sfRenderWindow_drawSprite(object->window->window, object->carac->spri, NULL);
+    sfRenderWindow_drawSprite(object->window->window, object->carac->spri,\
+    NULL);
     mouvement_backward(object);
     mouvement_downward(object);
     mouvement_forward(object);
