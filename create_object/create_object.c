@@ -10,8 +10,8 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my.h"
+#include "my_rpg.h"
+#include "my.h"
 
 void create_clock(struct_object *object);
 void create_back2(struct_object *object);

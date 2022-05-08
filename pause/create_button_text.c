@@ -10,9 +10,9 @@
 #include <SFML/Audio.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my_lib.h"
-#include "../includes/my.h"
+#include "my_rpg.h"
+#include "my_lib.h"
+#include "my.h"
 
 static void create_text_pause(struct_object *object)
 {

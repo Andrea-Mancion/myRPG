@@ -10,9 +10,9 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my_lib.h"
-#include "../includes/my.h"
+#include "my_rpg.h"
+#include "my_lib.h"
+#include "my.h"
 
 void create_clock_attack(struct_object *object)
 {

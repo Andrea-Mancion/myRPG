@@ -10,9 +10,9 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my_lib.h"
-#include "../includes/my.h"
+#include "my_rpg.h"
+#include "my_lib.h"
+#include "my.h"
 
 static struct_charachter which_button_click(struct_object *obj,
 sfVector2i mouse_pos, struct_charachter foe)

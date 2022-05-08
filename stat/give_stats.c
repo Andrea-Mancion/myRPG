@@ -16,7 +16,7 @@
 #include <fcntl.h>
 #include <SFML/Audio.h>
 #include <SFML/Audio/Music.h>
-#include "../includes/my_rpg.h"
+#include "my_rpg.h"
 
 static void give_stat_warrior(stats_t *stat)
 {

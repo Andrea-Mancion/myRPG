@@ -10,7 +10,7 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
+#include "my_rpg.h"
 #include "../my.h"
 
 #define TOTALE_CASE_1 28

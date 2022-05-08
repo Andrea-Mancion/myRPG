@@ -71,12 +71,12 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	my_rpg
 
-CFLAGS	=	-Wall -Wextra
-
+CFLAGS	=	-Wall -Wextra  -I includes/ -lcsfml-graphics -lcsfml-window
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(OBJ) -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
+	gcc -o $(NAME) $(OBJ) $(CFLAGS) -lcsfml-audio -lm -lcsfml-system
+
 	rm -f $(OBJ)
 
 clean:
