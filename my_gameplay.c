@@ -66,10 +66,14 @@ int second_window(struct_object *object, sfRenderWindow *window)
     }
     if (object->print_stat == true)
         create_button_stat(object);
-    if (object->battle.battle_beg == false)
+    if (object->battle.battle_beg == false) {
         object->hero.recup = object->hero.position;
-    if (object->battle.battle_beg == true)
+        set_view(object, window);
+    }
+    if (object->battle.battle_beg == true) {
+        set_view_battle(object, window);
         start_battle(object, object->current_ennemy);
+    }
     if (object->dialogue_balk_anny.can_print == true)
         clock_dialogue_balk_anny(object);
     if (object->dialogue_wife.can_print == true)
@@ -77,7 +81,6 @@ int second_window(struct_object *object, sfRenderWindow *window)
     move_object(object, window);
     put_numbers_in_text(object);
     verif_if_contact(object);
-    set_view(object, window);
     render_window(object, window);
     while (sfRenderWindow_pollEvent(window, &object->event.event))
         analyse_events(window, object);
