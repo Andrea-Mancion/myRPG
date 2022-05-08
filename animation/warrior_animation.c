@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** rpg
+** warrior_animation.c
 ** File description:
-** main_carac
+** warrior animation
 */
 
 #include "animation.h"

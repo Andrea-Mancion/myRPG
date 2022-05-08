@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** rpg
+** ranger_animation.c
 ** File description:
 ** ranger_animation
 */
