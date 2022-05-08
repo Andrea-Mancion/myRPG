@@ -29,7 +29,8 @@ void move_carac(object_t *object)
     if (object->carac->rect.left >= 114)
         object->carac->rect.left = 0;
     sfSprite_setTextureRect(object->carac->spri, object->carac->rect);
-    sfRenderWindow_drawSprite(object->window->window, object->carac->spri, NULL);
+    sfRenderWindow_drawSprite(object->window->window, object->carac->spri,\
+    NULL);
 }
 void mouvement_backward(object_t *object)
 {
@@ -82,7 +83,8 @@ void mouvement_downward(object_t *object)
 
 void essaie(object_t *object)
 {
-    sfRenderWindow_drawSprite(object->window->window, object->carac->spri, NULL);
+    sfRenderWindow_drawSprite(object->window->window, object->carac->spri,\
+    NULL);
     mouvement_backward(object);
     mouvement_downward(object);
     mouvement_forward(object);
