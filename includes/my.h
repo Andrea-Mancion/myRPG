@@ -87,5 +87,6 @@
     void destroy_inventory(struct_object *object);
     void set_view(struct_object *object, sfRenderWindow *window);
     void destroy_class_text(struct_object *obj);
+    void set_view_battle(struct_object *object, sfRenderWindow *window);
 
 #endif /* !MY_H_ */
