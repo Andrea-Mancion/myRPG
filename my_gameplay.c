@@ -77,6 +77,7 @@ int second_window(struct_object *object, sfRenderWindow *window)
     move_object(object, window);
     put_numbers_in_text(object);
     verif_if_contact(object);
+    set_view(object, window);
     render_window(object, window);
     while (sfRenderWindow_pollEvent(window, &object->event.event))
         analyse_events(window, object);
