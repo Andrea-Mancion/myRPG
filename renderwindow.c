@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2021
-** create_object
+** renderwindow.c
 ** File description:
 ** for runner
 */
