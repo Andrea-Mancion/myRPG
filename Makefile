@@ -17,9 +17,11 @@ SRC	=	lib/my_putchar.c	\
 		lib/my_putstr.c	\
 		create_object/create_object.c	\
 		renderwindow.c	\
+		view/setview.c	\
 		create_object/create_object2.c	\
 		create_object/create_mob.c	\
 		create_object/create_wife.c	\
+		create_object/create_bag.c	\
 		move/move_object.c	\
 		move/move_object2.c	\
 		move/move_spell.c	\
@@ -32,7 +34,7 @@ SRC	=	lib/my_putchar.c	\
 		menu/button_menu.c	\
 		menu/click_button.c	\
 		menu/main_menu.c	\
-		my_runner.c	\
+		my_gameplay.c	\
 		my_rpg.c	\
 		stat/create_stat.c	\
 		stat/give_stats.c	\
@@ -61,7 +63,9 @@ SRC	=	lib/my_putchar.c	\
 		dialogue/create_texte_dialogue.c	\
 		dialogue/print_dialogue.c	\
 		dialogue/verif_proxi.c	\
-		dialogue/clock_dialogue.c
+		dialogue/clock_dialogue.c	\
+		create_object/destroy_object.c	\
+		battle/destroy_battle.c
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -18,6 +18,8 @@ int settings_window(t_gbl *gbl)
 {
     struct_object *object = malloc(sizeof(struct_object));
 
+    if (!object)
+        exit(84);
     while (sfRenderWindow_isOpen(object->window.window)) {
         sfRenderWindow_clear(object->window.window, sfBlack);
         background_settings(gbl);

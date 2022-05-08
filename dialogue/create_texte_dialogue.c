@@ -19,9 +19,9 @@ static void create_text_dialogue(struct_object *object)
     sfText_setString(object->dialogue_wife.text_hero.text_invent, "OK");
     sfText_setString(object->dialogue_wife.text_wife.text_invent,
     "Go get a BAGUTTE");
-    sfText_setString(object->dialogue_wife.text_hero.text_invent,
+    sfText_setString(object->dialogue_balk_anny.text_hero.text_invent,
     "Give BAGUETTE");
-    sfText_setString(object->dialogue_wife.text_wife.text_invent, "Never");
+    sfText_setString(object->dialogue_balk_anny.text_balk_anny.text_invent, "Never");
 }
 
 static void create_dialogue_wife(struct_object *object)
@@ -68,6 +68,12 @@ static void create_dialogue_balk_anny(struct_object *object)
     sfText_setPosition(object->dialogue_balk_anny.text_balk_anny.text_invent,
     (sfVector2f){279, 505});
     object->dialogue_balk_anny.can_print = false;
+}
+
+void create_new_text_dialogue(struct_object *obj)
+{
+    sfText_setString(obj->dialogue_wife.text_wife.text_invent,
+    "Thank you honey, now your adventure is finish");
 }
 
 void create_dialogue(struct_object *object)

@@ -61,41 +61,6 @@ sfRenderWindow *create_window(struct_object *object)
     return (object->window.window);
 }
 
-void destroy(struct_object *object, sfRenderWindow *window)
-{
-    sfRenderWindow_destroy(window);
-    if (object->play == 2) {
-        sfSprite_destroy(object->hero.sprite);
-        sfTexture_destroy(object->hero.texture);
-        sfSprite_destroy(object->background.background);
-        sfTexture_destroy(object->background.background_text);
-        // sfSprite_destroy(object->game_over.background);
-        // sfTexture_destroy(object->game_over.background_text);
-        sfText_destroy(object->text_invetory.text_invent);
-        sfText_destroy(object->text_stat.text_invent);
-        sfText_destroy(object->text_pause.text_invent);
-        sfClock_destroy(object->clock.clock);
-        // sfClock_destroy(object->clock_battle.clock);
-        sfMusic_destroy(object->music.music);
-        // sfMusic_destroy(object->music_battle.music);
-        // sfMusic_destroy(object->music_over.music);
-        sfSprite_destroy(object->but_continue.sprite);
-        sfTexture_destroy(object->but_continue.texture);
-        sfSprite_destroy(object->but_exit.sprite);
-        sfTexture_destroy(object->but_exit.texture);
-        // sfSprite_destroy(object->but_over.sprite);
-        // sfTexture_destroy(object->but_over.texture);
-//        sfSprite_destroy(object->battle.battle_back.background);
-  //      sfTexture_destroy(object->battle.battle_back.background_text);
-   //     sfSprite_destroy(object->balk_anny.sprite);
-     //   sfTexture_destroy(object->balk_anny.texture);
-        sfSprite_destroy(object->balk_anny.sprite);
-        sfTexture_destroy(object->balk_anny.texture);
-        sfTexture_destroy(object->balk_anny.texture_fight);
-        sfSprite_destroy(object->balk_anny.sprite_fight);
-    }
-}
-
 void create_object(struct_object *object)
 {
     create_background(object);

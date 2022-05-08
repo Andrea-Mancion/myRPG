@@ -30,6 +30,7 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
     }
     if (sfKeyboard_isKeyPressed(sfKeyE)) {
         verif_proxi_balk_anny(object);
+        verif_proxi_wife(object);
     }
     if (object->battle.battle_beg == true) {
         object->current_ennemy = create_button_battle(object, object->current_ennemy);
@@ -76,6 +77,7 @@ int second_window(struct_object *object, sfRenderWindow *window)
     move_object(object, window);
     put_numbers_in_text(object);
     verif_if_contact(object);
+    set_view(object, window);
     render_window(object, window);
     while (sfRenderWindow_pollEvent(window, &object->event.event))
         analyse_events(window, object);

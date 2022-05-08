@@ -62,7 +62,7 @@ int menu_defender(struct_object *object)
         if (object->play == 2)
             second_window(object, window);
     }
-    destroy(object, window);
+    destroy_object(object, window);
     return 0;
 }
 
@@ -77,6 +77,8 @@ int main(int ac, char **av)
     //t_gbl gbl;
     struct_object *object = malloc(sizeof(struct_object));
 
+    if (!object)
+        return 84;
     if ((ac == 2) && (av[1][0] == '-') && (av[1][1] == 'h'))
         return print_help();
     else if (ac != 1) {

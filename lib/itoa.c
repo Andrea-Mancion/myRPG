@@ -30,6 +30,8 @@ char *itoa(int i)
         return NULL;
     nbr = count_number_number(i);
     str = malloc(sizeof(char) * (nbr + 1));
+    if (!str)
+        exit(84);
     for (size_t x = 0; i >= 10; x++, i /= 10) {
         s = i % 10;
         str[x] = s + 48;

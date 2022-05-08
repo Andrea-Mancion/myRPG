@@ -16,6 +16,21 @@
 #define TOTALE_CASE_1 28
 #define TOTALE_CASE 27
 
+void destroy_stat(struct_object *object)
+{
+    for (size_t x = 0; x < 7; x++) {
+        sfText_destroy(object->text_number_stat[x]->text_invent);
+        sfFont_destroy(object->text_number_stat[x]->font_text_invent);
+        free(object->text_number_stat[x]);
+    }
+    sfText_destroy(object->text_stat.text_invent);
+    sfFont_destroy(object->text_stat.font_text_invent);
+    free(object->text_number_stat);
+    sfSprite_destroy(object->stat->stat_s);
+    sfTexture_destroy(object->stat->stat_t);
+    free(object->stat);
+}
+
 void create_text_stat(struct_object *object)
 {
     sfVector2f pos_text = {330, 450};

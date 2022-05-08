@@ -78,5 +78,14 @@
     void clock_dialogue_wife(struct_object *obj);
     void clock_dialogue_balk_anny(struct_object *obj);
     void create_clock_dialogue(struct_object *obj);
+    void create_bag(struct_object *object);
+    void verif_proxi_wife(struct_object *obj);
+    void create_new_text_dialogue(struct_object *obj);
+    void destroy_battle(struct_object *object);
+    void destroy_stat(struct_object *object);
+    void destroy_object(struct_object *object, sfRenderWindow *window);
+    void destroy_inventory(struct_object *object);
+    void set_view(struct_object *object, sfRenderWindow *window);
+    void destroy_class_text(struct_object *obj);
 
 #endif /* !MY_H_ */
