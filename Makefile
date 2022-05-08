@@ -33,7 +33,7 @@ SRC	=	lib/my_putchar.c	\
 		menu/button_menu.c	\
 		menu/click_button.c	\
 		menu/main_menu.c	\
-		my_runner.c	\
+		my_gameplay.c	\
 		my_rpg.c	\
 		stat/create_stat.c	\
 		stat/give_stats.c	\
