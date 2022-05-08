@@ -16,18 +16,8 @@
 int my_putchar(char c);
 int my_putstr(char *str);
 
-static void analyse_events(sfRenderWindow *window, struct_object *object)
+static void analyse_events_2(sfRenderWindow *window, struct_object *object)
 {
-    if (object->event.event.type == sfEvtClosed)
-        sfRenderWindow_close(window);
-    if (sfKeyboard_isKeyPressed(sfKeyI))
-        object->print_inventory = true;
-    if (sfKeyboard_isKeyPressed(sfKeyC))
-        object->print_stat = true;
-    if (sfKeyboard_isKeyPressed(sfKeyE)) {
-        verif_proxi_balk_anny(object);
-        verif_proxi_wife(object);
-    }
     if (object->battle.battle_beg == true) {
         object->current_ennemy = create_button_battle(object,
         object->current_ennemy);
@@ -41,13 +31,25 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
     if (object->print_inventory == false && object->print_stat == false &&
     sfKeyboard_isKeyPressed(sfKeyEscape))
         object->print_pause = true;
-    if (sfKeyboard_isKeyPressed(sfKeyO))
-        create_over(object);
 }
 
-int second_window(struct_object *object, sfRenderWindow *window)
+static void analyse_events(sfRenderWindow *window, struct_object *object)
 {
-    object->window.window = window;
+    if (object->event.event.type == sfEvtClosed)
+        sfRenderWindow_close(window);
+    if (sfKeyboard_isKeyPressed(sfKeyI))
+        object->print_inventory = true;
+    if (sfKeyboard_isKeyPressed(sfKeyC))
+        object->print_stat = true;
+    if (sfKeyboard_isKeyPressed(sfKeyE)) {
+        verif_proxi_balk_anny(object);
+        verif_proxi_wife(object);
+    }
+    analyse_events_2(window, object);
+}
+
+static void init_play(struct_object *object)
+{
     if (object->create == false) {
         object->print_inventory = false;
         object->print_stat = false;
@@ -62,6 +64,12 @@ int second_window(struct_object *object, sfRenderWindow *window)
         sfMusic_play(object->music.music);
         sfClock_restart(object->dialogue_wife.clock.clock);
     }
+}
+
+int second_window(struct_object *object, sfRenderWindow *window)
+{
+    object->window.window = window;
+    init_play(object);
     if (object->print_stat == true)
         create_button_stat(object);
     if (object->battle.battle_beg == true) {
