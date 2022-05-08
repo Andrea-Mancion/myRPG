@@ -203,6 +203,7 @@ typedef struct object
     btn_t but_continue;
     btn_t but_exit;
     btn_t but_over;
+    btn_t return_settings;
     struct_text text_invetory;
     struct_text text_stat;
     struct_text text_pause;

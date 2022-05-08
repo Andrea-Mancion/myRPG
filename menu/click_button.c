@@ -66,7 +66,6 @@ void click_voldown(sfRenderWindow *window, struct_object *obj, float volume)
                 if (obj->event.event.type == sfEvtMouseButtonPressed) {
                     volume -= 10;
                     sfMusic_setVolume(obj->music.music, volume);
-                    printf("volume: %f\n", volume);
                 }
             }
         }
@@ -83,7 +82,6 @@ void click_volup(sfRenderWindow *window, struct_object *obj, float volume)
                 if (obj->event.event.type == sfEvtMouseButtonPressed) {
                     volume += 10;
                     sfMusic_setVolume(obj->music.music, volume);
-                    printf("volume; %f\n", volume);
                 }
             }
         }
