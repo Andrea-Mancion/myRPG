@@ -43,6 +43,7 @@ int menu_defender(struct_object *object)
     sfVideoMode mode = {1920, 1080, 32};
     sfRenderWindow* window;
     object->play = 0;
+    object->settings = 0;
     object->create = false;
     object->battle.battle_beg = false;
     window = sfRenderWindow_create(mode, "Main Menu", sfResize | sfClose, NULL);
@@ -54,6 +55,10 @@ int menu_defender(struct_object *object)
         }
         sfRenderWindow_clear(window, sfBlack);
         if (object->play == 0) {
+            if (object->settings == 1) {
+                window_settings(&opti, window);
+                continue;
+            }
             menu(object, window, opti);
             continue;
         }

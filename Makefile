@@ -34,6 +34,7 @@ SRC	=	lib/my_putchar.c	\
 		menu/button_menu.c	\
 		menu/click_button.c	\
 		menu/main_menu.c	\
+		menu/settings_menu.c	\
 		my_gameplay.c	\
 		my_rpg.c	\
 		stat/create_stat.c	\

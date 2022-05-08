@@ -9,33 +9,45 @@
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
 #include <stdbool.h>
-#include "includes/my_rpg.h"
-#include "includes/my_lib.h"
+#include "../includes/my_rpg.h"
+#include "../includes/my_lib.h"
 #include <stdio.h>
 
-void background_settings(t_gbl *opti)
+static void settings_render(t_gbl *opti, sfRenderWindow *window)
+{
+    sfRenderWindow_clear(window, sfWhite);
+    sfRenderWindow_drawSprite(window, opti->backg.sprite, NULL);
+    sfRenderWindow_drawSprite(window, opti->volumed.sprite, NULL);
+    sfRenderWindow_display(window);
+
+}
+
+static void background_settings(t_gbl *opti)
 {
     opti->backg.texture =
-    sfTexture_createFromFile("./sprite/my_defender.png", NULL);
-    sfVector2f size = {3.7, 3.6};
+    sfTexture_createFromFile("./assets/sprites/settings.png", NULL);
     opti->backg.sprite = sfSprite_create();
-    sfSprite_setScale(opti->backg.sprite, size);
     sfSprite_setTexture(opti->backg.sprite, opti->backg.texture, sfTrue);
+    sfSprite_setScale(opti->backg.sprite, (sfVector2f){2.5, 2.0});
 }
 
-void button_volume(t_gbl *opti)
+static void button_volume_down(t_gbl *opti)
 {
-    sfVector2f pos = (sfVector2f) {820, 430};
-    opti->volume.texture =
-    sfTexture_createFromFile("./sprite/button_volume.png", NULL);
-    sfVector2f size = {0.5, 0.5};
+    sfVector2f pos = (sfVector2f) {300, 430};
+    opti->volumed.texture =
+    sfTexture_createFromFile("./assets/sprites/volume_minus.png", NULL);
+    sfVector2f size = {2.0, 2.0};
 
-    opti->volume.sprite = sfSprite_create();
-    sfSprite_setScale(opti->volume.sprite, size);
-    sfSprite_setPosition(opti->volume.sprite, pos);
-    sfSprite_setTexture(opti->volume.sprite, opti->volume.texture, sfTrue);
+    opti->volumed.sprite = sfSprite_create();
+    sfSprite_setScale(opti->volumed.sprite, size);
+    sfSprite_setPosition(opti->volumed.sprite, pos);
+    sfSprite_setTexture(opti->volumed.sprite, opti->volumed.texture, sfTrue);
 }
 
-int settings()
+int window_settings(t_gbl *opti, sfRenderWindow *window)
 {
+    background_settings(opti);
+    button_volume_down(opti);
+    settings_render(opti, window);
+    return (0);
 }

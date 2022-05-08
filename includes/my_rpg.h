@@ -55,7 +55,8 @@ typedef struct s_gbl {
     trucs backg;
     btn_t play;
     btn_t set_tings;
-    btn_t volume;
+    btn_t volumed;
+    btn_t volumeu;
     btn_t quit;
     t_game game;
     t_object player;
@@ -212,6 +213,7 @@ typedef struct object
     battle_t battle;
     class_t **class;
     int play;
+    int settings;
     bool create;
     bool print_inventory;
     bool print_stat;
@@ -222,11 +224,9 @@ typedef struct object
 
 void background(t_gbl *opti);
 void title_menu(t_gbl *opti);
-void background_settings(t_gbl *opti);
 
 void play(t_gbl *opti);
 void button_settings(t_gbl *opti);
-void button_volume(t_gbl *opti);
 void button_quit(t_gbl *opti);
 
 void create_button(struct_object *object);
@@ -248,6 +248,6 @@ int init_game_struct (t_gbl *gbl);
 int init_sprites(t_gbl *gbl);
 
 void close_graphics (t_gbl *gbl);
-int window_settings(t_gbl *gbl);
+int window_settings(t_gbl *gbl, sfRenderWindow *window);
 
 #endif
