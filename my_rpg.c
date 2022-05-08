@@ -74,7 +74,6 @@ static int print_help (void)
 
 int main(int ac, char **av)
 {
-    //t_gbl gbl;
     struct_object *object = malloc(sizeof(struct_object));
 
     if (!object)
@@ -85,10 +84,6 @@ int main(int ac, char **av)
         my_putstr("Usage: my_defender [-h]\n");
         return 0;
     }
-    /*if (init_music(&gbl)) {
-        my_putstr("Error during initialization\n");
-        return 84;
-    }*/
     menu_defender(object);
     return 0;
 }
