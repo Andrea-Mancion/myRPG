@@ -68,7 +68,8 @@ SRC	=	lib/my_putchar.c	\
 		dialogue/clock_dialogue.c	\
 		create_object/destroy_object.c	\
 		battle/destroy_battle.c	\
-		dialogue/create_dialogue_balk_anny.c
+		dialogue/create_dialogue_balk_anny.c	\
+		boucle_inf.c
 
 OBJ	=	$(SRC:.c=.o)
 

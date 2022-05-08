@@ -24,7 +24,7 @@ static void display_menu(sfRenderWindow *window, t_gbl opti)
     sfRenderWindow_display(window);
 }
 
-static void menu(struct_object *object, sfRenderWindow *window, t_gbl opti)
+void menu(struct_object *object, sfRenderWindow *window, t_gbl opti)
 {
     display_menu(window, opti);
     pos_play(window, object);
@@ -49,26 +49,7 @@ int menu_defender(struct_object *object)
     object->battle.battle_beg = false;
     window = sfRenderWindow_create(mode, "Main Menu", sfResize | sfClose,\
     NULL);
-
-    while (sfRenderWindow_isOpen(window)) {
-        while (sfRenderWindow_pollEvent(window, &object->event.event)) {
-            if (object->event.event.type == sfEvtClosed)
-                sfRenderWindow_close(window);
-        }
-        sfRenderWindow_clear(window, sfBlack);
-        if (object->play == 0) {
-            if (object->settings == 1) {
-                window_settings(&opti, window, object, volume);
-                continue;
-            }
-            menu(object, window, opti);
-            continue;
-        }
-        if (object->play == 1)
-            choose_class(object, window);
-        if (object->play == 2)
-            second_window(object, window);
-    }
+    boucle_inf(object, window, opti, volume);
     destroy_object(object, window);
     return 0;
 }

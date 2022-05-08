@@ -24,10 +24,6 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
         object->print_inventory = true;
     if (sfKeyboard_isKeyPressed(sfKeyC))
         object->print_stat = true;
-    if (sfKeyboard_isKeyPressed(sfKeyY)) {
-        object->balk_anny = init_battle(object, object->balk_anny);
-        object->current_ennemy = object->balk_anny;
-    }
     if (sfKeyboard_isKeyPressed(sfKeyE)) {
         verif_proxi_balk_anny(object);
         verif_proxi_wife(object);

@@ -90,5 +90,8 @@
     void create_dialogue_balk_anny(struct_object *object);
     void create_return_menu(struct_object *obj);
     void click_return(sfRenderWindow *window, struct_object *object);
+    void boucle_inf(struct_object *object, sfRenderWindow *window, t_gbl opti,
+    float volume);
+    void menu(struct_object *object, sfRenderWindow *window, t_gbl opti);
 
 #endif /* !MY_H_ */

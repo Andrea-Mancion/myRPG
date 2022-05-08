@@ -44,6 +44,7 @@ static void create_clock_battle(struct_object *object)
 
 struct_charachter init_battle(struct_object *object, struct_charachter foe)
 {
+    object->hero.recup = object->hero.position;
     create_text_battle(object, foe);
     create_battle_back(object);
     object->battle.can_attack = true;
