@@ -33,8 +33,7 @@ static int end_battle(struct_object *obj, struct_charachter foe)
             if (foe.x == -1) {
                 obj->bag_in_invent = true;
                 obj->balk_anny.death = true;
-            }
-            else
+            } else
                 obj->blob[foe.x]->death = true;
         } else
             create_over(obj);

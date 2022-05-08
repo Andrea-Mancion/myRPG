@@ -24,8 +24,8 @@ void print_dialogue_wife(struct_object *object)
 
 void print_dialogue_balk_anny(struct_object *object)
 {
-    if (object->dialogue_balk_anny.can_print == true) {
-        sfRenderWindow_drawText(object->window.window, object->dialogue_wife.text_wife.text_invent, NULL);
-        sfRenderWindow_drawText(object->window.window, object->dialogue_wife.text_hero.text_invent, NULL);
+    if (object->dialogue_balk_anny.can_print == true && object->balk_anny.death == false) {
+        sfRenderWindow_drawText(object->window.window, object->dialogue_balk_anny.text_balk_anny.text_invent, NULL);
+        sfRenderWindow_drawText(object->window.window, object->dialogue_balk_anny.text_hero.text_invent, NULL);
     }
 }
