@@ -37,6 +37,10 @@ void render_window(struct_object *object, sfRenderWindow *window)
         sfRenderWindow_drawText(window, object->text_invetory.text_invent,
         NULL);
         print_inventory(object, window);
+        if (object->bag_in_invent == true) {
+            create_bag(object);
+            sfRenderWindow_drawSprite(window, object->bag.sprite, NULL);
+        }
     }
     if (object->print_stat == true) {
         sfRenderWindow_drawText(window, object->text_stat.text_invent, NULL);

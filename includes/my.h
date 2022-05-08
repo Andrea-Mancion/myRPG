@@ -78,5 +78,6 @@
     void clock_dialogue_wife(struct_object *obj);
     void clock_dialogue_balk_anny(struct_object *obj);
     void create_clock_dialogue(struct_object *obj);
+    void create_bag(struct_object *object);
 
 #endif /* !MY_H_ */

@@ -188,6 +188,7 @@ typedef struct object
     struct_charachter current_ennemy;
     struct_charachter **blob;
     struct_charachter wife;
+    struct_charachter bag;
     struct_clock clock;
     struct_clock clock_attack;
     struct_clock clock_battle;
