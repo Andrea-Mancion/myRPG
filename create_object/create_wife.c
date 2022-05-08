@@ -19,7 +19,7 @@ void create_wife(struct_object *object)
     sfTexture_createFromFile("assets/sprites/wife.png", NULL);
     object->wife.sprite = sfSprite_create();
     object->wife.position.x = 250;
-    object->wife.position.y = 570;
+    object->wife.position.y = 420;
     object->wife.rect.top = 0;
     object->wife.rect.left = 0;
     object->wife.rect.width = 33;

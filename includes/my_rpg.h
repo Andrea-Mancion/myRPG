@@ -68,7 +68,6 @@ typedef struct charachter
     sfSprite *sprite_fight;
     sfTexture *texture_fight;
     sfTexture *texture;
-    sfView *view;
     sfIntRect rect;
     sfVector2f position;
     sfVector2f recup;
