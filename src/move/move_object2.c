@@ -16,7 +16,8 @@
 void mouvement_x_back(struct_object *object, sfRenderWindow *window)
 {
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
-    if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
+    if (sfKeyboard_isKeyPressed(sfKeyLeft) && object->hero.position.x
+    > 10) {
         object->hero.rect.top = 45;
         object->hero.position.x -= 10;
         move_warrior(object, window);
@@ -26,8 +27,10 @@ void mouvement_x_back(struct_object *object, sfRenderWindow *window)
 
 void mouvement_y_up(struct_object *object, sfRenderWindow *window)
 {
+    printf("%.0f = d   y = %.0f\n", object->hero.position.x, object->hero.position.y);
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
-    if (sfKeyboard_isKeyPressed(sfKeyUp)) {
+    if (sfKeyboard_isKeyPressed(sfKeyUp) && object->hero.position.y
+    > 10) {
         object->hero.rect.top = 135;
         object->hero.position.y -= 10;
         move_warrior(object, window);
@@ -38,7 +41,8 @@ void mouvement_y_up(struct_object *object, sfRenderWindow *window)
 void mouvement_y_down(struct_object *object, sfRenderWindow *window)
 {
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
-    if (sfKeyboard_isKeyPressed(sfKeyDown)) {
+    if (sfKeyboard_isKeyPressed(sfKeyDown) && object->hero.position.y
+    < 980) {
         object->hero.rect.top = 0;
         object->hero.position.y += 10;
         move_warrior(object, window);

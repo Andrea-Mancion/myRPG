@@ -25,7 +25,8 @@ void move_warrior(struct_object *object, sfRenderWindow *window)
 void mouvement_x(struct_object *object, sfRenderWindow *window)
 {
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
-    if (sfKeyboard_isKeyPressed(sfKeyRight)) {
+    if (sfKeyboard_isKeyPressed(sfKeyRight) && object->hero.position.x
+    < 1880) {
         object->hero.rect.top = 90;
         object->hero.position.x += 10;
         move_warrior(object, window);
