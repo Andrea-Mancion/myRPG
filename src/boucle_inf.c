@@ -9,9 +9,9 @@
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
 #include <stdbool.h>
-#include "includes/my_rpg.h"
-#include "includes/my_lib.h"
-#include "includes/my.h"
+#include "my_rpg.h"
+#include "my_lib.h"
+#include "my.h"
 #include <stdio.h>
 
 static int open_menu(struct_object *object, sfRenderWindow *window,

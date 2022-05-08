@@ -10,13 +10,13 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "includes/my_rpg.h"
-#include "includes/my.h"
+#include "my_rpg.h"
+#include "my.h"
 
 int my_putchar(char c);
 int my_putstr(char *str);
 
-static void analyse_events_2(sfRenderWindow *window, struct_object *object)
+static void analyse_events_2(struct_object *object)
 {
     if (object->battle.battle_beg == true) {
         object->current_ennemy = create_button_battle(object,
@@ -45,7 +45,7 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
         verif_proxi_balk_anny(object);
         verif_proxi_wife(object);
     }
-    analyse_events_2(window, object);
+    analyse_events_2(object);
 }
 
 static void init_play(struct_object *object)

@@ -9,8 +9,8 @@
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
 #include <stdbool.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my_lib.h"
+#include "my_rpg.h"
+#include "my_lib.h"
 #include <stdio.h>
 
 void create_return_menu(struct_object *obj)

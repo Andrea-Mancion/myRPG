@@ -11,7 +11,7 @@
 #include <math.h>
 #include <stdio.h>
 #include "my_rpg.h"
-#include "../my.h"
+#include "my.h"
 
 #define TOTALE_CASE 27
 
