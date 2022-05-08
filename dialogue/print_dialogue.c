@@ -16,9 +16,17 @@
 
 void print_dialogue_wife(struct_object *object)
 {
-    if (object->dialogue_wife.can_print == true) {
+    if (object->dialogue_wife.can_print == true &&
+    object->bag_in_invent == false) {
         sfRenderWindow_drawText(object->window.window, object->dialogue_wife.text_wife.text_invent, NULL);
         sfRenderWindow_drawText(object->window.window, object->dialogue_wife.text_hero.text_invent, NULL);
+    } else if (object->dialogue_wife.can_print == true &&
+    object->bag_in_invent == true) {
+        create_new_text_dialogue(object);
+        sfRenderWindow_drawText(object->window.window,
+        object->dialogue_wife.text_wife.text_invent, NULL);
+        sfRenderWindow_drawText(object->window.window,
+        object->dialogue_wife.text_hero.text_invent, NULL);
     }
 }
 

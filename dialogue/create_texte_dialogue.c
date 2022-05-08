@@ -70,6 +70,12 @@ static void create_dialogue_balk_anny(struct_object *object)
     object->dialogue_balk_anny.can_print = false;
 }
 
+void create_new_text_dialogue(struct_object *obj)
+{
+    sfText_setString(obj->dialogue_wife.text_wife.text_invent,
+    "Thank you honey, now your adventure is finish");
+}
+
 void create_dialogue(struct_object *object)
 {
     create_dialogue_balk_anny(object);
