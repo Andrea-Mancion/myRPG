@@ -20,7 +20,7 @@ char *my_strcat(char *str1, char const *str2)
 
     ret = malloc(sizeof(char) * (lenstr2 + lenstr1 + 1));
     if (!ret)
-       return NULL;
+        return NULL;
     for (int l = 0; l != lenstr1; l++)
         ret[l] = str1[l];
     for (i = 0; i != lenstr2; i++) {

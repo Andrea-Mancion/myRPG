@@ -9,7 +9,8 @@
 
 void create_warrior(object_t *object)
 {
-    object->carac->texture = sfTexture_createFromFile("sprite_rpg/spellcaster.png",
+    object->carac->texture =
+    sfTexture_createFromFile("sprite_rpg/spellcaster.png",
     NULL);
     object->carac->spri = sfSprite_create();
     object->carac->position.x = 400;

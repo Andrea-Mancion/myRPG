@@ -14,7 +14,6 @@
 #include "my_lib.h"
 #include "my.h"
 
-
 static void game_overback(struct_object *object)
 {
     sfVector2f size = {1.5, 1.5};
