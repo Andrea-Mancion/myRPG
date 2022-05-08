@@ -14,7 +14,6 @@
 #include "my_lib.h"
 #include "my.h"
 
-
 void create_hero_battle(struct_object *obj)
 {
     sfVector2f size = {2.0, 2.0};

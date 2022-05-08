@@ -33,32 +33,37 @@ void mouvement_x(struct_object *object, sfRenderWindow *window)
     sfSprite_setPosition(object->hero.sprite, object->hero.position);
 }
 
+static void movement_per_class(struct_object *object, sfRenderWindow *window)
+{
+    if (object->stat->nmbr_class == 1 &&
+    object->dialogue_wife.can_print == false) {
+        mouvement_x(object, window);
+        mouvement_x_back(object, window);
+        mouvement_y_up(object, window);
+        mouvement_y_down(object, window);
+    }
+    if (object->stat->nmbr_class == 2 &&
+    object->dialogue_wife.can_print == false) {
+        mouvement_spellfor(object);
+        mouvement_spellback(object);
+        mouvement_spellup(object);
+        mouvement_spelldown(object);
+    }
+    if (object->stat->nmbr_class == 3 &&
+    object->dialogue_wife.can_print == false) {
+        mouvement_rangerfor(object);
+        mouvement_rangerback(object);
+        mouvement_rangerup(object);
+        mouvement_rangerdown(object);
+    }
+}
+
 void clock(struct_object *object, sfRenderWindow *window)
 {
     object->clock.time = sfClock_getElapsedTime(object->clock.clock);
     object->clock.seconds = object->clock.time.microseconds / 1000000.0f;
     if (object->clock.seconds > 0.2) {
-        if (object->stat->nmbr_class == 1 &&
-        object->dialogue_wife.can_print == false) {
-            mouvement_x(object, window);
-            mouvement_x_back(object, window);
-            mouvement_y_up(object, window);
-            mouvement_y_down(object, window);
-        }
-        if (object->stat->nmbr_class == 2 &&
-        object->dialogue_wife.can_print == false) {
-            mouvement_spellfor(object);
-            mouvement_spellback(object);
-            mouvement_spellup(object);
-            mouvement_spelldown(object);
-        }
-        if (object->stat->nmbr_class == 3 &&
-        object->dialogue_wife.can_print == false) {
-            mouvement_rangerfor(object);
-            mouvement_rangerback(object);
-            mouvement_rangerup(object);
-            mouvement_rangerdown(object);
-        }
+        movement_per_class(object, window);
         move_idle_balk(object);
         move_blob(object);
         move_wife(object);

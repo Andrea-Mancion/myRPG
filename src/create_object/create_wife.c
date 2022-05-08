@@ -24,6 +24,8 @@ void create_wife(struct_object *object)
     object->wife.rect.left = 0;
     object->wife.rect.width = 33;
     object->wife.rect.height = 46;
+    object->wife.size_x = 33;
+    object->wife.size_y = 46;
     sfSprite_setTexture(object->wife.sprite, object->wife.texture, sfTrue);
     sfSprite_setPosition(object->wife.sprite, object->wife.position);
     sfSprite_setTextureRect(object->wife.sprite, object->wife.rect);

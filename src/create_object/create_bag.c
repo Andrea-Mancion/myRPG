@@ -16,7 +16,7 @@
 void create_bag(struct_object *object)
 {
     object->bag.texture =
-    sfTexture_createFromFile("assets/sprites/baguette.PNG", NULL);
+    sfTexture_createFromFile("assets/sprites/baguette.png", NULL);
     object->bag.sprite = sfSprite_create();
     object->bag.position.x = 920;
     object->bag.position.y = 510;
