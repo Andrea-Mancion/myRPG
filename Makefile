@@ -17,6 +17,7 @@ SRC	=	lib/my_putchar.c	\
 		lib/my_putstr.c	\
 		create_object/create_object.c	\
 		renderwindow.c	\
+		view/setview.c	\
 		create_object/create_object2.c	\
 		create_object/create_mob.c	\
 		create_object/create_wife.c	\
