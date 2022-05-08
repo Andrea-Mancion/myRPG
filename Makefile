@@ -62,7 +62,9 @@ SRC	=	lib/my_putchar.c	\
 		dialogue/create_texte_dialogue.c	\
 		dialogue/print_dialogue.c	\
 		dialogue/verif_proxi.c	\
-		dialogue/clock_dialogue.c
+		dialogue/clock_dialogue.c	\
+		create_object/destroy_object.c	\
+		battle/destroy_battle.c
 
 OBJ	=	$(SRC:.c=.o)
 

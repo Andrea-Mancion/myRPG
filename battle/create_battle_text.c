@@ -34,8 +34,12 @@ void create_text_battle(struct_object *object, struct_charachter foe)
 {
     object->battle.text_battle = malloc(sizeof(struct_text) * 6);
 
+    if (!object->battle.text_battle)
+        exit(84);
     for (int x = 0; x < 6; x++) {
         object->battle.text_battle[x] = malloc(sizeof(struct_text));
+        if (!object->battle.text_battle[x])
+            exit(84);
         object->battle.text_battle[x]->text_invent = sfText_create();
         object->battle.text_battle[x]->font_text_invent =
         sfFont_createFromFile("ressource/cinzel.ttf");
