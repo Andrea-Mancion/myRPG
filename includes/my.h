@@ -86,5 +86,6 @@
     void destroy_object(struct_object *object, sfRenderWindow *window);
     void destroy_inventory(struct_object *object);
     void destroy_class_text(struct_object *obj);
+    void create_dialogue_balk_anny(struct_object *object);
 
 #endif /* !MY_H_ */

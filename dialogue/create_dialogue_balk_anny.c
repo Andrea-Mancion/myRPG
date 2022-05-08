@@ -14,7 +14,7 @@
 #include "my.h"
 #include "my_rpg.h"
 
-create_dialogue_of_balk_anny(struct_object *object)
+static void create_dialogue_of_balk_anny(struct_object *object)
 {
     object->dialogue_balk_anny.text_balk_anny.text_invent = sfText_create();
     object->dialogue_balk_anny.text_balk_anny.font_text_invent =
@@ -31,7 +31,7 @@ create_dialogue_of_balk_anny(struct_object *object)
     object->dialogue_balk_anny.can_print = false;
 }
 
-static void create_dialogue_balk_anny(struct_object *object)
+void create_dialogue_balk_anny(struct_object *object)
 {
     object->dialogue_balk_anny.text_hero.text_invent = sfText_create();
     object->dialogue_balk_anny.text_hero.font_text_invent =
@@ -42,4 +42,5 @@ static void create_dialogue_balk_anny(struct_object *object)
     40);
     sfText_setFillColor(object->dialogue_balk_anny.text_hero.text_invent,
     sfWhite);
+    create_dialogue_of_balk_anny(object);
 }
