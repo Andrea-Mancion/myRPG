@@ -18,8 +18,13 @@ void set_view(struct_object *object, sfRenderWindow *window)
     object->hero.view = sfView_create();
     sfView_setCenter(object->hero.view, object->hero.position);
     sfView_setSize(object->hero.view, (sfVector2f) {960, 540});
-    // sfView_setRotation(object->hero.view, (float) {20});
-    // sfView_rotate(object->hero.view, (float) {5});
     sfRenderWindow_setView(window, object->hero.view);
-    // printf("ici");
+}
+
+void set_view_battle(struct_object *object, sfRenderWindow *window)
+{
+    object->hero.view = sfView_create();
+    sfView_setCenter(object->hero.view, (sfVector2f) {960, 540});
+    sfView_setSize(object->hero.view, (sfVector2f) {1920, 1080});
+    sfRenderWindow_setView(window, object->hero.view);
 }
