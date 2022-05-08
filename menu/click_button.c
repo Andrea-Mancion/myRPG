@@ -29,11 +29,11 @@ void pos_settings(sfRenderWindow* window, struct_object *object)
 {
     sfVector2i mouse_pos = sfMouse_getPosition((const sfWindow *)window);
 
-    if (mouse_pos.y >= 350 && mouse_pos.y <= 472) {
-        if (mouse_pos.x >= 853 && mouse_pos.x <= 1072) {
+    if (mouse_pos.y >= 630 && mouse_pos.y <= 720) {
+        if (mouse_pos.x >= 738 && mouse_pos.x <= 1200) {
             while (sfRenderWindow_pollEvent(window, &object->event.event)) {
                 if (object->event.event.type == sfEvtMouseButtonPressed) {
-                    //window_settings();
+                    // window_settings();
                     break;
                 }
             }
@@ -45,8 +45,8 @@ void pos_quit(sfRenderWindow* window, struct_object *object)
 {
     sfVector2i mouse_pos = sfMouse_getPosition((const sfWindow *)window);
 
-    if (mouse_pos.y >= 550 && mouse_pos.y <= 723) {
-        if (mouse_pos.x >= 735 && mouse_pos.x <= 1099) {
+    if (mouse_pos.y >= 737 && mouse_pos.y <= 823) {
+        if (mouse_pos.x >= 730 && mouse_pos.x <= 1200) {
             while (sfRenderWindow_pollEvent(window, &object->event.event)) {
                 if (object->event.event.type == sfEvtMouseButtonPressed) {
                     sfRenderWindow_close(window);
