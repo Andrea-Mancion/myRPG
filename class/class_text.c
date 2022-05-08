@@ -13,6 +13,12 @@
 #include "../includes/my_rpg.h"
 #include "../includes/my.h"
 
+void destroy_class_text(struct_object *obj)
+{
+    sfFont_destroy(obj->text_class.font_text_invent);
+    sfText_destroy(obj->text_class.text_invent);
+}
+
 void create_class_text(struct_object *obj)
 {
     obj->text_class.text_invent = sfText_create();
