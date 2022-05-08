@@ -21,7 +21,7 @@
     void create_background(struct_object *object);
     void clock(struct_object *object, sfRenderWindow *window);
     void create_clock(struct_object *object);
-    void create_music(struct_object *object);
+    float create_music(struct_object *object);
     void render_window(struct_object *object, sfRenderWindow *window);
     void move_warrior(struct_object *object, sfRenderWindow *window);
     void mouvement_x(struct_object *object, sfRenderWindow *window);

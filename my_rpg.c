@@ -39,6 +39,7 @@ int menu_defender(struct_object *object)
     play(&opti);
     button_settings(&opti);
     button_quit(&opti);
+    float volume = create_music(object);
 
     sfVideoMode mode = {1920, 1080, 32};
     sfRenderWindow* window;
@@ -56,7 +57,7 @@ int menu_defender(struct_object *object)
         sfRenderWindow_clear(window, sfBlack);
         if (object->play == 0) {
             if (object->settings == 1) {
-                window_settings(&opti, window);
+                window_settings(&opti, window, object, volume);
                 continue;
             }
             menu(object, window, opti);

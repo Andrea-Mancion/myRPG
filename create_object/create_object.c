@@ -14,7 +14,6 @@
 #include "../includes/my.h"
 
 void create_clock(struct_object *object);
-void create_music(struct_object *object);
 void create_back2(struct_object *object);
 void create_back3(struct_object *object);
 void create_back4(struct_object *object);
@@ -67,7 +66,6 @@ void create_object(struct_object *object)
     create_balk_anny(object);
     create_wife(object);
     create_blob(object);
-    create_music(object);
     create_inventory(object);
     create_text_inventory(object);
     create_clock(object);

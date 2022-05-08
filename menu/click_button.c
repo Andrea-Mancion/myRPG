@@ -55,3 +55,37 @@ void pos_quit(sfRenderWindow* window, struct_object *object)
         }
     }
 }
+
+void click_voldown(sfRenderWindow *window, struct_object *obj, float volume)
+{
+    sfVector2i mouse_pos = sfMouse_getPosition((const sfWindow *)window);
+
+    if (mouse_pos.y >= 446 && mouse_pos.y <= 596) {
+        if (mouse_pos.x >= 334 && mouse_pos.x <= 486) {
+            while (sfRenderWindow_pollEvent(window, &obj->event.event)) {
+                if (obj->event.event.type == sfEvtMouseButtonPressed) {
+                    volume -= 10;
+                    sfMusic_setVolume(obj->music.music, volume);
+                    printf("volume: %f\n", volume);
+                }
+            }
+        }
+    }
+}
+
+void click_volup(sfRenderWindow *window, struct_object *obj, float volume)
+{
+    sfVector2i mouse_pos = sfMouse_getPosition((const sfWindow *)window);
+
+    if (mouse_pos.y >= 454 && mouse_pos.y <= 604) {
+        if (mouse_pos.x >= 646 && mouse_pos.x <= 798) {
+            while (sfRenderWindow_pollEvent(window, &obj->event.event)) {
+                if (obj->event.event.type == sfEvtMouseButtonPressed) {
+                    volume += 10;
+                    sfMusic_setVolume(obj->music.music, volume);
+                    printf("volume; %f\n", volume);
+                }
+            }
+        }
+    }
+}

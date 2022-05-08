@@ -234,6 +234,8 @@ void create_button(struct_object *object);
 void pos_play(sfRenderWindow* window, struct_object *object);
 void pos_settings(sfRenderWindow* window, struct_object *object);
 void pos_quit(sfRenderWindow* window, struct_object *object);
+void click_voldown(sfRenderWindow *window, struct_object *obj, float volume);
+void click_volup(sfRenderWindow *window, struct_object *obj, float volume);
 
 void click_but(sfRenderWindow *window, sfEvent event, struct_object *object);
 
@@ -248,6 +250,7 @@ int init_game_struct (t_gbl *gbl);
 int init_sprites(t_gbl *gbl);
 
 void close_graphics (t_gbl *gbl);
-int window_settings(t_gbl *gbl, sfRenderWindow *window);
+int window_settings(t_gbl *gbl, sfRenderWindow *window, struct_object *obj,
+float volume);
 
 #endif

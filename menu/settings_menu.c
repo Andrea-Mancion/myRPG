@@ -58,11 +58,14 @@ static void button_volume_up(t_gbl *opti)
     sfSprite_setTexture(opti->volumeu.sprite, opti->volumeu.texture, sfTrue);
 }
 
-int window_settings(t_gbl *opti, sfRenderWindow *window)
+int window_settings(t_gbl *opti, sfRenderWindow *window, struct_object *obj,
+float volume)
 {
     background_settings(opti);
     button_volume_down(opti);
     button_volume_up(opti);
     settings_render(opti, window);
+    click_voldown(window, obj, volume);
+    click_volup(window, obj, volume);
     return (0);
 }

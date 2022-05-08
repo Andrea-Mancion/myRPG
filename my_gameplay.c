@@ -62,6 +62,7 @@ int second_window(struct_object *object, sfRenderWindow *window)
         create_inventory(object);
         create_button(object);
         object->create = true;
+        sfMusic_play(object->music.music);
         sfClock_restart(object->dialogue_wife.clock.clock);
     }
     if (object->print_stat == true)

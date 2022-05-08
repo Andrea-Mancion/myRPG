@@ -83,10 +83,13 @@ void create_clock(struct_object *object)
     object->clock.clock = sfClock_create();
 }
 
-void create_music(struct_object *object)
+float create_music(struct_object *object)
 {
+    float volume = 80;
+
     object->music.music =
     sfMusic_createFromFile("assets/music/rpg_gameplay.ogg");
-    sfMusic_setVolume(object->music.music, 80);
-    sfMusic_play(object->music.music);
+    sfMusic_setVolume(object->music.music, volume);
+
+    return (volume);
 }
