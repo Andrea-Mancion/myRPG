@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** rpg
+** speelcaster_animation.c
 ** File description:
 ** speelcaster_animation
 */

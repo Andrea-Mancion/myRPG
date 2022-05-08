@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** rpg
+** animation.h
 ** File description:
 ** animation
 */
@@ -37,8 +37,5 @@ typedef struct object_s {
     struct_clock *clock;
     window_t *window;
 } object_t;
-
-
-
 
 #endif

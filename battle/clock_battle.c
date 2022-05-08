@@ -26,7 +26,6 @@ void clock_attack(struct_object *object)
     if (object->clock_attack.seconds > 2.5) {
         object->stat->pv -= rand() % 3;
         object->battle.can_attack = true;
-        //anime attack enemy;
         sfClock_restart(object->clock_attack.clock);
     }
 }

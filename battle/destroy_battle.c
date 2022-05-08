@@ -26,5 +26,4 @@ void destroy_battle(struct_object *object)
         free(object->battle.text_battle[x]);
     }
     free(object->battle.text_battle);
-    // sfMusic_destroy(object->music_battle.music);
 }
