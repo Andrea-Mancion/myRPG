@@ -43,17 +43,13 @@ void create_text_inventory(struct_object *object)
 
 void create_inventory(struct_object *object)
 {
-    int a = 0;
+    size_t a = 0;
     sfVector2f scale = {1.5, 1.5};
 
     object->inventory = malloc(sizeof(struct_inventory *) * TOTALE_CASE_1);
-    if (!object->inventory)
-        exit(84);
     object->inventory[TOTALE_CASE] = NULL;
     for (; a < TOTALE_CASE; a++) {
         object->inventory[a] = malloc(sizeof(struct_inventory));
-        if (!object->inventory[a])
-            exit(84);
         object->inventory[a]->inv_t =
         sfTexture_createFromFile("ressource/inventory.png", NULL);
         object->inventory[a]->inv_s = sfSprite_create();

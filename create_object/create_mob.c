@@ -17,12 +17,8 @@
 void create_blob(struct_object *obj)
 {
     obj->blob = malloc(sizeof(struct_charachter *) * 4);
-    if (!obj->blob)
-        exit(84);
     for (size_t x = 0; x < 4; x++) {
         obj->blob[x] = malloc(sizeof(struct_charachter));
-        if (!obj->blob[x])
-            exit(84);
         obj->blob[x]->texture = sfTexture_createFromFile("./assets/sprites/blob2.png",
         NULL);
         obj->blob[x]->texture_fight = sfTexture_createFromFile("./assets/sprites/blob.png",
