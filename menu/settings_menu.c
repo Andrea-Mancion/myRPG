@@ -18,6 +18,7 @@ static void settings_render(t_gbl *opti, sfRenderWindow *window)
     sfRenderWindow_clear(window, sfWhite);
     sfRenderWindow_drawSprite(window, opti->backg.sprite, NULL);
     sfRenderWindow_drawSprite(window, opti->volumed.sprite, NULL);
+    sfRenderWindow_drawSprite(window, opti->volumeu.sprite, NULL);
     sfRenderWindow_display(window);
 
 }
@@ -44,10 +45,24 @@ static void button_volume_down(t_gbl *opti)
     sfSprite_setTexture(opti->volumed.sprite, opti->volumed.texture, sfTrue);
 }
 
+static void button_volume_up(t_gbl *opti)
+{
+    sfVector2f pos = {600, 430};
+    sfVector2f size = {2.0, 2.0};
+
+    opti->volumeu.texture =
+    sfTexture_createFromFile("./assets/sprites/volume_plus.png", NULL);
+    opti->volumeu.sprite = sfSprite_create();
+    sfSprite_setScale(opti->volumeu.sprite, size);
+    sfSprite_setPosition(opti->volumeu.sprite, pos);
+    sfSprite_setTexture(opti->volumeu.sprite, opti->volumeu.texture, sfTrue);
+}
+
 int window_settings(t_gbl *opti, sfRenderWindow *window)
 {
     background_settings(opti);
     button_volume_down(opti);
+    button_volume_up(opti);
     settings_render(opti, window);
     return (0);
 }
