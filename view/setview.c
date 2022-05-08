@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** B-MUL-200-REN-2-1-myrpg-ludwig.vandenberghe
+** setview.c
 ** File description:
 ** setview
 */
