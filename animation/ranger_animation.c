@@ -10,7 +10,7 @@
 void create_warrior(object_t *object)
 {
     object->carac->texture = sfTexture_createFromFile("sprite_rpg/ranger.png",
-     NULL);
+    NULL);
     object->carac->spri = sfSprite_create();
     object->carac->position.x = 400;
     object->carac->position.y = 500;
