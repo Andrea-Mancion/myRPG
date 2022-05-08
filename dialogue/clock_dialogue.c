@@ -27,7 +27,7 @@ void clock_dialogue_wife(struct_object *obj)
         obj->dialogue_wife.can_print = false;
     }
     if (obj->dialogue_wife.clock.seconds > 5 && obj->bag_in_invent == true)
-         obj->play = 0;
+        obj->play = 0;
 }
 
 void clock_dialogue_balk_anny(struct_object *obj)
