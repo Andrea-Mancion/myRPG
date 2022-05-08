@@ -10,8 +10,8 @@
 #include <SFML/Audio.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my_lib.h"
+#include "my_rpg.h"
+#include "my_lib.h"
 
 void play(t_gbl *opti)
 {

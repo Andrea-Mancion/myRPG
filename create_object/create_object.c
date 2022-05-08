@@ -10,8 +10,8 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my.h"
+#include "my_rpg.h"
+#include "my.h"
 
 void create_clock(struct_object *object);
 void create_back2(struct_object *object);
@@ -43,8 +43,8 @@ void create_background(struct_object *object)
     object->background.background_text, sfTrue);
     object->background.back.top = 500;
     object->background.back.left = 0;
-    object->background.back.width = 1920;
-    object->background.back.height = 1080;
+    object->background.back.width = 2048;
+    object->background.back.height = 2048;
     sfSprite_setTextureRect(object->background.background,
     object->background.back);
 }

@@ -57,7 +57,8 @@
     char *my_strcat(char *str1, char const *str2);
     void print_battle(struct_object *obj, struct_charachter foe);
     void create_text_battle(struct_object *object, struct_charachter foe);
-    struct_charachter init_battle(struct_object *object, struct_charachter foe);
+    struct_charachter init_battle(struct_object *object,
+    struct_charachter foe);
     struct_charachter create_button_battle(struct_object *obj,
     struct_charachter foe);
     void move_battle(struct_object *object, struct_charachter foe);
@@ -85,8 +86,9 @@
     void destroy_stat(struct_object *object);
     void destroy_object(struct_object *object, sfRenderWindow *window);
     void destroy_inventory(struct_object *object);
-    void set_view(struct_object *object, sfRenderWindow *window);
     void destroy_class_text(struct_object *obj);
-    void set_view_battle(struct_object *object, sfRenderWindow *window);
+    void create_dialogue_balk_anny(struct_object *object);
+    void create_return_menu(struct_object *obj);
+    void click_return(sfRenderWindow *window, struct_object *object);
 
 #endif /* !MY_H_ */

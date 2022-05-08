@@ -14,7 +14,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include "../includes/my_rpg.h"
+#include "my_rpg.h"
 #include <SFML/Audio.h>
 #include <SFML/Audio/Music.h>
 

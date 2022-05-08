@@ -29,11 +29,9 @@
     void move_back2(struct_object *object);
     void move_back3(struct_object *object);
     void move_back4(struct_object *object);
-    void destroy(struct_object *object);
     void create_object(struct_object *object);
     void move_object(struct_object *object);
     void create_inventory(struct_object *object);
-    void put_inventory(struct_inventory **inventory, struct_baguette *baguette);
     void print_inventory(struct_object *object);
     void create_text_inventory(struct_object *object);
 

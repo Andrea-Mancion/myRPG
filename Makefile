@@ -17,7 +17,6 @@ SRC	=	lib/my_putchar.c	\
 		lib/my_putstr.c	\
 		create_object/create_object.c	\
 		renderwindow.c	\
-		view/setview.c	\
 		create_object/create_object2.c	\
 		create_object/create_mob.c	\
 		create_object/create_wife.c	\
@@ -35,6 +34,8 @@ SRC	=	lib/my_putchar.c	\
 		menu/click_button.c	\
 		menu/main_menu.c	\
 		menu/settings_menu.c	\
+		menu/create_butt_return.c	\
+		menu/click_butt_return.c	\
 		my_gameplay.c	\
 		my_rpg.c	\
 		stat/create_stat.c	\
@@ -66,18 +67,19 @@ SRC	=	lib/my_putchar.c	\
 		dialogue/verif_proxi.c	\
 		dialogue/clock_dialogue.c	\
 		create_object/destroy_object.c	\
-		battle/destroy_battle.c
+		battle/destroy_battle.c	\
+		dialogue/create_dialogue_balk_anny.c
 
 OBJ	=	$(SRC:.c=.o)
 
 NAME	=	my_rpg
 
-CFLAGS	=	-Wall -Wextra
-
+CFLAGS	=	-Wall -Wextra  -I includes/ -lcsfml-graphics -lcsfml-window
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(OBJ) -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
+	gcc -o $(NAME) $(OBJ) $(CFLAGS) -lcsfml-audio -lm -lcsfml-system
+
 	rm -f $(OBJ)
 
 clean:

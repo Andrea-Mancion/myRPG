@@ -10,8 +10,8 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my.h"
+#include "my_rpg.h"
+#include "my.h"
 
 void move_ranger_batt(struct_object *obj)
 {

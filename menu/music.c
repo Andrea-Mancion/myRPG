@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "../includes/my_rpg.h"
+#include "my_rpg.h"
 
 int init_music(t_gbl *gbl)
 {

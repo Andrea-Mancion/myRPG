@@ -9,16 +9,19 @@
 #include <SFML/Graphics.h>
 #include <SFML/Audio.h>
 #include <stdbool.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my_lib.h"
+#include "my_rpg.h"
+#include "my_lib.h"
+#include "my.h"
 #include <stdio.h>
 
-static void settings_render(t_gbl *opti, sfRenderWindow *window)
+static void settings_render(t_gbl *opti, sfRenderWindow *window,
+struct_object *obj)
 {
     sfRenderWindow_clear(window, sfWhite);
     sfRenderWindow_drawSprite(window, opti->backg.sprite, NULL);
     sfRenderWindow_drawSprite(window, opti->volumed.sprite, NULL);
     sfRenderWindow_drawSprite(window, opti->volumeu.sprite, NULL);
+    sfRenderWindow_drawSprite(window, obj->return_settings.sprite, NULL);
     sfRenderWindow_display(window);
 
 }
@@ -62,10 +65,12 @@ int window_settings(t_gbl *opti, sfRenderWindow *window, struct_object *obj,
 float volume)
 {
     background_settings(opti);
+    create_return_menu(obj);
     button_volume_down(opti);
     button_volume_up(opti);
-    settings_render(opti, window);
+    settings_render(opti, window, obj);
     click_voldown(window, obj, volume);
     click_volup(window, obj, volume);
+    click_return(window, obj);
     return (0);
 }

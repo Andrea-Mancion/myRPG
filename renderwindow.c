@@ -18,7 +18,8 @@ static void print_blob(struct_object *object)
     for (size_t x = 0; x < 4; x++) {
         if (object->blob[x]->death == true)
             continue;
-        sfRenderWindow_drawSprite(object->window.window, object->blob[x]->sprite, NULL);
+        sfRenderWindow_drawSprite(object->window.window,
+        object->blob[x]->sprite, NULL);
     }
 }
 

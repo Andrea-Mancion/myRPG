@@ -33,7 +33,8 @@ static void analyse_events(sfRenderWindow *window, struct_object *object)
         verif_proxi_wife(object);
     }
     if (object->battle.battle_beg == true) {
-        object->current_ennemy = create_button_battle(object, object->current_ennemy);
+        object->current_ennemy = create_button_battle(object,
+        object->current_ennemy);
         move_battle(object, object->current_ennemy);
     }
     if ((object->print_inventory == true || object->print_stat == true) &&
@@ -67,12 +68,7 @@ int second_window(struct_object *object, sfRenderWindow *window)
     }
     if (object->print_stat == true)
         create_button_stat(object);
-    if (object->battle.battle_beg == false) {
-        object->hero.recup = object->hero.position;
-        set_view(object, window);
-    }
     if (object->battle.battle_beg == true) {
-        set_view_battle(object, window);
         start_battle(object, object->current_ennemy);
     }
     if (object->dialogue_balk_anny.can_print == true)

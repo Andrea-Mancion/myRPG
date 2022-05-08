@@ -9,10 +9,10 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "../includes/my_rpg.h"
-#include "../includes/button.h"
-#include "../includes/my.h"
-#include "../includes/my_rpg.h"
+#include "my_rpg.h"
+#include "button.h"
+#include "my.h"
+#include "my_rpg.h"
 
 void put_numbers_in_text(struct_object *object)
 {
@@ -35,12 +35,8 @@ void create_number_text_stat(struct_object *object)
 {
     object->text_number_stat = malloc(sizeof(struct_text) * 7);
 
-    if (!object->text_number_stat)
-        exit(84);
     for (int x = 0; x < 7; x++) {
         object->text_number_stat[x] = malloc(sizeof(struct_text));
-        if (!object->text_number_stat[x])
-            exit(84);
         object->text_number_stat[x]->text_invent = sfText_create();
         object->text_number_stat[x]->font_text_invent =
         sfFont_createFromFile("ressource/cinzel.ttf");

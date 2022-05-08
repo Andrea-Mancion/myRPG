@@ -6,7 +6,7 @@
 */
 
 #include <SFML/Graphics.h>
-#include "../includes/my_rpg.h"
+#include "my_rpg.h"
 
 int main_menu(void)
 {

@@ -9,10 +9,10 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "../includes/my_rpg.h"
-#include "../includes/button.h"
-#include "../includes/my.h"
-#include "../includes/my_rpg.h"
+#include "my_rpg.h"
+#include "button.h"
+#include "my.h"
+#include "my_rpg.h"
 
 static void create_text_dialogue(struct_object *object)
 {
@@ -35,7 +35,7 @@ static void create_dialogue_wife(struct_object *object)
     sfText_setCharacterSize(object->dialogue_wife.text_hero.text_invent, 40);
     sfText_setFillColor(object->dialogue_wife.text_hero.text_invent, sfWhite);
     sfText_setPosition(object->dialogue_wife.text_hero.text_invent,
-    (sfVector2f){279, 505});
+    (sfVector2f){object->hero.position.x + 40, object->hero.position.y});
     object->dialogue_wife.text_wife.text_invent = sfText_create();
     object->dialogue_wife.text_wife.font_text_invent =
     sfFont_createFromFile("ressource/cinzel.ttf");
@@ -44,31 +44,8 @@ static void create_dialogue_wife(struct_object *object)
     sfText_setCharacterSize(object->dialogue_wife.text_wife.text_invent, 40);
     sfText_setFillColor(object->dialogue_wife.text_wife.text_invent, sfWhite);
     sfText_setPosition(object->dialogue_wife.text_wife.text_invent,
-    (sfVector2f){279, 505});
+    (sfVector2f){object->wife.position.x + 40, object->wife.position.y});
     object->dialogue_wife.can_print = true;
-}
-
-static void create_dialogue_balk_anny(struct_object *object)
-{
-    object->dialogue_balk_anny.text_hero.text_invent = sfText_create();
-    object->dialogue_balk_anny.text_hero.font_text_invent =
-    sfFont_createFromFile("ressource/cinzel.ttf");
-    sfText_setFont(object->dialogue_balk_anny.text_hero.text_invent,
-    object->dialogue_balk_anny.text_hero.font_text_invent);
-    sfText_setCharacterSize(object->dialogue_balk_anny.text_hero.text_invent, 40);
-    sfText_setFillColor(object->dialogue_balk_anny.text_hero.text_invent, sfWhite);
-    sfText_setPosition(object->dialogue_balk_anny.text_hero.text_invent,
-    object->balk_anny.position);
-    object->dialogue_balk_anny.text_balk_anny.text_invent = sfText_create();
-    object->dialogue_balk_anny.text_balk_anny.font_text_invent =
-    sfFont_createFromFile("ressource/cinzel.ttf");
-    sfText_setFont(object->dialogue_balk_anny.text_balk_anny.text_invent,
-    object->dialogue_balk_anny.text_balk_anny.font_text_invent);
-    sfText_setCharacterSize(object->dialogue_balk_anny.text_balk_anny.text_invent, 40);
-    sfText_setFillColor(object->dialogue_balk_anny.text_balk_anny.text_invent, sfWhite);
-    sfText_setPosition(object->dialogue_balk_anny.text_balk_anny.text_invent,
-    (sfVector2f){279, 505});
-    object->dialogue_balk_anny.can_print = false;
 }
 
 void create_new_text_dialogue(struct_object *obj)

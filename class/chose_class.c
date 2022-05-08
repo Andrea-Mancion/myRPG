@@ -10,8 +10,8 @@
 #include <SFML/Graphics.h>
 #include <math.h>
 #include <stdio.h>
-#include "../includes/my_rpg.h"
-#include "../includes/my.h"
+#include "my_rpg.h"
+#include "my.h"
 
 static void set_rect(struct_object *obj)
 {
@@ -33,13 +33,8 @@ static void set_rect(struct_object *obj)
 static void init_class(struct_object *obj)
 {
     obj->class = malloc(sizeof(class_t) * 3);
-    if (!obj->class)
-        exit(84);
-    for (int x = 0; x < 3; x++) {
+    for (int x = 0; x < 3; x++)
         obj->class[x] = malloc(sizeof(class_t));
-        if (!obj->class[x])
-            exit(84);
-    }
     obj->class[0]->texture =
     sfTexture_createFromFile("ressource/Guerrier.jpg", NULL);
     obj->class[1]->texture =
@@ -88,8 +83,6 @@ void choose_class(struct_object *object, sfRenderWindow *window)
     sfVector2i mouse_pos;
 
     object->stat = malloc(sizeof(stats_t));
-    if (!object->stat)
-        exit(84);
     init_class(object);
     create_class_text(object);
     for (size_t x = 0; x < 3; x++)
