@@ -66,7 +66,6 @@ void destroy_object(struct_object *object, sfRenderWindow *window)
             sfTexture_destroy(object->but_over.texture);
         }
         destroy_text(object);
-        destroy_music(object);
         destroy_characters(object);
         destroy_inventory(object);
         sfClock_destroy(object->clock.clock);
@@ -76,5 +75,6 @@ void destroy_object(struct_object *object, sfRenderWindow *window)
         sfTexture_destroy(object->but_exit.texture);
         destroy_stat(object);
     }
+    destroy_music(object);
     free(object);
 }
