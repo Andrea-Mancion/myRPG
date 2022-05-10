@@ -51,7 +51,7 @@ static void create_dialogue_wife(struct_object *object)
 void create_new_text_dialogue(struct_object *obj)
 {
     sfText_setString(obj->dialogue_wife.text_wife.text_invent,
-    "Thank you honey, now your adventure is finish");
+    "Thank you honey, now your adventure is finished");
 }
 
 void create_dialogue(struct_object *object)

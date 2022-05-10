@@ -27,7 +27,6 @@ void mouvement_x_back(struct_object *object, sfRenderWindow *window)
 
 void mouvement_y_up(struct_object *object, sfRenderWindow *window)
 {
-    printf("%.0f = d   y = %.0f\n", object->hero.position.x, object->hero.position.y);
     object->hero.position = sfSprite_getPosition(object->hero.sprite);
     if (sfKeyboard_isKeyPressed(sfKeyUp) && object->hero.position.y
     > 10) {
